@@ -25,4 +25,5 @@ private _vehicles = profileNamespace getVariable ["OA_airport_vehicles", []];
 
 // start airport jobs queue
 sleep 5;
-[] call OA_fnc_airportJobsQueue;
+[] call OA_fnc_airportRefuelJobsQueue;
+[] call OA_fnc_airportRepairJobsQueue;
