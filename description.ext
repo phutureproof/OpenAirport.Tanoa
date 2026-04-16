@@ -60,6 +60,7 @@ class CfgFunctions
         };
 
         class GUI {
+            class genericListGUI {};
             class viewJobGUI {};
         };
     };
