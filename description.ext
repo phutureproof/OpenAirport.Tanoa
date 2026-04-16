@@ -1,0 +1,37 @@
+class CfgFunctions
+{
+    class OA
+    {
+        class Utils
+        {
+            class spawnVehicle {};
+            class showFunds {};
+            class updateFunds {};
+            class saveData {};
+            class jobRequest {};
+            class laptopActions {};
+            class playerActions {};
+            class shopActions {};
+            class resetSave {};
+            class sendATCMsg {};
+            class getRandomDestination {};
+            class spawnPassenger {};
+            class formatIntAsCurrency {};
+        };
+
+        class Queues {
+            class airportJobsQueue {};
+            class addAirportJob {};
+        };
+        
+        class AirportJobs
+        {
+            class refuelJob {};
+            class repairJob {};
+        };
+    };
+};
+
+respawn = 3;
+respawnOnStart = 0;
+enableDebugConsole = 1;
