@@ -13,11 +13,6 @@ _player addAction ["<t color='#00FF00'>Show Airport Balance</t>", {
 	[] call OA_fnc_showFunds;
 }, [], _menuPriority, false, true];
 
-_player addAction ["<t color='#00FF00'>Request Job</t>", {
-	params ["_target", "_caller"];
-	[_caller] remoteExec ["OA_fnc_jobRequest", 2];
-}, [], _menuPriority, false, true, "", "!(isNull objectParent _this) && (_this distance (getMarkerPos 'civSpawn') < 1000)"];
-
 _player addAction [ format ["<t color='#00FF00'>Request Refuel (%1)</t>", _formattedRefuelCost], {
 	params ["_target", "_caller"];
 	["refuel", _caller, vehicle _caller] remoteExec ["OA_fnc_addAirportJobToQueue", 2];
@@ -27,3 +22,5 @@ _player addAction [ format ["<t color='#00FF00'>Request Repair (%1)</t>", _forma
 	params ["_target", "_caller"];
 	["repair", _caller, vehicle _caller] remoteExec ["OA_fnc_addAirportJobToQueue", 2];
 }, [], _menuPriority, false, true, "", "!(isNull objectParent _this) && (_this distance (getMarkerPos 'civSpawn') < 1000)"];
+
+_player addAction ["================", {}, [], _menuPriority, false, true, "", "!(isNull objectParent _this)"];

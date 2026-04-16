@@ -34,4 +34,4 @@ _list = [
 	];
 } forEach _list;
 
-_obj addAction ["================", [], 30, true, true, "", "true", 5];
+_obj addAction ["================", {}, [], 30, true, true, "", "true", 5];
