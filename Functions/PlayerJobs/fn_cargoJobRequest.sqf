@@ -6,6 +6,8 @@ if (isServer) then {
     private _cargo = objNull;
 	private _vehicle = objNull;
 	private _lightCargo = ["C_Quadbike_01_F", "CargoNet_01_barrels_F", "CargoNet_01_box_F", "I_CargoNet_01_ammo_F", "O_CargoNet_01_ammo_F", "C_IDAP_CargoNet_01_supplies_F", "I_E_CargoNet_01_ammo_F"];
+	private _mediumCargo = ["Land_Cargo10_IDAP_F", "Land_Cargo10_blue_F", "Land_Cargo10_brick_red_F"];
+	private _heavyCargo = ["Land_Cargo20_grey_F", "Land_Cargo20_blue_F", "Land_Cargo20_orange_F", "Land_Cargo20_white_F"];
 	private _dest = [] call OA_fnc_getRandomDestination;
 	private _jobDistance = _spawnPos distance getPos _dest;
 	private _multiplier = 1;
@@ -18,13 +20,13 @@ if (isServer) then {
 			_multiplier = 5;
         };
 		case "medium": {
-            _cargo = (selectRandom _lightCargo) createVehicle _spawnPos;
-			[_cargo, 500] remoteExec ["setMass"]; // make sure whatever we just spawned is carryable by all helicopters
+            _cargo = (selectRandom _mediumCargo) createVehicle _spawnPos;
+			[_cargo, 1000] remoteExec ["setMass"]; // make sure whatever we just spawned is carryable by medium helicopters
 			_multiplier = 15;
         };
 		case "heavy": {
-            _cargo = (selectRandom _lightCargo) createVehicle _spawnPos;
-			[_cargo, 500] remoteExec ["setMass"]; // make sure whatever we just spawned is carryable by all helicopters
+            _cargo = (selectRandom _heavyCargo) createVehicle _spawnPos;
+			[_cargo, 2000] remoteExec ["setMass"]; // make sure whatever we just spawned is carryable by heavy helicopters
 			_multiplier = 30;
         };
     };
