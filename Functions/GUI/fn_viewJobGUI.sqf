@@ -14,23 +14,15 @@ private _listData = [
 private _buttonText = 'SELECT JOB';
 
 private _buttonHandler = {
-    params ["_ctrl"];
-    private _display = ctrlParent _ctrl;
-    private _list = _display displayCtrl 1500;
-    private _selIdx = lbCurSel _list;
+    params ["_itemName", "_itemData"];
 
-    if (_selIdx == -1) exitWith { hint "Please select a job first!"; };
-
-    private _jobName = _list lbText _selIdx;
-    private _jobID = _list lbData _selIdx;
-
-    _jobParams = _jobID splitString "-";
+    _jobParams = _itemData splitString "-";
     _jobType = _jobParams select 0;
     
     switch (_jobType) do {
         case "passenger": {
             _min = parseNumber (_jobParams select 1);
-            _max = parseNumber (_jobparams select 2);
+            _max = parseNumber (_jobParams select 2);
             [player, _min, _max] remoteExec ["OA_fnc_passengerJobRequest", 2];
         };
         case "medic": {
@@ -44,7 +36,7 @@ private _buttonHandler = {
             hint "Not yet implemented";
         };
     };
-    _display closeDisplay 1;
+    
 };
 
 [_listData, _buttonText, _buttonHandler] call OA_fnc_genericListGUI;

@@ -4,6 +4,8 @@ disableSerialization;
 
 // create background
 private _display = findDisplay 46 createDisplay "RscDisplayEmpty";
+_display setVariable ["_buttonHandler", _buttonHandler];
+
 private _bg = _display ctrlCreate ["RscText", -1];
 _bg ctrlSetPosition [0.35 * safeZoneW + safeZoneX, 0.3 * safeZoneH + safeZoneY, 0.3 * safeZoneW, 0.4 * safeZoneH];
 _bg ctrlSetBackgroundColor [0, 0, 0, 0.8];
@@ -27,4 +29,21 @@ _btn ctrlSetText _buttonText;
 _btn ctrlCommit 0;
 
 // event handlers
-_btn ctrlAddEventHandler ["ButtonClick", _buttonHandler];
+_btn ctrlAddEventHandler ["ButtonClick", {
+    params ["_ctrl"];
+    private _display = ctrlParent _ctrl;
+    private _buttonHandler = _display getVariable["_buttonHandler", {}];
+
+    private _list = _display displayCtrl 1500;
+    private _selIdx = lbCurSel _list;
+
+    if (_selIdx == -1) exitWith { hint "Please make a selection first"; };
+
+    private _itemName = _list lbText _selIdx;
+    private _itemData = _list lbData _selIdx;
+
+    [_itemName, _itemData] call _buttonHandler;
+
+    _display closeDisplay 1;
+    _display setVariable ["_buttonHandler", nil];
+}];
