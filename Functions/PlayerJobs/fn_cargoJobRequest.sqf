@@ -44,7 +44,7 @@ if (isServer) then {
 		sleep 1;
 		(getSlingLoad _vehicle == _cargo)
 	};
-	[_taskPickupCargo] call BIS_fnc_deleteTask;
+	[_taskPickupCargo] call BIS_fnc_deleteTask; 
 
 	// task deliver the cargo
 	_taskDeliver = [_player, 'Deliver the cargo', 'Deliver the cargo to the destination', _dest, 'container'] call OA_fnc_genericTask;
