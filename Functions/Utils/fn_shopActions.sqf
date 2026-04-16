@@ -30,6 +30,8 @@ _list = [
 			[_caller, _class] remoteExec ["OA_fnc_spawnVehicle", 2];
 			[_price * -1] remoteExec ["OA_fnc_updateFunds", 2];
 			[format ["%1 has purchased a %2 for %3", name _caller, _name, [_price] call OA_fnc_formatIntAsCurrency]] call OA_fnc_sendATCMsg;
-		}, _x, 15, true, true, "", "true", 5
+		}, _x, 30, true, true, "", "true", 5
 	];
 } forEach _list;
+
+_obj addAction ["================", [], 30, true, true, "", "true", 5];

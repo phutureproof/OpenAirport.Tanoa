@@ -16,6 +16,7 @@ class CfgFunctions
             class getRandomDestination {};
             class spawnPassenger {};
             class formatIntAsCurrency {};
+            class generateTaskID {};
         };
 
         class Queues {
@@ -35,6 +36,10 @@ class CfgFunctions
 
         class CargoJobs {
 
+        };
+
+        class GUI {
+            class viewJobGUI {};
         };
     };
 };
