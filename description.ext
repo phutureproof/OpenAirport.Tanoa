@@ -14,18 +14,23 @@ class CfgFunctions
             class shopActions {};
         };
 
+        class Data {
+            class saveData {};
+            class resetSave {};
+        };
+
+        class Funds {
+            class showFunds {};
+            class updateFunds {};
+        };
+
         class Utils
         {
             class spawnVehicle {};
-            class showFunds {};
-            class updateFunds {};
-            class saveData {};
-            class resetSave {};
             class sendATCMsg {};
             class getRandomDestination {};
             class spawnPassenger {};
             class formatIntAsCurrency {};
-            
         };
 
         class Tasks {
@@ -34,8 +39,11 @@ class CfgFunctions
         };
 
         class Queues {
-            class airportJobsQueue {};
-            class addAirportJobToQueue {};
+            class airportRefuelJobsQueue {};
+            class addRefuelJobToQueue {};
+            
+            class airportRepairJobsQueue {};
+            class addRepairJobToQueue {};
         };
         
         class AirportJobs
