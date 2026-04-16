@@ -13,6 +13,21 @@ _list = [
 	["I_Heli_Transport_02_F", "CH-49 Mohawk", 345000]
 ];
 
+/*
+_obj addAction [
+	"<t color='#189979'>Buy First Aid Kit ($500.00)</t>",
+	{
+		params ["_target", "_caller", "_actionId", "_args"];
+		private _funds = missionNamespace getVariable ["OA_airport_funds", 0];
+		if (_funds < 500) then {
+			hint "You don't have enough to purchase a first aid kit";
+		};
+		[-500] remoteExec ["OA_fnc_updateFunds", 2];
+		_caller addItem "FirstAidKit";
+	}, _x, 30, true, false, "", "true", 5
+];
+*/
+
 {
 	_class = _x select 0;
 	_name = _x select 1;

@@ -12,11 +12,11 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=105;
+		nextID=115;
 	};
 	class MarkerIDProvider
 	{
-		nextID=3;
+		nextID=4;
 	};
 	class LayerIndexProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6931.8115,64.37664,7353.8726};
-		dir[]={-0.2483076,-0.70224202,-0.66723269};
-		up[]={-0.24492578,0.71193838,-0.65814531};
-		aside[]={-0.93720585,-1.4901161e-08,0.34877688};
+		pos[]={7043.5479,182.3461,7331.3003};
+		dir[]={-0.6401372,-0.75134766,-0.16031626};
+		up[]={-0.72883874,0.65990651,-0.18253072};
+		aside[]={-0.24293777,0,0.97004199};
 	};
 };
 binarizationWanted=0;
@@ -261,7 +261,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=72;
+		items=73;
 		class Item0
 		{
 			dataType="Object";
@@ -1381,7 +1381,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6793.8477,2.6614389,7296.1382};
-						angles[]={0,2.2563443,0};
+						angles[]={-0,1.3572098,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -1397,7 +1397,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6793.8477,2.6614389,7296.1382};
-						angles[]={0,2.2563443,0};
+						angles[]={-0,1.3572098,0};
 					};
 					side="Civilian";
 					flags=5;
@@ -1454,8 +1454,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6788.353,5.0417042,7303.7642};
-				angles[]={0,2.2563443,0};
+				position[]={6913.6089,5.0417042,7440.1689};
+				angles[]={-0,1.3572098,0};
 			};
 			side="Civilian";
 			flags=6;
@@ -1469,10 +1469,11 @@ class Mission
 		class Item57
 		{
 			dataType="Marker";
-			position[]={6792.8271,2.6600001,7300.8125};
+			position[]={6918.7036,2.6600001,7441.834};
 			name="refuelPoint";
 			type="mil_objective";
 			alpha=0;
+			angle=308.48328;
 			id=77;
 			class CustomAttributes
 			{
@@ -1505,7 +1506,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6788.3872,2.6728299,7287.7544};
-						angles[]={0.0026529003,2.2729073,6.2805324};
+						angles[]={-0,1.3737727,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -1522,7 +1523,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6788.3872,2.6728299,7287.7544};
-						angles[]={0.0026529003,2.2729073,6.2805324};
+						angles[]={-0,1.3737727,0};
 					};
 					side="Civilian";
 					flags=5;
@@ -1573,14 +1574,15 @@ class Mission
 				};
 			};
 			id=78;
+			atlOffset=-1.6927719e-05;
 		};
 		class Item59
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6782.7964,5.0476727,7296.2212};
-				angles[]={0.0026529003,2.2729073,6.2805324};
+				position[]={6909.5122,5.0416875,7462.0884};
+				angles[]={-0,1.3737727,0};
 			};
 			side="Civilian";
 			flags=6;
@@ -1589,16 +1591,17 @@ class Mission
 			};
 			id=82;
 			type="C_Truck_02_box_F";
+			atlOffset=-1.6927719e-05;
 		};
 		class Item60
 		{
 			dataType="Marker";
-			position[]={6786.7998,2.6630001,7293.3662};
+			position[]={6914.231,2.6600001,7463.4482};
 			name="repairPoint";
 			type="mil_objective";
 			alpha=0;
+			angle=308.48328;
 			id=83;
-			atlOffset=0.00011062622;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1625,6 +1628,7 @@ class Mission
 			text="Airport";
 			type="respawn_unknown";
 			colorName="ColorWEST";
+			alpha=0;
 			id=85;
 			class CustomAttributes
 			{
@@ -1657,7 +1661,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6901.6343,2.6614389,7277.9902};
-						angles[]={0,1.604535,-0};
+						angles[]={0,1.604535,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -1717,7 +1721,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6901.7446,2.6614389,7276.9443};
-						angles[]={0,1.2859064,-0};
+						angles[]={0,1.2859064,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -1778,7 +1782,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6903.3481,2.6614389,7278.5122};
-						angles[]={0,1.604535,-0};
+						angles[]={0,1.604535,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -1838,7 +1842,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6903.2349,2.6614389,7277.6514};
-						angles[]={0,1.604535,-0};
+						angles[]={0,1.604535,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -1898,7 +1902,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6903.0498,2.6614389,7276.7607};
-						angles[]={0,1.604535,-0};
+						angles[]={0,1.604535,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -1958,7 +1962,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6903.0107,2.6614389,7275.7085};
-						angles[]={0,1.604535,-0};
+						angles[]={0,1.604535,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -2018,7 +2022,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6904.7544,2.6614389,7275.9058};
-						angles[]={0,1.604535,-0};
+						angles[]={0,1.604535,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -2078,7 +2082,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6904.6011,2.6614389,7277.0068};
-						angles[]={0,1.604535,-0};
+						angles[]={0,1.604535,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -2138,7 +2142,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6904.5635,2.6614389,7278.0518};
-						angles[]={0,1.604535,-0};
+						angles[]={0,1.604535,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -2198,7 +2202,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6904.7271,2.6614389,7278.9482};
-						angles[]={0,1.604535,-0};
+						angles[]={0,1.604535,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -2244,6 +2248,33 @@ class Mission
 			{
 			};
 			id=102;
+		};
+		class Item72
+		{
+			dataType="Marker";
+			position[]={6862.4321,2.6600001,7296.7041};
+			name="cargoSpawn";
+			type="mil_pickup";
+			colorName="ColorGreen";
+			alpha=0;
+			id=105;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

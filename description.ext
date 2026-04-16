@@ -44,8 +44,11 @@ class CfgFunctions
             class repairJob {};
         };
 
-        class PassengerJobs {
-            class jobRequest {};
+        class PlayerJobs
+        {
+            class passengerJobRequest {};
+            class medicJobRequest {};
+            class cargoJobRequest {};
         };
 
         class GUI {
