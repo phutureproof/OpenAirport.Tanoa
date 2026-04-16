@@ -25,9 +25,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={6964.1279,13.53954,7414.439};
-		dir[]={-0.68907487,-0.39968497,0.60463613};
-		up[]={-0.30047083,0.91663134,0.26365};
-		aside[]={0.65959769,1.1229422e-06,0.75171316};
+		dir[]={-0.68902069,-0.39965355,0.60458875};
+		up[]={-0.3004033,0.91666627,0.26359215};
+		aside[]={0.65955168,0,0.75165927};
 	};
 };
 binarizationWanted=0;
@@ -1447,6 +1447,7 @@ class Mission
 				};
 			};
 			id=72;
+			atlOffset=-2.3841858e-07;
 		};
 		class Item56
 		{
@@ -1463,6 +1464,7 @@ class Mission
 			};
 			id=76;
 			type="C_Truck_02_fuel_F";
+			atlOffset=-2.3841858e-07;
 		};
 		class Item57
 		{
@@ -1471,7 +1473,7 @@ class Mission
 			name="refuelPoint";
 			type="mil_objective";
 			alpha=0;
-			angle=75.887146;
+			angle=75.887138;
 			id=77;
 			class CustomAttributes
 			{
@@ -1513,6 +1515,7 @@ class Mission
 					};
 					id=79;
 					type="C_Man_UtilityWorker_01_F";
+					atlOffset=4.0531158e-06;
 				};
 				class Item1
 				{
@@ -1529,6 +1532,7 @@ class Mission
 					};
 					id=81;
 					type="C_Man_UtilityWorker_01_F";
+					atlOffset=4.0531158e-06;
 				};
 			};
 			class Attributes
@@ -1570,6 +1574,7 @@ class Mission
 				};
 			};
 			id=78;
+			atlOffset=-2.3841858e-07;
 		};
 		class Item59
 		{
@@ -1586,6 +1591,7 @@ class Mission
 			};
 			id=82;
 			type="C_Truck_02_box_F";
+			atlOffset=-2.3841858e-07;
 		};
 		class Item60
 		{
@@ -1594,7 +1600,7 @@ class Mission
 			name="repairPoint";
 			type="mil_objective";
 			alpha=0;
-			angle=74.999985;
+			angle=74.999977;
 			id=83;
 			class CustomAttributes
 			{
