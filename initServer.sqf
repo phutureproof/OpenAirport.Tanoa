@@ -1,14 +1,14 @@
 // load game state
 // funds
-_savedFunds = profileNamespace getVariable ["OA_airport_funds", 100000];
+private _savedFunds = profileNamespace getVariable ["OA_airport_funds", 100000];
 missionNamespace setVariable ["OA_airport_funds", _savedFunds, true];
 
 // define globals
-missionNamespace setVariable ["OA_repair_cost", 12345, true];
-missionNamespace setVariable ["OA_refuel_cost", 1324, true];
+missionNamespace setVariable ["OA_repair_cost", 10000, true];
+missionNamespace setVariable ["OA_refuel_cost", 1000, true];
 
 // vehicles
-_vehicles = profileNamespace getVariable ["OA_airport_vehicles", []];
+private _vehicles = profileNamespace getVariable ["OA_airport_vehicles", []];
 {
     _type = _x select 0;
     _pos = _x select 1;

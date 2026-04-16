@@ -8,7 +8,6 @@ class CfgFunctions
             class showFunds {};
             class updateFunds {};
             class saveData {};
-            class jobRequest {};
             class laptopActions {};
             class playerActions {};
             class shopActions {};
@@ -21,13 +20,21 @@ class CfgFunctions
 
         class Queues {
             class airportJobsQueue {};
-            class addAirportJob {};
+            class addAirportJobToQueue {};
         };
         
         class AirportJobs
         {
             class refuelJob {};
             class repairJob {};
+        };
+
+        class PassengerJobs {
+            class jobRequest {};
+        };
+
+        class CargoJobs {
+
         };
     };
 };
