@@ -50,8 +50,8 @@ if (isServer) then {
 	_taskDeliver = [_player, 'Deliver the cargo', 'Deliver the cargo to the destination', _dest, 'container'] call OA_fnc_genericTask;
 	waitUntil {
 		sleep 1;
-		_dist = (_cargo distance _dest) > 100;
-		_detached = (getSlingLoad _vehicle != _cargo);
+		_dist = (_cargo distance _dest) < 100;
+		_detached = isNull (getSlingLoad _vehicle);
 
 		_dist && _detached
 	};
@@ -59,7 +59,6 @@ if (isServer) then {
 
 	// calculate payment
 	_payment = _jobDistance * _multiplier;
-	_distance = getMarkerPos "cargoSpawn" distance _dest;
     [_payment] call OA_fnc_updateFunds;
 
 	// ATC message
@@ -68,7 +67,7 @@ if (isServer) then {
         name _player,
         [_payment] call OA_fnc_formatIntAsCurrency,
 		_multiplier,
-        _distance
+        _jobDistance
     ];
     [_atcMessage] call OA_fnc_sendATCMsg;
 
