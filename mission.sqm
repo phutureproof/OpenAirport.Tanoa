@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6964.1279,13.53954,7414.439};
-		dir[]={-0.68902069,-0.39965355,0.60458875};
-		up[]={-0.3004033,0.91666627,0.26359215};
-		aside[]={0.65955168,0,0.75165927};
+		pos[]={6937.8965,27.934229,7295.7754};
+		dir[]={-0.62883735,-0.61168724,-0.48001567};
+		up[]={-0.48622191,0.79109824,-0.37115172};
+		aside[]={-0.60676748,1.169974e-07,0.79488617};
 	};
 };
 binarizationWanted=0;
@@ -1381,7 +1381,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6793.8477,2.6614389,7296.1382};
-						angles[]={-0,1.3572098,0};
+						angles[]={0,1.3572098,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -1397,7 +1397,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6793.8477,2.6614389,7296.1382};
-						angles[]={-0,1.3572098,0};
+						angles[]={0,1.3572098,0};
 					};
 					side="Civilian";
 					flags=5;
@@ -1455,7 +1455,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6913.4189,5.0417042,7440.2759};
-				angles[]={-0,1.3572098,0};
+				angles[]={0,1.3572098,0};
 			};
 			side="Civilian";
 			flags=6;
@@ -1473,7 +1473,7 @@ class Mission
 			name="refuelPoint";
 			type="mil_objective";
 			alpha=0;
-			angle=75.887138;
+			angle=75.887123;
 			id=77;
 			class CustomAttributes
 			{
@@ -1506,7 +1506,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6788.3872,2.6728299,7287.7544};
-						angles[]={-0,1.3737727,0};
+						angles[]={0,1.3737727,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -1523,7 +1523,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={6788.3872,2.6728299,7287.7544};
-						angles[]={-0,1.3737727,0};
+						angles[]={0,1.3737727,0};
 					};
 					side="Civilian";
 					flags=5;
@@ -1582,7 +1582,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6910.3716,5.0417042,7462.4253};
-				angles[]={-0,1.3737727,0};
+				angles[]={0,1.3737727,0};
 			};
 			side="Civilian";
 			flags=6;
