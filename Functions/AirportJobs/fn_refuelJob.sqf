@@ -6,6 +6,7 @@ if (isServer) then {
 	_formattedRefuelCost = [_refuelCost] call OA_fnc_formatIntAsCurrency;
 
 	_crew = refuelCrew;
+	// keep vehicle at full health and fully fueled
 	[vehicle leader _crew, 1] remoteExec ["setFuel"];
 	[vehicle leader _crew, 0] remoteExec ["setDamage"];
 

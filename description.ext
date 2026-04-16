@@ -1,21 +1,36 @@
+// mission setup config
+respawn = 3;            // respawn on custom marker position
+respawnOnStart = 0;     // dont respawn but run the player respawn event
+enableDebugConsole = 1;
+
+// Define our custom functions / scripts
 class CfgFunctions
 {
     class OA
     {
+        class ActionMenus {
+            class laptopActions {}; 
+            class playerActions {};
+            class shopActions {};
+        };
+
         class Utils
         {
             class spawnVehicle {};
             class showFunds {};
             class updateFunds {};
             class saveData {};
-            class laptopActions {};
-            class playerActions {};
-            class shopActions {};
             class resetSave {};
             class sendATCMsg {};
             class getRandomDestination {};
             class spawnPassenger {};
             class formatIntAsCurrency {};
+            
+        };
+
+        class Tasks {
+            class generateTaskID {};
+            class genericTask {};
         };
 
         class Queues {
@@ -33,12 +48,8 @@ class CfgFunctions
             class jobRequest {};
         };
 
-        class CargoJobs {
-
+        class GUI {
+            class viewJobGUI {};
         };
     };
 };
-
-respawn = 3;
-respawnOnStart = 0;
-enableDebugConsole = 1;
