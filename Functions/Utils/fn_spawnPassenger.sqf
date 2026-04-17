@@ -1,4 +1,4 @@
-params ["_group", "_vehicle"];
+params ["_group", "_vehicle", "_spawnPoint"];
 
 private _civilianClasses = [
     // Standard Civilians
