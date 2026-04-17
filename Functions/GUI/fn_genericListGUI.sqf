@@ -4,6 +4,8 @@ disableSerialization;
 
 // create background
 private _display = findDisplay 46 createDisplay "RscDisplayEmpty";
+
+// save _buttonHandler to the display so we can use it later (in the callback)
 _display setVariable ["_buttonHandler", _buttonHandler];
 
 private _bg = _display ctrlCreate ["RscText", -1];
@@ -32,6 +34,8 @@ _btn ctrlCommit 0;
 _btn ctrlAddEventHandler ["ButtonClick", {
     params ["_ctrl"];
     private _display = ctrlParent _ctrl;
+
+    // here is where we are using the saved _buttonHandler
     private _buttonHandler = _display getVariable["_buttonHandler", {}];
 
     private _list = _display displayCtrl 1500;

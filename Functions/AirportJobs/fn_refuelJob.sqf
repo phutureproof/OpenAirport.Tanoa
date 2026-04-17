@@ -15,14 +15,14 @@ if (isServer) then {
 
 	waitUntil {
 		sleep 1;
-		_dist = (leader _crew distance _pos <= 20);
+		_dist = (leader _crew distance _pos <= 50);
 		_dist 
 	};
 
 	private _time = time;
 	waitUntil {
 		sleep 1;
-		_timer = (time - _time >= 10);
+		_timer = (time - _time >= 15);
 		_timer
 	};
 

@@ -10,7 +10,6 @@ if (isServer) then {
         sleep 1;
         _inVehicle = !(isNull objectParent _player);
         _numSeats = (vehicle _player emptyPositions "Cargo" >= _maxPassengers);
-
         _inVehicle && _numSeats
     };
 
@@ -35,6 +34,8 @@ if (isServer) then {
 
     _seats = _vehicle emptyPositions "Cargo";
     _numCivs = (1 + floor(random(_maxPassengers)));
+    if (_numCivs < ceil(_seats / 2)) then { _numCivs = ceil(_seats / 2); }; // at least half
+    if (_numCivs > _seats) then { _numCivs = _seats; }; // no more than max
     _group = createGroup civilian;
 
     // spawn civilian group
@@ -76,7 +77,7 @@ if (isServer) then {
     // passengers disembark
     {
         unassignVehicle _x;
-        moveOut _x;
+        [_x] orderGetIn false;
     } forEach (units _group);
 
     waitUntil {
