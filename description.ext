@@ -15,8 +15,9 @@ class CfgFunctions
         };
 
         class Data {
-            class saveData {};
+            class loadData {};
             class resetSave {};
+            class saveData {};
         };
 
         class Funds {
