@@ -1,5 +1,3 @@
-disableSerialization;
-
 private _listData = [
     ["Passenger Job (1-2 passengers)", "passenger-1-2"],
     ["Passenger Job (3-6 passengers)", "passenger-3-6"],

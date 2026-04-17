@@ -15,14 +15,14 @@ if (isServer) then {
 
 	waitUntil {
 		sleep 1;
-		_dist = (leader _crew distance _pos <= 20);
+		_dist = (leader _crew distance _pos <= 50);
 		_dist
 	};
 
 	private _time = time;
 	waitUntil {
 		sleep 1;
-		_timer = (time - _time >= 10);
+		_timer = (time - _time >= 15);
 		_timer
 	};
 
@@ -31,7 +31,7 @@ if (isServer) then {
 	[-(_repairCost)] call OA_fnc_updateFunds;
 	[format ["%1 spent %2 repairing a vehicle", name _player, _formattedRepairCost]] call OA_fnc_sendATCMsg;
 
-	_pos = getMarkerPos "refuelPoint";
+	_pos = getMarkerPos "repairPoint";
 	(leader _crew) doMove _pos;
 
 	true
