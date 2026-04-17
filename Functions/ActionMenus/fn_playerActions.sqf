@@ -24,3 +24,9 @@ _player addAction [ format ["<t color='#00FF00'>Request Repair (%1)</t>", _forma
 }, [], _menuPriority, false, true, "", "!(isNull objectParent _this) && (_this distance (getMarkerPos 'civSpawn') < 1000)"];
 
 _player addAction ["================", {}, [], _menuPriority, false, true, "", "!(isNull objectParent _this)"];
+
+// debug
+_player addAction ["TEST DYNAMIC VEHICLE LIST", {
+	params ["_target", "_caller"];
+	[_caller] remoteExec ["OA_fnc_dynamicVehicleListGUI", 2];
+}, [], _menuPriority, false, true];

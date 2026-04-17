@@ -15,8 +15,9 @@ class CfgFunctions
         };
 
         class Data {
-            class saveData {};
+            class loadData {};
             class resetSave {};
+            class saveData {};
         };
 
         class Funds {
@@ -61,6 +62,7 @@ class CfgFunctions
         };
 
         class GUI {
+            class dynamicVehicleListGUI {};
             class genericListGUI {};
             class viewJobGUI {};
             class viewShopGUI {};
