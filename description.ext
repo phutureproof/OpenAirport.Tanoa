@@ -31,6 +31,7 @@ class CfgFunctions
             class getRandomDestination {};
             class spawnPassenger {};
             class formatIntAsCurrency {};
+            class purchaseVehicle {};
         };
 
         class Tasks {
@@ -62,6 +63,7 @@ class CfgFunctions
         class GUI {
             class genericListGUI {};
             class viewJobGUI {};
+            class viewShopGUI {};
         };
     };
 };

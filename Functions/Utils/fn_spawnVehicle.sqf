@@ -1,4 +1,4 @@
-params ["_player", "_vehicle"];
+params ["_vehicle"];
 
 if (isServer) then {
 	_veh = createVehicle [_vehicle, getPosATL heliSpawn, [], 0, "NONE"];
