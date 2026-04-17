@@ -27,6 +27,9 @@ private _buttonHandler = {
 
     private _callingPlayerName = name player;
     
+    // DEBUG LINE
+    systemChat format ["DEBUG: Caller Name is %1", _callingPlayerName];
+    
     [_callingPlayerName, _vehicleClassName, _vehicleFriendlyName, _vehiclePrice] remoteExec ["OA_fnc_purchaseVehicle", 2];
 };
 
