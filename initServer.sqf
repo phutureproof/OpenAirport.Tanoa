@@ -6,7 +6,7 @@ missionNamespace setVariable ["OA_airport_funds", _savedFunds, true];
 // define globals
 missionNamespace setVariable ["OA_repair_cost", 10000, true];
 missionNamespace setVariable ["OA_refuel_cost", 1000, true];
-missionNamespace setVariable ["OA_vehicle_object_array", call compile preprocessFileLineNumbers "Functions\ObjectArrays\vehicleObjectArray.sqf", true];
+missionNamespace setVariable ["OA_vehicle_object_array", [] call OA_fnc_returnVehicleObjectArray, true];
 
 // vehicles
 private _vehicles = profileNamespace getVariable ["OA_airport_vehicles", []];

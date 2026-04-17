@@ -65,5 +65,9 @@ class CfgFunctions
             class viewJobGUI {};
             class viewShopGUI {};
         };
+
+        class ObjectArrays {
+            class returnVehichleObjectArray {};
+        };
     };
 };
