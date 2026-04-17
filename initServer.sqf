@@ -1,5 +1,5 @@
 // load game state
-[] call OA_fn_loadData;
+[] call OA_fnc_loadData;
 
 // define globals
 missionNamespace setVariable ["OA_repair_cost", 10000, true];
