@@ -61,6 +61,7 @@ class CfgFunctions
         };
 
         class GUI {
+            class dynamicVehicleListGUI {};
             class genericListGUI {};
             class viewJobGUI {};
         };
