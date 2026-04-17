@@ -14,4 +14,4 @@ private _vehicleObjectArray = [
 	["air", "B_Heli_Transport_03_unarmed_F", "CH-67 (Black)", 26, 1500000]
 ];
 
-return _vehicleObjectArray;
+_vehicleObjectArray
