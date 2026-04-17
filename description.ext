@@ -67,7 +67,7 @@ class CfgFunctions
         };
 
         class ObjectArrays {
-            class returnVehichleObjectArray {};
+            class returnVehicleObjectArray {};
         };
     };
 };
