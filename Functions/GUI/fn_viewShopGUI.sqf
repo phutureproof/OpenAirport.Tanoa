@@ -2,14 +2,17 @@ private _vehicleObjectArray = missionNamespace getVariable ["OA_vehicle_object_a
 
 private _listData = _vehicleObjectArray apply { // apparently apply is like JS map - the current item will be known as _x    
     private _type = _x select 0;
-    private _className _x select 1;
-    private _friendlyName _x select 2;
-    private _seats  _x select 3;
-    private _price _x select 4;
+    private _className = _x select 1;
+    private _friendlyName = _x select 2;
+    private _seats = _x select 3;
+    private _price = _x select 4;
+    
     private _formattedPrice = [_price] call OA_fnc_formatIntAsCurrency;
 
-    private _buttonText = format ["%1 | %2 seats | $3", _friendlyName, _seats, _formattedPrice];
+    private _buttonText = format ["%1 | %2 seats | %3", _friendlyName, _seats, _formattedPrice];
     private _dataString = format ["%1;%2;%3", _className, _friendlyName, _price];
+
+    [_buttonText, _dataString]
 };
 
 private _buttonText = 'PURCHASE VEHICLE';
