@@ -1,4 +1,4 @@
-private _vehicleObjectArray = missionNamespace getVariable ["OA_vehicle_object_array", []];
+private _vehicleObjectArray = missionNamespace getVariable ["OA_shop_helicopter_array", []];
 
 private _listData = _vehicleObjectArray apply {
     private _type = _x select 0;

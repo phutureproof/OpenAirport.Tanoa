@@ -8,50 +8,42 @@ class CfgFunctions
 {
     class OA
     {
-        class ActionMenus {
+        class ActionMenus
+        {
             class laptopActions {}; 
             class playerActions {};
             class shopActions {};
         };
 
-        class Data {
+        class AirportJobs
+        {
+            class refuelJob {};
+            class repairJob {};
+        };
+
+        class Config
+        {
+            class initServerConfig {};
+        };
+
+        class Data
+        {
             class loadData {};
             class resetSave {};
             class saveData {};
         };
 
-        class Funds {
+        class Funds
+        {
             class showFunds {};
             class updateFunds {};
         };
 
-        class Utils
+        class GUI
         {
-            class spawnVehicle {};
-            class sendATCMsg {};
-            class getRandomDestination {};
-            class spawnPassenger {};
-            class formatIntAsCurrency {};
-            class purchaseVehicle {};
-        };
-
-        class Tasks {
-            class generateTaskID {};
-            class genericTask {};
-        };
-
-        class Queues {
-            class airportRefuelJobsQueue {};
-            class addRefuelJobToQueue {};
-            
-            class airportRepairJobsQueue {};
-            class addRepairJobToQueue {};
-        };
-        
-        class AirportJobs
-        {
-            class refuelJob {};
-            class repairJob {};
+            class genericListGUI {};
+            class viewJobGUI {};
+            class viewShopGUI {};
         };
 
         class PlayerJobs
@@ -61,14 +53,34 @@ class CfgFunctions
             class cargoJobRequest {};
         };
 
-        class GUI {
-            class genericListGUI {};
-            class viewJobGUI {};
-            class viewShopGUI {};
-        };
+        class Queues
+        {
+            class airportRefuelJobsQueue {};
+            class addRefuelJobToQueue {};
 
-        class ObjectArrays {
-            class returnVehicleObjectArray {};
+            class airportRepairJobsQueue {};
+            class addRepairJobToQueue {};
+        };
+        
+        class Shops
+        {
+            class shopHelicopterList {};
+        };
+        
+        class Tasks
+        {
+            class generateTaskID {};
+            class genericTask {};
+        };
+        
+        class Utils
+        {
+            class spawnVehicle {};
+            class sendATCMsg {};
+            class getRandomDestination {};
+            class spawnPassenger {};
+            class formatIntAsCurrency {};
+            class purchaseVehicle {};
         };
     };
 };
