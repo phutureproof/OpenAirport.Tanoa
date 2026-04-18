@@ -21,14 +21,14 @@ private _buttonHandler = {
         case "passenger": {
             _min = parseNumber (_jobParams select 1);
             _max = parseNumber (_jobParams select 2);
-            [player, _min, _max] remoteExec ["OA_fnc_passengerJobRequest", 2];
+            [player, _min, _max] remoteExec ["OA_fnc_passengerHelicopterJobRequest", 2];
         };
         case "medic": {
-            [player] remoteExec ["OA_fnc_medicJobRequest", 2];
+            [player] remoteExec ["OA_fnc_medicHelicopterJobRequest", 2];
         };
         case "cargo": {
             _weight = _jobParams select 1;
-            [player, _weight] remoteExec ["OA_fnc_cargoJobRequest", 2];
+            [player, _weight] remoteExec ["OA_fnc_cargoHelicopterJobRequest", 2];
         };
         default {
             hint "Not yet implemented";

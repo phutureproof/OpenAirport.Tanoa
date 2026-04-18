@@ -8,3 +8,4 @@ missionNamespace setVariable ["OA_refuel_cost", 1000, true];
 missionNamespace setVariable ["OA_vehicle_base_price", 40000, true]; // Must be set before the OA_vehicle_object_array
 missionNamespace setVariable ["OA_vehicle_price_multiplier", 1.08, true]; // Must be set before the OA_vehicle_object_array
 missionNamespace setVariable ["OA_shop_helicopter_array", [] call OA_fnc_shopHelicopterList, true]; // This must load last
+missionNamespace setVariable ["OA_shop_plane_array", [] call OA_fnc_shopPlaneList, true]; // This must load last
