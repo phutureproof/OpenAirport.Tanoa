@@ -25,9 +25,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={6992.0537,40.730999,7228.4854};
-		dir[]={-0.68551862,-0.43716615,0.58219409};
-		up[]={-0.33321321,0.89938074,0.28298977};
-		aside[]={0.64732772,0,0.76221174};
+		dir[]={-0.68551868,-0.43716601,0.58219415};
+		up[]={-0.33321312,0.89938092,0.28298971};
+		aside[]={0.64732778,0,0.76221186};
 	};
 };
 binarizationWanted=0;
@@ -583,7 +583,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="this setName ""ATC"";";
+						init="this setName ""ATC"";" \n "this linkItem ""ItemRadio"";";
 						name="ATC";
 						description="ATC";
 					};

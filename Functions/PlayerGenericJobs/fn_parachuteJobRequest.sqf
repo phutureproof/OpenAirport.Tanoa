@@ -3,7 +3,7 @@ params ["_player"];
 if (isServer) then {
 
     // add task to get into a vehicle
-    _taskGetIn = [_player, 'Board Vehicle', "You have a job waiting! Get into a helicopter.", _player, 'getin' ] call OA_fnc_genericTask;
+    _taskGetIn = [_player, 'Board Vehicle', "You have a job waiting! Get into an air vehicle.", _player, 'getin' ] call OA_fnc_genericTask;
     _numVehSeats = 0;
 
     // wait until player is in vehicle and has enough seats
@@ -21,9 +21,8 @@ if (isServer) then {
     _clientID = owner _player;
     _vehicle = vehicle _player;
     _spawnPoint = getMarkerPos "civSpawn";
-    _dest = [] call OA_fnc_getRandomHelicopterDestination;
-
-    _jobDistance = _spawnPoint distance getPos _dest;
+    _dest = getPos([] call OA_fnc_getRandomHelicopterDestination);
+    _jobDistance = _spawnPoint distance _dest;
 
     // sanity checks
     // player already has a task
@@ -41,8 +40,14 @@ if (isServer) then {
     // spawn civilian group
     for "_i" from 1 to _numCivs do {
         [_group, _vehicle, _spawnPoint] call OA_fnc_spawnPassenger;
-        sleep 0.25;
+        sleep 0.5;
     };
+
+    // give them parachutes
+    {
+        [_x] remoteExec ["removeBackpack", 2];
+        [_x, "B_Parachute"] remoteExec ["addBackpack", 2];
+    } forEach (units _group);
 
     // order them to get in
     _group addVehicle _vehicle;
@@ -62,23 +67,24 @@ if (isServer) then {
     [_taskLoad] call BIS_fnc_deleteTask;
 
     // create task for player HUD
-    _taskID = [_player, 'Transport Passengers', 'Transport the passengers to their destination', _dest, 'move'] call OA_fnc_genericTask;
+    _taskID = [_player, 'Transport Passengers', 'Transport the passengers to their destination, you must be above 250m', _dest, 'move'] call OA_fnc_genericTask;
     // save task to play incase of death 
     _player setVariable ["taskID", _taskID];
 
     // wait until we're at the destination 
     waitUntil {
         sleep 1;
-        _atDest = _vehicle distance _dest < 100;
-        _stopped = speed _vehicle < 1;
-        _grounded = isTouchingGround _vehicle;
-
-        _atDest && _stopped && _grounded
+        _atDest = _vehicle distance2D _dest < 250;
+        _atHeight = ((getPosATL _vehicle) select 2 >= 250);
+        _atDest && _atHeight
     };
 
-    // passengers disembark
+    // passengers eject
     _group leaveVehicle _vehicle;
-    units _group orderGetIn false;
+    {
+        _x action ["EJECT", _vehicle];
+        sleep 1;
+    } forEach (units _group);
 
     waitUntil {
         sleep 1;
