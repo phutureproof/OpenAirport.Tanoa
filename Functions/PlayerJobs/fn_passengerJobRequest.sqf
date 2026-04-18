@@ -4,14 +4,16 @@ if (isServer) then {
 
     // add task to get into a vehicle
     _taskGetIn = [_player, 'Board Vehicle', format["You have a job waiting! Get into a vehicle that can carry up to %1 passengers.", _maxPassengers], _player, 'getin' ] call OA_fnc_genericTask;
+    _numVehSeats = 0;
 
     // wait until player is in vehicle and has enough seats
     waitUntil {
         sleep 1;
         _inVehicle = !(isNull objectParent _player);
-        _numSeats = (vehicle _player emptyPositions "Cargo" >= _maxPassengers);
+        _numSeats = count (fullCrew [vehicle _player, "", true]) >= _maxPassengers;
         _inVehicle && _numSeats
     };
+    _numVehSeats = count (fullCrew [vehicle _player, "", true]);
 
     // remove the task to board vehicle 
     [_taskGetIn, "SUCCEEDED"] call BIS_fnc_taskSetState;
@@ -32,18 +34,19 @@ if (isServer) then {
 
     _player setVariable ["hasTask", true];
 
-    _seats = _vehicle emptyPositions "Cargo";
     _numCivs = (1 + floor(random(_maxPassengers)));
-    if (_numCivs < ceil(_seats / 2)) then { _numCivs = ceil(_seats / 2); }; // at least half
-    if (_numCivs > _seats) then { _numCivs = _seats; }; // no more than max
+    if (_numCivs < ceil(_numVehSeats / 2)) then { _numCivs = ceil(_numVehSeats / 2); }; // at least half
+    if (_numCivs > _numVehSeats) then { _numCivs = _numVehSeats; }; // no more than max
     _group = createGroup civilian;
 
     // spawn civilian group
     for "_i" from 1 to _numCivs do {
         [_group, _vehicle, _spawnPoint] call OA_fnc_spawnPassenger;
+        sleep 0.25;
     };
 
     // order them to get in
+    _group addVehicle _vehicle;
     units _group orderGetIn true;
 
     // create a task to wait for passengers
@@ -75,10 +78,8 @@ if (isServer) then {
     };
 
     // passengers disembark
-    {
-        unassignVehicle _x;
-        [_x] orderGetIn false;
-    } forEach (units _group);
+    _group leaveVehicle _vehicle;
+    units _group orderGetIn false;
 
     waitUntil {
         sleep 1;
