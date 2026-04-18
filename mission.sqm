@@ -12,11 +12,11 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=122;
+		nextID=128;
 	};
 	class MarkerIDProvider
 	{
-		nextID=4;
+		nextID=5;
 	};
 	class LayerIndexProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7028.188,53.49527,7244.8389};
-		dir[]={-0.73388237,-0.40798524,0.54311806};
-		up[]={-0.32795039,0.91298705,0.24270351};
-		aside[]={0.59487802,3.5390258e-08,0.80382395};
+		pos[]={6992.0537,40.730999,7228.4854};
+		dir[]={-0.68551862,-0.43716615,0.58219409};
+		up[]={-0.33321321,0.89938074,0.28298977};
+		aside[]={0.64732772,0,0.76221174};
 	};
 };
 binarizationWanted=0;
@@ -261,7 +261,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=73;
+		items=77;
 		class Item0
 		{
 			dataType="Object";
@@ -301,8 +301,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6938.3496,2.6600001,7270.876};
-				angles[]={0,3.5452697,0};
+				position[]={6969.2681,2.6600001,7299.019};
+				angles[]={0,6.0356627,-0};
 			};
 			side="Empty";
 			class Attributes
@@ -538,13 +538,14 @@ class Mission
 		class Item13
 		{
 			dataType="Marker";
-			position[]={6912.8027,2.7692451,7399.6685};
+			position[]={6912.8032,2.7690001,7399.668};
 			name="civSpawn";
-			type="mil_pickup";
+			type="mil_objective";
 			colorName="ColorGreen";
 			alpha=0;
 			angle=83.577957;
 			id=21;
+			atlOffset=0.10899997;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2256,10 +2257,118 @@ class Mission
 			dataType="Marker";
 			position[]={6862.4321,2.6600001,7296.7041};
 			name="cargoSpawn";
-			type="mil_pickup";
+			type="mil_objective";
 			colorName="ColorGreen";
 			alpha=0;
 			id=105;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item73
+		{
+			dataType="Marker";
+			position[]={2111.6631,12.95,3466.0071};
+			name="planeDestination_1";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=123;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item74
+		{
+			dataType="Marker";
+			position[]={11712.227,4.6873951,3040.2185};
+			name="planeDestination_2";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=124;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item75
+		{
+			dataType="Marker";
+			position[]={2256.6985,13.45,13369.679};
+			name="planeDestination_3";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=125;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item76
+		{
+			dataType="Marker";
+			position[]={11632.843,6.9499998,13144.863};
+			name="planeDestination_4";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=126;
 			class CustomAttributes
 			{
 				class Attribute0

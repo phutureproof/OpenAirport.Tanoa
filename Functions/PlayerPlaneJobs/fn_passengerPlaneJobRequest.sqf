@@ -22,9 +22,9 @@ if (isServer) then {
     _clientID = owner _player;
     _vehicle = vehicle _player;
     _spawnPoint = getMarkerPos "civSpawn";
-    _dest = [] call OA_fnc_getRandomDestination;
+    _dest = [] call OA_fnc_getRandomPlaneDestination;
 
-    _jobDistance = _spawnPoint distance getPos _dest;
+    _jobDistance = _spawnPoint distance _dest;
 
     // sanity checks
     // player already has a task
@@ -70,7 +70,7 @@ if (isServer) then {
     // wait until we're at the destination 
     waitUntil {
         sleep 1;
-        _atDest = _vehicle distance _dest < 100;
+        _atDest = _vehicle distance _dest < 1000;
         _stopped = speed _vehicle < 1;
         _grounded = isTouchingGround _vehicle;
 
