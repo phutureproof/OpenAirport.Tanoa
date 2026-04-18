@@ -13,7 +13,7 @@ _bg ctrlSetPosition [0.35 * safeZoneW + safeZoneX, 0.3 * safeZoneH + safeZoneY, 
 _bg ctrlSetBackgroundColor [0, 0, 0, 0.8];
 _bg ctrlCommit 0;
 
-// create the list box of jobs
+// create the select list 
 private _list = _display ctrlCreate ["RscListBox", 1500];
 _list ctrlSetPosition [0.36 * safeZoneW + safeZoneX, 0.32 * safeZoneH + safeZoneY, 0.28 * safeZoneW, 0.3 * safeZoneH];
 _list ctrlCommit 0;
