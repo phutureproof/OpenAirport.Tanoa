@@ -55,9 +55,14 @@ class CfgFunctions
             class cargoHelicopterJobRequest {};
         };
 
-        class PlayerPlaneJobs {
+        class PlayerPlaneJobs
+        {
             class passengerPlaneJobRequest {};
-            class parachutePlaneJobRequest {};
+        };
+
+        class PlayerGenericJobs
+        {
+            class parachuteJobRequest {};
         };
 
         class Queues
@@ -67,6 +72,11 @@ class CfgFunctions
 
             class airportRepairJobsQueue {};
             class addRepairJobToQueue {};
+        };
+
+        class Radio
+        {
+            class initCustomRadioChannels {};
         };
         
         class Shops

@@ -19,6 +19,9 @@ private _buttonHandler = {
         case "passenger": {
             [player] remoteExec ["OA_fnc_passengerHelicopterJobRequest", 2];
         };
+        case "parachute": {
+            [player] remoteExec ["OA_fnc_parachuteJobRequest", 2];
+        };
         /*
         case "medic": {
             [player] remoteExec ["OA_fnc_medicHelicopterJobRequest", 2];

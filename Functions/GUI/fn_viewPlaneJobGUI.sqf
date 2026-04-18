@@ -16,7 +16,7 @@ private _buttonHandler = {
             [player] remoteExec ["OA_fnc_passengerPlaneJobRequest", 2];
         };
         case "parachute": {
-            [player] remoteExec ["OA_fnc_parachutePlaneJobRequest", 2];
+            [player] remoteExec ["OA_fnc_parachuteJobRequest", 2];
         };
         default {
             hint "Not yet implemented";

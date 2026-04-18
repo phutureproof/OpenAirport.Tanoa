@@ -3,7 +3,7 @@ params ["_player"];
 if (isServer) then {
 
     // add task to get into a vehicle
-    _taskGetIn = [_player, 'Board Vehicle', "You have a job waiting! Get into a plane.", _player, 'getin' ] call OA_fnc_genericTask;
+    _taskGetIn = [_player, 'Board Vehicle', "You have a job waiting! Get into an air vehicle.", _player, 'getin' ] call OA_fnc_genericTask;
     _numVehSeats = 0;
 
     // wait until player is in vehicle and has enough seats
