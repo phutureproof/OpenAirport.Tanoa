@@ -17,6 +17,11 @@ private _buttonHandler = {
             _max = parseNumber (_jobParams select 2);
             [player, _min, _max] remoteExec ["OA_fnc_passengerPlaneJobRequest", 2];
         };
+        case "parachute": {
+            _min = parseNumber (_jobParams select 1);
+            _max = parseNumber (_jobParams select 2);
+            [player, _min, _max] remoteExec ["OA_fnc_parachutePlaneJobRequest", 2];
+        };
         default {
             hint "Not yet implemented";
         };

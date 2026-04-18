@@ -25,9 +25,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={6992.0537,40.730999,7228.4854};
-		dir[]={-0.68552238,-0.43716863,0.58219707};
-		up[]={-0.33321616,0.89937997,0.28299218};
-		aside[]={0.64732999,2.0652078e-07,0.76221591};
+		dir[]={-0.68551862,-0.43716615,0.58219409};
+		up[]={-0.33321321,0.89938074,0.28298977};
+		aside[]={0.64732772,0,0.76221174};
 	};
 };
 binarizationWanted=0;
@@ -543,7 +543,7 @@ class Mission
 			type="mil_objective";
 			colorName="ColorGreen";
 			alpha=0;
-			angle=83.577972;
+			angle=83.577957;
 			id=21;
 			atlOffset=0.10899997;
 			class CustomAttributes
