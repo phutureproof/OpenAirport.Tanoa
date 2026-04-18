@@ -1,4 +1,4 @@
-private _allVehicles = "(configName _x) isKindOf 'Helicopter'" configClasses (configFile >> "CfgVehicles");
+private _allVehicles = "(configName _x) isKindOf 'Plane'" configClasses (configFile >> "CfgVehicles");
 private _basePrice = missionNamespace getVariable ["OA_vehicle_base_price", 0];
 private _priceMultiplier = missionNamespace getVariable ["OA_vehicle_price_multiplier", 0];
 
