@@ -9,7 +9,7 @@ if (isServer) then {
 	private _mediumCargo = ["Land_Cargo10_IDAP_F", "Land_Cargo10_blue_F", "Land_Cargo10_brick_red_F"];
 	private _heavyCargo = ["Land_Cargo20_grey_F", "Land_Cargo20_blue_F", "Land_Cargo20_orange_F", "Land_Cargo20_white_F"];
 	private _dest = [] call OA_fnc_getRandomHelicopterDestination;
-	private _jobDistance = _spawnPos distance getPos _dest;
+	private _jobDistance = _spawnPos distance _dest;
 	private _multiplier = 1;
 
 	// switch based on weight of cargo

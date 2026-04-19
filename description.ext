@@ -33,6 +33,12 @@ class CfgFunctions
             class saveData {};
         };
 
+        class Destinations
+        {
+            class getRandomHelicopterDestination {};
+            class getRandomPlaneDestination {};
+        };
+
         class Funds
         {
             class showFunds {};
@@ -77,12 +83,20 @@ class CfgFunctions
         class Radio
         {
             class initCustomRadioChannels {};
+            class sendATCMsg {};
         };
         
         class Shops
         {
+            class purchaseVehicle {};
             class shopHelicopterList {};
             class shopPlaneList {};
+        };
+
+        class Spawn
+        {
+            class spawnVehicle {};
+            class spawnPassenger {};
         };
         
         class Tasks
@@ -93,13 +107,8 @@ class CfgFunctions
         
         class Utils
         {
-            class spawnVehicle {};
-            class sendATCMsg {};
-            class getRandomHelicopterDestination {};
-            class getRandomPlaneDestination {};
-            class spawnPassenger {};
             class formatIntAsCurrency {};
-            class purchaseVehicle {};
+            class formatIntAsKilometers {};
         };
     };
 };

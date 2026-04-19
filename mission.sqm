@@ -12,11 +12,11 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=128;
+		nextID=165;
 	};
 	class MarkerIDProvider
 	{
-		nextID=5;
+		nextID=6;
 	};
 	class LayerIndexProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6992.0537,40.730999,7228.4854};
-		dir[]={-0.68551868,-0.43716601,0.58219415};
-		up[]={-0.33321312,0.89938092,0.28298971};
-		aside[]={0.64732778,0,0.76221186};
+		pos[]={6976.1831,27.755106,7309.6553};
+		dir[]={-0.85759699,-0.35516864,-0.37201634};
+		up[]={-0.32583529,0.93479961,-0.14134367};
+		aside[]={-0.39796141,-3.7602149e-08,0.91740841};
 	};
 };
 binarizationWanted=0;
@@ -261,14 +261,14 @@ class Mission
 	};
 	class Entities
 	{
-		items=77;
+		items=108;
 		class Item0
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7048.6992,2.6600001,7593.2402};
-				angles[]={0,3.3216407,0};
+				position[]={6948.2031,2.6600001,7441.5298};
+				angles[]={0,1.4758503,0};
 			};
 			side="Empty";
 			flags=4;
@@ -276,7 +276,7 @@ class Mission
 			{
 				name="paxPickup_1";
 			};
-			id=6;
+			id=8;
 			type="Land_HelipadCivil_F";
 		};
 		class Item1
@@ -284,25 +284,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7046.5908,2.6600001,7447.0103};
-				angles[]={0,3.3216407,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="paxPickup_2";
-			};
-			id=8;
-			type="Land_HelipadCivil_F";
-		};
-		class Item2
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={6969.2681,2.6600001,7299.019};
-				angles[]={0,6.0356627,-0};
+				position[]={6957.1128,2.6600001,7251.1191};
+				angles[]={0,0.02421586,0};
 			};
 			side="Empty";
 			class Attributes
@@ -312,7 +295,7 @@ class Mission
 			id=9;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item3
+		class Item2
 		{
 			dataType="Object";
 			class PositionInfo
@@ -347,7 +330,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item4
+		class Item3
 		{
 			dataType="Object";
 			class PositionInfo
@@ -382,7 +365,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Object";
 			class PositionInfo
@@ -416,13 +399,30 @@ class Mission
 				nAttributes=1;
 			};
 		};
+		class Item5
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6969.2041,2.6600001,7321.3252};
+				angles[]={0,1.4097549,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="paxPickup_2";
+			};
+			id=15;
+			type="Land_HelipadCivil_F";
+		};
 		class Item6
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7096.353,2.6600001,7357.5366};
-				angles[]={0,3.3216407,0};
+				position[]={6958.4731,2.6600001,7381.9521};
+				angles[]={0,1.4071542,0};
 			};
 			side="Empty";
 			flags=4;
@@ -430,112 +430,10 @@ class Mission
 			{
 				name="paxPickup_3";
 			};
-			id=14;
-			type="Land_HelipadCivil_F";
-		};
-		class Item7
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7024.0854,2.6600001,7274.9233};
-				angles[]={0,3.3216407,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="paxPickup_4";
-			};
-			id=15;
-			type="Land_HelipadCivil_F";
-		};
-		class Item8
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7041.771,2.6600001,7373.2324};
-				angles[]={0,3.3216407,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="paxPickup_5";
-			};
 			id=16;
 			type="Land_HelipadCivil_F";
 		};
-		class Item9
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7117.1045,2.6600001,7291.9771};
-				angles[]={0,3.3216407,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="paxPickup_6";
-			};
-			id=17;
-			type="Land_HelipadCivil_F";
-		};
-		class Item10
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7116.4736,2.6600001,7196.6533};
-				angles[]={0,3.3216407,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="paxPickup_7";
-			};
-			id=18;
-			type="Land_HelipadCivil_F";
-		};
-		class Item11
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7098.7227,2.6600001,7412.0078};
-				angles[]={0,3.3216407,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="paxPickup_8";
-			};
-			id=19;
-			type="Land_HelipadCivil_F";
-		};
-		class Item12
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7068.8032,2.6600001,7518.3774};
-				angles[]={0,3.3216407,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="paxPickup_9";
-			};
-			id=20;
-			type="Land_HelipadCivil_F";
-		};
-		class Item13
+		class Item7
 		{
 			dataType="Marker";
 			position[]={6912.8032,2.7690001,7399.668};
@@ -564,7 +462,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item14
+		class Item8
 		{
 			dataType="Group";
 			side="Civilian";
@@ -642,7 +540,7 @@ class Mission
 			id=23;
 			atlOffset=6.8664551e-05;
 		};
-		class Item15
+		class Item9
 		{
 			dataType="Object";
 			class PositionInfo
@@ -658,7 +556,7 @@ class Mission
 			id=25;
 			type="Land_CashDesk_F";
 		};
-		class Item16
+		class Item10
 		{
 			dataType="Group";
 			side="Civilian";
@@ -734,7 +632,7 @@ class Mission
 			id=26;
 			atlOffset=0.095000029;
 		};
-		class Item17
+		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
@@ -751,7 +649,7 @@ class Mission
 			type="Land_Rack_F";
 			atlOffset=0.09510541;
 		};
-		class Item18
+		class Item12
 		{
 			dataType="Object";
 			class PositionInfo
@@ -767,7 +665,7 @@ class Mission
 			id=31;
 			type="Land_HelipadCircle_F";
 		};
-		class Item19
+		class Item13
 		{
 			dataType="Object";
 			class PositionInfo
@@ -784,7 +682,7 @@ class Mission
 			id=32;
 			type="Land_HelipadCircle_F";
 		};
-		class Item20
+		class Item14
 		{
 			dataType="Object";
 			class PositionInfo
@@ -801,7 +699,7 @@ class Mission
 			id=33;
 			type="Land_HelipadCircle_F";
 		};
-		class Item21
+		class Item15
 		{
 			dataType="Object";
 			class PositionInfo
@@ -816,7 +714,7 @@ class Mission
 			id=35;
 			type="Land_HelipadEmpty_F";
 		};
-		class Item22
+		class Item16
 		{
 			dataType="Object";
 			class PositionInfo
@@ -832,7 +730,7 @@ class Mission
 			id=36;
 			type="Land_HelipadCircle_F";
 		};
-		class Item23
+		class Item17
 		{
 			dataType="Object";
 			class PositionInfo
@@ -849,7 +747,7 @@ class Mission
 			id=38;
 			type="Land_HelipadCircle_F";
 		};
-		class Item24
+		class Item18
 		{
 			dataType="Object";
 			class PositionInfo
@@ -866,7 +764,7 @@ class Mission
 			id=40;
 			type="Land_HelipadCircle_F";
 		};
-		class Item25
+		class Item19
 		{
 			dataType="Object";
 			class PositionInfo
@@ -883,7 +781,7 @@ class Mission
 			id=41;
 			type="Land_HelipadCircle_F";
 		};
-		class Item26
+		class Item20
 		{
 			dataType="Object";
 			class PositionInfo
@@ -900,7 +798,7 @@ class Mission
 			id=42;
 			type="Land_HelipadCircle_F";
 		};
-		class Item27
+		class Item21
 		{
 			dataType="Object";
 			class PositionInfo
@@ -916,7 +814,7 @@ class Mission
 			id=43;
 			type="Land_HelipadCircle_F";
 		};
-		class Item28
+		class Item22
 		{
 			dataType="Object";
 			class PositionInfo
@@ -932,7 +830,7 @@ class Mission
 			id=44;
 			type="Land_HelipadCircle_F";
 		};
-		class Item29
+		class Item23
 		{
 			dataType="Object";
 			class PositionInfo
@@ -949,7 +847,7 @@ class Mission
 			id=45;
 			type="Land_HelipadCircle_F";
 		};
-		class Item30
+		class Item24
 		{
 			dataType="Object";
 			class PositionInfo
@@ -966,7 +864,7 @@ class Mission
 			id=46;
 			type="Land_HelipadCircle_F";
 		};
-		class Item31
+		class Item25
 		{
 			dataType="Object";
 			class PositionInfo
@@ -982,7 +880,7 @@ class Mission
 			id=47;
 			type="Land_HelipadCircle_F";
 		};
-		class Item32
+		class Item26
 		{
 			dataType="Object";
 			class PositionInfo
@@ -999,7 +897,7 @@ class Mission
 			id=49;
 			type="Land_HelipadCircle_F";
 		};
-		class Item33
+		class Item27
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1016,7 +914,7 @@ class Mission
 			id=50;
 			type="Land_HelipadCircle_F";
 		};
-		class Item34
+		class Item28
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1033,7 +931,7 @@ class Mission
 			id=51;
 			type="Land_HelipadCircle_F";
 		};
-		class Item35
+		class Item29
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1049,7 +947,7 @@ class Mission
 			id=52;
 			type="Land_HelipadCircle_F";
 		};
-		class Item36
+		class Item30
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1066,7 +964,7 @@ class Mission
 			id=53;
 			type="Land_HelipadCircle_F";
 		};
-		class Item37
+		class Item31
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1083,7 +981,7 @@ class Mission
 			id=54;
 			type="Land_HelipadCircle_F";
 		};
-		class Item38
+		class Item32
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1099,7 +997,7 @@ class Mission
 			id=55;
 			type="Land_HelipadCircle_F";
 		};
-		class Item39
+		class Item33
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1116,7 +1014,7 @@ class Mission
 			id=56;
 			type="Land_HelipadCircle_F";
 		};
-		class Item40
+		class Item34
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1132,7 +1030,7 @@ class Mission
 			id=57;
 			type="Land_HelipadCircle_F";
 		};
-		class Item41
+		class Item35
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1149,7 +1047,7 @@ class Mission
 			id=58;
 			type="Land_HelipadCircle_F";
 		};
-		class Item42
+		class Item36
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1166,7 +1064,7 @@ class Mission
 			id=59;
 			type="Land_HelipadCircle_F";
 		};
-		class Item43
+		class Item37
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1183,7 +1081,7 @@ class Mission
 			id=60;
 			type="Land_HelipadCircle_F";
 		};
-		class Item44
+		class Item38
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1200,7 +1098,7 @@ class Mission
 			id=61;
 			type="Land_HelipadCircle_F";
 		};
-		class Item45
+		class Item39
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1217,7 +1115,7 @@ class Mission
 			id=62;
 			type="Land_HelipadCircle_F";
 		};
-		class Item46
+		class Item40
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1234,7 +1132,7 @@ class Mission
 			id=63;
 			type="Land_HelipadCircle_F";
 		};
-		class Item47
+		class Item41
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1251,7 +1149,7 @@ class Mission
 			id=64;
 			type="Land_HelipadCircle_F";
 		};
-		class Item48
+		class Item42
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1267,7 +1165,7 @@ class Mission
 			id=65;
 			type="Land_HelipadCircle_F";
 		};
-		class Item49
+		class Item43
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1284,7 +1182,7 @@ class Mission
 			id=66;
 			type="Land_HelipadCircle_F";
 		};
-		class Item50
+		class Item44
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1301,7 +1199,7 @@ class Mission
 			id=67;
 			type="Land_HelipadCircle_F";
 		};
-		class Item51
+		class Item45
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1318,7 +1216,7 @@ class Mission
 			id=68;
 			type="Land_HelipadCircle_F";
 		};
-		class Item52
+		class Item46
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1335,7 +1233,7 @@ class Mission
 			id=69;
 			type="Land_HelipadCircle_F";
 		};
-		class Item53
+		class Item47
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1352,7 +1250,7 @@ class Mission
 			id=70;
 			type="Land_HelipadCircle_F";
 		};
-		class Item54
+		class Item48
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1369,7 +1267,7 @@ class Mission
 			id=71;
 			type="Land_HelipadCircle_F";
 		};
-		class Item55
+		class Item49
 		{
 			dataType="Group";
 			side="Civilian";
@@ -1451,7 +1349,7 @@ class Mission
 			id=72;
 			atlOffset=-2.3841858e-07;
 		};
-		class Item56
+		class Item50
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1468,7 +1366,7 @@ class Mission
 			type="C_Truck_02_fuel_F";
 			atlOffset=-2.3841858e-07;
 		};
-		class Item57
+		class Item51
 		{
 			dataType="Marker";
 			position[]={6914.2813,2.6600001,7440.4424};
@@ -1495,7 +1393,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item58
+		class Item52
 		{
 			dataType="Group";
 			side="Civilian";
@@ -1579,7 +1477,7 @@ class Mission
 			id=78;
 			atlOffset=-2.3841858e-07;
 		};
-		class Item59
+		class Item53
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1596,7 +1494,7 @@ class Mission
 			type="C_Truck_02_box_F";
 			atlOffset=-2.3841858e-07;
 		};
-		class Item60
+		class Item54
 		{
 			dataType="Marker";
 			position[]={6909.7339,2.6600001,7461.9253};
@@ -1623,7 +1521,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item61
+		class Item55
 		{
 			dataType="Marker";
 			position[]={6911.209,2.6600001,7279.062};
@@ -1651,7 +1549,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item62
+		class Item56
 		{
 			dataType="Group";
 			side="Civilian";
@@ -1711,7 +1609,7 @@ class Mission
 			};
 			id=86;
 		};
-		class Item63
+		class Item57
 		{
 			dataType="Group";
 			side="Civilian";
@@ -1772,7 +1670,7 @@ class Mission
 			};
 			id=87;
 		};
-		class Item64
+		class Item58
 		{
 			dataType="Group";
 			side="Civilian";
@@ -1832,7 +1730,7 @@ class Mission
 			};
 			id=88;
 		};
-		class Item65
+		class Item59
 		{
 			dataType="Group";
 			side="Civilian";
@@ -1892,7 +1790,7 @@ class Mission
 			};
 			id=90;
 		};
-		class Item66
+		class Item60
 		{
 			dataType="Group";
 			side="Civilian";
@@ -1952,7 +1850,7 @@ class Mission
 			};
 			id=92;
 		};
-		class Item67
+		class Item61
 		{
 			dataType="Group";
 			side="Civilian";
@@ -2012,7 +1910,7 @@ class Mission
 			};
 			id=94;
 		};
-		class Item68
+		class Item62
 		{
 			dataType="Group";
 			side="Civilian";
@@ -2072,7 +1970,7 @@ class Mission
 			};
 			id=96;
 		};
-		class Item69
+		class Item63
 		{
 			dataType="Group";
 			side="Civilian";
@@ -2132,7 +2030,7 @@ class Mission
 			};
 			id=98;
 		};
-		class Item70
+		class Item64
 		{
 			dataType="Group";
 			side="Civilian";
@@ -2192,7 +2090,7 @@ class Mission
 			};
 			id=100;
 		};
-		class Item71
+		class Item65
 		{
 			dataType="Group";
 			side="Civilian";
@@ -2252,7 +2150,7 @@ class Mission
 			};
 			id=102;
 		};
-		class Item72
+		class Item66
 		{
 			dataType="Marker";
 			position[]={6862.4321,2.6600001,7296.7041};
@@ -2279,7 +2177,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item73
+		class Item67
 		{
 			dataType="Marker";
 			position[]={2111.6631,12.95,3466.0071};
@@ -2306,7 +2204,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item74
+		class Item68
 		{
 			dataType="Marker";
 			position[]={11712.227,4.6873951,3040.2185};
@@ -2333,7 +2231,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item75
+		class Item69
 		{
 			dataType="Marker";
 			position[]={2256.6985,13.45,13369.679};
@@ -2360,7 +2258,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item76
+		class Item70
 		{
 			dataType="Marker";
 			position[]={11632.843,6.9499998,13144.863};
@@ -2369,6 +2267,1005 @@ class Mission
 			colorName="ColorGreen";
 			alpha=0;
 			id=126;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item71
+		{
+			dataType="Marker";
+			position[]={7110.7471,2.6700001,8004.2988};
+			name="helicopterDestination_1";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=128;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item72
+		{
+			dataType="Marker";
+			position[]={8697.8809,3.6820374,6592.6733};
+			name="helicopterDestination_2";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=129;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item73
+		{
+			dataType="Marker";
+			position[]={6163.8804,37.528408,8572.1572};
+			name="helicopterDestination_3";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=130;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item74
+		{
+			dataType="Marker";
+			position[]={8424.25,19.43,10241.396};
+			name="helicopterDestination_4";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=131;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item75
+		{
+			dataType="Marker";
+			position[]={5453.9658,2.21,10073.992};
+			name="helicopterDestination_5";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=132;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item76
+		{
+			dataType="Marker";
+			position[]={5220.8833,19.079283,3661.3511};
+			name="helicopterDestination_6";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=133;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item77
+		{
+			dataType="Marker";
+			position[]={10946.833,91.501076,7875.3765};
+			name="helicopterDestination_7";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=134;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item78
+		{
+			dataType="Marker";
+			position[]={12793.491,6.8128123,7220.1772};
+			name="helicopterDestination_8";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=135;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item79
+		{
+			dataType="Marker";
+			position[]={14052.722,0.80764645,8324.6006};
+			name="helicopterDestination_9";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=136;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item80
+		{
+			dataType="Marker";
+			position[]={12063.344,201.23,10600.595};
+			name="helicopterDestination_10";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=137;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item81
+		{
+			dataType="Marker";
+			position[]={12279.169,181.19,10368.792};
+			name="helicopterDestination_11";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=138;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item82
+		{
+			dataType="Marker";
+			position[]={11900.751,147.33815,10252.264};
+			name="helicopterDestination_12";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=139;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item83
+		{
+			dataType="Marker";
+			position[]={9970.1924,298.69125,12167.975};
+			name="helicopterDestination_13";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=140;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item84
+		{
+			dataType="Marker";
+			position[]={10009.002,409.87,11766.843};
+			name="helicopterDestination_14";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=141;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item85
+		{
+			dataType="Marker";
+			position[]={6506.2505,3.0673876,12948.196};
+			name="helicopterDestination_15";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=142;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item86
+		{
+			dataType="Marker";
+			position[]={3160.811,19.418869,11193.524};
+			name="helicopterDestination_16";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=143;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item87
+		{
+			dataType="Marker";
+			position[]={1663.4132,2.9724317,12173.209};
+			name="helicopterDestination_17";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=144;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item88
+		{
+			dataType="Marker";
+			position[]={2296.1047,13.45,13396.684};
+			name="helicopterDestination_18";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=145;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item89
+		{
+			dataType="Marker";
+			position[]={2675.8225,171.32964,12313.565};
+			name="helicopterDestination_19";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=146;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item90
+		{
+			dataType="Marker";
+			position[]={2690.2346,7.2760406,7352.2124};
+			name="helicopterDestination_20";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=147;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item91
+		{
+			dataType="Marker";
+			position[]={2128.386,12.95,3448.4832};
+			name="helicopterDestination_21";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=148;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item92
+		{
+			dataType="Marker";
+			position[]={11733.732,4.6901236,3026.2961};
+			name="helicopterDestination_22";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=149;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item93
+		{
+			dataType="Marker";
+			position[]={12280.054,10.64,13973.675};
+			name="helicopterDestination_23";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=150;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item94
+		{
+			dataType="Marker";
+			position[]={2658.4475,2.9622862,5751.0835};
+			name="helicopterDestination_24";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=151;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item95
+		{
+			dataType="Marker";
+			position[]={846.20978,2.7571335,7668.6548};
+			name="helicopterDestination_25";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=152;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item96
+		{
+			dataType="Marker";
+			position[]={1843.135,16.217386,3911.7708};
+			name="helicopterDestination_26";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=153;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item97
+		{
+			dataType="Marker";
+			position[]={1672.9363,1.0740014,6196.1387};
+			name="helicopterDestination_27";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=154;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item98
+		{
+			dataType="Marker";
+			position[]={2132.4875,7.0713649,7891.1416};
+			name="helicopterDestination_28";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=155;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item99
+		{
+			dataType="Marker";
+			position[]={2274.2771,13.105457,6328.5947};
+			name="helicopterDestination_29";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=156;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item100
+		{
+			dataType="Marker";
+			position[]={3598.8625,37.903595,2137.8997};
+			name="helicopterDestination_30";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=157;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item101
+		{
+			dataType="Marker";
+			position[]={2873.2253,11.5,3516.9175};
+			name="helicopterDestination_31";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=158;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item102
+		{
+			dataType="Marker";
+			position[]={9356.5811,5.4401646,4176.146};
+			name="helicopterDestination_32";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=159;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item103
+		{
+			dataType="Marker";
+			position[]={9025.9229,6.3394752,4810.1782};
+			name="helicopterDestination_33";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=160;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item104
+		{
+			dataType="Marker";
+			position[]={12317.81,108.43437,1841.9642};
+			name="helicopterDestination_34";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=161;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item105
+		{
+			dataType="Marker";
+			position[]={12437.014,57.208275,3990.7593};
+			name="helicopterDestination_35";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=162;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item106
+		{
+			dataType="Marker";
+			position[]={5319.6069,2.3654249,14455.807};
+			name="helicopterDestination_36";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=163;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item107
+		{
+			dataType="Marker";
+			position[]={2479.9456,14.353464,11360.827};
+			name="helicopterDestination_37";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=164;
 			class CustomAttributes
 			{
 				class Attribute0
