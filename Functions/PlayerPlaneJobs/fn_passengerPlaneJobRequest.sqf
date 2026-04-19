@@ -101,13 +101,13 @@ if (isServer) then {
     _player setVariable ["hasTask", false];
 
     // create a payment
-    _tip = random(floor(0.5 * _jobDistance));
+    _tip = random(floor(0.25 * _jobDistance));
     _payment = _jobDistance * _numCivs + _tip;
     [_payment] call OA_fnc_updateFunds;
-    _distanceFormatted = _jobDistance / 1000;
+    _distanceFormatted = [_jobDistance] call OA_fnc_formatIntAsKilometers;
 
     _atcMessage = format [
-        "%1 has finished a job! Earning %2 for %3 passengers at a distance of %4km, and a tip of %5",
+        "%1 has finished a job! Earning %2 for %3 passengers at a distance of roughly %4, and a tip of %5",
         name _player,
         [_payment] call OA_fnc_formatIntAsCurrency,
         _numCivs,
