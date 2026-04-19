@@ -48,27 +48,17 @@ class CfgFunctions
         class GUI
         {
             class genericListGUI {};
-            class viewHelicopterJobGUI {};
-            class viewPlaneJobGUI {};
+            class viewJobsGUI {};
             class viewShopHelicopterGUI {};
             class viewShopPlaneGUI {};
         };
 
-        class PlayerHelicopterJobs
-        {
-            class passengerHelicopterJobRequest {};
-            class medicHelicopterJobRequest {};
-            class cargoHelicopterJobRequest {};
-        };
-
-        class PlayerPlaneJobs
-        {
-            class passengerPlaneJobRequest {};
-        };
-
-        class PlayerGenericJobs
+        class PlayerJobs
         {
             class parachuteJobRequest {};
+            class passengerJobRequest {};
+            class medicJobRequest {};
+            class cargoJobRequest {};
         };
 
         class Queues
@@ -97,6 +87,7 @@ class CfgFunctions
         {
             class spawnVehicle {};
             class spawnPassenger {};
+            class spawnTransportQuad {};
         };
         
         class Tasks

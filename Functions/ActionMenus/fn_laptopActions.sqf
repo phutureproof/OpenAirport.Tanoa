@@ -4,8 +4,7 @@ private _menuPriority = 20;
 
 _obj addAction ["<t color='#11c94e'>Laptop Menu</t>", {}, [], _menuPriority, true, false, "", "true", 3];
 _obj addAction ["================", { }, [], _menuPriority, true, true, "", "true", 3];
-_obj addAction ["<t color='#11c94e'>View Helicopter Jobs</t>", { [] call OA_fnc_viewHelicopterJobGUI; }, [], _menuPriority, true, true, "", "true", 3];
-_obj addAction ["<t color='#11c94e'>View Plane Jobs</t>", { [] call OA_fnc_viewPlaneJobGUI; }, [], _menuPriority, true, true, "", "true", 3];
+_obj addAction ["<t color='#11c94e'>View Jobs</t>", { [] call OA_fnc_viewJobsGUI; }, [], _menuPriority, true, true, "", "true", 3];
 _obj addAction ["================", { }, [], _menuPriority, true, true, "", "true", 3];
 _obj addAction ["<t color='#12c7df'>Save Game</t>", { [] remoteExec ["OA_fnc_saveData", 2]; }, [], _menuPriority, true, true, "", "true", 3];
 _obj addAction ["================", {}, [], _menuPriority, true, true, "", "true", 3];

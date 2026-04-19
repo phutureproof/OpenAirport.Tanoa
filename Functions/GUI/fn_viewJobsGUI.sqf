@@ -17,22 +17,17 @@ private _buttonHandler = {
     
     switch (_jobType) do {
         case "passenger": {
-            [player] remoteExec ["OA_fnc_passengerHelicopterJobRequest", 2];
+            [player] remoteExec ["OA_fnc_passengerJobRequest", 2];
         };
         case "parachute": {
             [player] remoteExec ["OA_fnc_parachuteJobRequest", 2];
         };
-        /*
-        case "medic": {
-            [player] remoteExec ["OA_fnc_medicHelicopterJobRequest", 2];
-        };
-        */
         case "cargo": {
             _weight = _jobParams select 1;
             [player, _weight] remoteExec ["OA_fnc_cargoHelicopterJobRequest", 2];
         };
         default {
-            hint "Not yet implemented";
+            hint "Not implemented yet";
         };
     };
     

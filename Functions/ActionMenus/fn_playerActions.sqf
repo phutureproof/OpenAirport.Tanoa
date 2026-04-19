@@ -13,6 +13,11 @@ _player addAction ["<t color='#00FF00'>Show Airport Balance</t>", {
 	[] call OA_fnc_showFunds;
 }, [], _menuPriority, false, true];
 
+_player addAction ["<t color='#00FF00'>Transport Quad</t>", {
+	params ["_target", "_caller"];
+	[_caller] remoteExec ["OA_fnc_spawnTransportQuad", 2];
+}, [], _menuPriority, false, true, "", "(isNull objectParent _this)"];
+
 _player addAction [ format ["<t color='#00FF00'>Request Refuel (%1)</t>", _formattedRefuelCost], {
 	params ["_target", "_caller"];
 	["refuel", _caller, vehicle _caller] remoteExec ["OA_fnc_addRefuelJobToQueue", 2];

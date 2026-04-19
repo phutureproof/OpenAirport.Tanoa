@@ -35,7 +35,7 @@ if (isServer) then {
     _taskGetIn = [_player, 'Board Vehicle', "You have a job waiting! Get into a vehicle that can carry light cargo", _player, 'getin'] call OA_fnc_genericTask;
     waitUntil {
         sleep 1;
-        !(isNull objectParent _player)
+        !(isNull objectParent _player) && ((vehicle player) isKindOf "Air")
     };
     [_taskGetIn] call BIS_fnc_deleteTask;
 	_vehicle = vehicle _player;
@@ -65,11 +65,11 @@ if (isServer) then {
 
 	// ATC message
     _atcMessage = format [
-        "%1 has finished a job! Earning %2 for cargo delivered with a %3x multiplier at a distance of %4m",
+        "%1 has finished a job! Earning %2 for cargo delivered with a %3x multiplier at a distance of around %4",
         name _player,
         [_payment] call OA_fnc_formatIntAsCurrency,
 		_multiplier,
-        _jobDistance
+        [_jobDistance] call OA_fnc_formatIntAsKilometers
     ];
     [_atcMessage] call OA_fnc_sendATCMsg;
 
@@ -86,7 +86,6 @@ if (isServer) then {
     [_taskReturn] call BIS_fnc_deleteTask;
 
 	// cleanup 
-	sleep 60;
+	sleep 5;
 	deleteVehicle _cargo;
-
 };
