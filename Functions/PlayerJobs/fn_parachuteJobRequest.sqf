@@ -10,7 +10,7 @@ if (isServer) then {
     waitUntil {
         sleep 1;
         _inVehicle = !(isNull objectParent _player);
-        _inVehicle && ((vehicle player) isKindOf "Air")
+        _inVehicle && ((vehicle _player) isKindOf "Air")
     };
     _numVehSeats = count (fullCrew [vehicle _player, "", true]) - 1;
 
