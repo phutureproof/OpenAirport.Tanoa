@@ -40,7 +40,7 @@ if (isServer) then {
 
     // spawn civilian group
     for "_i" from 1 to _numCivs do {
-        [_group, _vehicle, _spawnPoint] call OA_fnc_spawnPassenger;
+        [_group, _spawnPoint] call OA_fnc_spawnPassenger;
         sleep 0.25;
     };
 

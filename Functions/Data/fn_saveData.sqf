@@ -6,7 +6,7 @@ if (isServer) then {
 	// vehicles
 	_vehicles = [];
 	{
-		if (_x isKindOf "Air" || _x isKindOf "Car" || _x isKindOf "Tank") then {
+		if (_x isKindOf "Air") then {
 			_vehicles pushBack[
 				typeOf _x,
 				getPosASL _x,
@@ -20,5 +20,5 @@ if (isServer) then {
 
 	saveProfileNamespace;
 
-	[ATC, "Game has been saved"] remoteExec ["globalChat"];
+	["Game has been saved"] call OA_fnc_sendATCmsg;
 };
