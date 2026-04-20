@@ -53,6 +53,11 @@ class CfgFunctions
             class viewShopPlaneGUI {};
         };
 
+        class Integrations
+        {
+            class initAlive {};
+        };
+
         class PlayerJobs
         {
             class parachuteJobRequest {};

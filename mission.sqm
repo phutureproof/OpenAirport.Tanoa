@@ -5,18 +5,18 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=1537;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=181;
+		nextID=182;
 	};
 	class MarkerIDProvider
 	{
-		nextID=7;
+		nextID=8;
 	};
 	class LayerIndexProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6983.3477,9.7370777,7380.8833};
-		dir[]={-0.7332809,-0.40943986,0.54282427};
-		up[]={-0.32908276,0.91233706,0.24360938};
-		aside[]={0.59498209,0,0.80373889};
+		pos[]={6987.3457,155.26149,7382.2778};
+		dir[]={-0.019104019,-0.99981314,-0.0032463106};
+		up[]={-0.98568332,0.0192717,-0.16749537};
+		aside[]={-0.16752662,0,0.98586768};
 	};
 };
 binarizationWanted=0;
@@ -221,22 +221,11 @@ class Mission
 	class Intel
 	{
 		overviewText="OpenAirport";
-		startWeather=1;
-		startFog=0.054315139;
-		startWind=1;
-		startWindDir=250;
-		startRain=1;
-		startLightnings=1;
-		startWaves=1;
-		startGust=1;
+		startWeather=0;
+		startWind=0;
 		forecastWeather=0;
 		forecastWind=0;
-		forecastWaves=0.046763863;
-		forecastWindDir=154;
-		rainForced=1;
-		lightningsForced=1;
-		wavesForced=1;
-		windForced=1;
+		forecastWaves=0;
 		year=2026;
 		month=6;
 		day=5;
@@ -306,7 +295,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=83;
+		items=84;
 		class Item0
 		{
 			dataType="Object";
@@ -465,7 +454,7 @@ class Mission
 		class Item6
 		{
 			dataType="Marker";
-			position[]={6917.6465,2.6600001,7400.894};
+			position[]={6884.6455,2.6600001,7394.0928};
 			name="civSpawn";
 			type="mil_objective";
 			colorName="ColorGreen";
@@ -2747,7 +2736,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6879.7529,4.3919611,7382.2861};
-				angles[]={-0,5.5511799,0};
+				angles[]={0,5.5511799,0};
 			};
 			side="Empty";
 			flags=4;
@@ -2764,7 +2753,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6881.3638,4.3919611,7373.1831};
-				angles[]={-0,5.5643115,0};
+				angles[]={0,5.5643115,0};
 			};
 			side="Empty";
 			flags=4;
@@ -2781,7 +2770,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6877.4463,4.3919611,7392.1509};
-				angles[]={-0,5.5511799,0};
+				angles[]={0,5.5511799,0};
 			};
 			side="Empty";
 			flags=4;
@@ -2814,7 +2803,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6906.7163,3.7438135,7299.6958};
-				angles[]={0,6.0887451,-0};
+				angles[]={0,6.0887451,0};
 			};
 			side="Empty";
 			flags=5;
@@ -2877,7 +2866,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6941.2417,3.7438135,7275.9434};
-				angles[]={0,4.0818911,-0};
+				angles[]={0,4.0818911,0};
 			};
 			side="Empty";
 			flags=5;
@@ -2894,7 +2883,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6945.4678,3.7438135,7256.1758};
-				angles[]={0,4.7528801,-0};
+				angles[]={0,4.7528801,0};
 			};
 			side="Empty";
 			flags=5;
@@ -2911,7 +2900,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6945.7046,3.7438135,7237.9565};
-				angles[]={0,4.7516055,-0};
+				angles[]={0,4.7516055,0};
 			};
 			side="Empty";
 			flags=5;
@@ -2928,7 +2917,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6973.5308,3.7438135,7275.7339};
-				angles[]={0,2.7696528,-0};
+				angles[]={0,2.7696528,0};
 			};
 			side="Empty";
 			flags=5;
@@ -2945,7 +2934,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6968.7168,3.7438135,7255.3799};
-				angles[]={0,1.5989037,-0};
+				angles[]={0,1.5989037,0};
 			};
 			side="Empty";
 			flags=5;
@@ -2962,7 +2951,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6968.7021,3.7438135,7237.4502};
-				angles[]={0,1.5935208,-0};
+				angles[]={0,1.5935208,0};
 			};
 			side="Empty";
 			flags=5;
@@ -2972,6 +2961,39 @@ class Mission
 			id=180;
 			type="Land_PortableLight_double_F";
 			atlOffset=2.3841858e-07;
+		};
+		class Item83
+		{
+			dataType="Marker";
+			position[]={6958.9492,2.6600001,7381.5562};
+			name="marker_7";
+			text="PICKUP ZONE";
+			markerType="RECTANGLE";
+			type="";
+			colorName="ColorGreen";
+			alpha=0.49576423;
+			fillName="DiagGrid";
+			a=15.013258;
+			b=68.333069;
+			angle=349.73865;
+			id=181;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

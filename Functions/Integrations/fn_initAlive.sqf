@@ -1,0 +1,98 @@
+if (isServer) then {
+	private _aliveGroup = createGroup sideLogic;
+	
+	["Creating ALiVE main system."] call OA_fnc_sendATCmsg;
+	"ALiVE_main" createUnit [[0,0,0], _aliveGroup, "missionNamespace setVariable ['OA_integration_alive_main', this, true]", 0.5, "PRIVATE"];
+	private _main = missionNamespace getVariable ["OA_integration_alive_main", objNull];
+	[_main] call BIS_fnc_initModules;
+
+	["Creating ALiVE require system."] call OA_fnc_sendATCmsg;
+	"ALiVE_require" createUnit [[0,0,0], _aliveGroup, "missionNamespace setVariable ['OA_integration_alive_require', this, true]", 0.5, "PRIVATE"];
+	private _require = missionNamespace getVariable ["OA_integration_alive_require", objNull];
+	_require setVariable ['ALiVE_GC_THRESHHOLD', "100", true];
+	_require setVariable ['ALiVE_GC_INTERVAL', "300", true];
+	_require setVariable ['ALiVE_DISABLEADMINACTIONS', false, true];
+	_require setVariable ['ALiVE_Versioning', "warning", true];
+	_require setVariable ['debug', "true", true];
+	_require setVariable ['ALiVE_PAUSEMODULES', false, true];
+	_require setVariable ['ALiVE_GC_INDIVIDUALTYPES', "", true];
+	_require setVariable ['ALiVE_TABLET_MODEL', "Tablet01", true];
+	_require setVariable ['ALiVE_DISABLEMARKERS', false, true];
+	_require setVariable ['ALiVE_DISABLESAVE', "true", true];
+	_require setVariable ['ALiVE_AI_DISTRIBUTION', "false", true];
+	[_require] call BIS_fnc_initModules;
+
+	["Creating ALiVE system profile."] call OA_fnc_sendATCmsg;
+	"ALiVE_sys_profile" createUnit [[0,0,0], _aliveGroup, "missionNamespace setVariable ['OA_integration_alive_sysProfile', this, true]", 0.5, "PRIVATE"];
+	private _sysProfile = missionNamespace getVariable ["OA_integration_alive_sysProfile", objNull];
+	_sysProfile setVariable ['virtualcombat_speedmodifier', "0.75", true];
+	_sysProfile setVariable ['spawnTypeJetRadius', "2500", true];
+	_sysProfile setVariable ['seaTransport', "false", true];
+	_sysProfile setVariable ['pathfinding', "false", true];
+	_sysProfile setVariable ['debug', "true", true];
+	_sysProfile setVariable ['activeLimiter', "144", true];
+	_sysProfile setVariable ['spawnRadius', "1000", true];
+	_sysProfile setVariable ['persistent', "false", true];
+	_sysProfile setVariable ['speedModifier', "1.00", true];
+	_sysProfile setVariable ['syncronised', "ADD", true];
+	_sysProfile setVariable ['smoothSpawn', "0.3", true];
+	_sysProfile setVariable ['spawnRadiusUAV', "-1", true];
+	_sysProfile setVariable ['zeusSpawn', "true", true];
+	_sysProfile setVariable ['spawnTypeHeliRadius', "2500", true];
+	_sysProfile setVariable ['pathfindingSize', "[600,75]", true];
+	[_sysProfile] call BIS_fnc_initModules;
+	
+	["Creating ALiVE weather system."] call OA_fnc_sendATCmsg;
+	"ALiVE_sys_weather" createUnit [[0,0,0], _aliveGroup, "missionNamespace setVariable ['OA_integration_alive_weather', this, true]", 0.5, "PRIVATE"];
+	private _weather = missionNamespace getVariable ["OA_integration_alive_weather", objNull];
+	_weather setVariable ['weather_cycle_variance_setting', 0.5 , true];
+	_weather setVariable ['weather_debug_cycle_setting', 60, true];
+	_weather setVariable ['weather_real_location_setting', "COUNTRY/CITY", true];
+	_weather setVariable ['weather_initial_setting', 2, true];
+	_weather setVariable ['weather_debug_setting', "true", true];
+	_weather setVariable ['weather_cycle_delay_setting', 1800, true];
+	_weather setVariable ['weather_override_setting', 3, true];
+	[_weather] call BIS_fnc_initModules;
+
+	["Creating ALiVE civilian population system."] call OA_fnc_sendATCmsg;
+	"ALiVE_amb_civ_population" createUnit [[0,0,0], _aliveGroup, "missionNamespace setVariable ['OA_integration_alive_civPop', this, true]", 0.5, "PRIVATE"];
+	private _civPop = missionNamespace getVariable ["OA_integration_alive_civPop", objNull];
+	_civPop setVariable ['disableACEX', 0, true];
+	_civPop setVariable ['ambientCrowdSpawn', "50", true];
+	_civPop setVariable ['humanitarianHostilityChance', "20", true];
+	_civPop setVariable ['ambientCrowdFaction', "", true];
+	_civPop setVariable ['insurgentFaction', "", true];
+	_civPop setVariable ['spawnRadius', "1000", true];
+	_civPop setVariable ['customHumRatItems', "", true];
+	_civPop setVariable ['hostilityWest', "0", true];
+	_civPop setVariable ['activeLimiter', "50", true];
+	_civPop setVariable ['hostilityIndep', "0", true];
+	_civPop setVariable ['spawnTypeJetRadius', "2500", true];
+	_civPop setVariable ['ambientCivilianRoles', "[]", true];
+	_civPop setVariable ['limitInteraction', "", true];
+	_civPop setVariable ['enableInteraction', "false", true];
+	_civPop setVariable ['ambientCrowdLimit', "50", true];
+	_civPop setVariable ['spawnTypeHeliRadius', "2500", true];
+	_civPop setVariable ['debug', "true", true];
+	_civPop setVariable ['ambientCrowdDensity', "3", true];
+	_civPop setVariable ['hostilityEast', "0", true];
+	_civPop setVariable ['maxAllowAid', "3", true];
+	_civPop setVariable ['customWaterItems', "", true];
+	[_civPop] call BIS_fnc_initModules;
+
+	["Creating ALiVE civilian placement system."] call OA_fnc_sendATCmsg;
+	"ALiVE_amb_civ_placement" createUnit [[0,0,0], _aliveGroup, "missionNamespace setVariable ['OA_integration_alive_civPlacement', this, true]", 0.5, "PRIVATE"];
+	private _civPlacement = missionNamespace getVariable ["OA_integration_alive_civPlacement", objNull];
+	_civPlacement setVariable ['taor', "", true];
+	_civPlacement setVariable ['initialdamage', "false", true];
+	_civPlacement setVariable ['sizeFilter', "400", true];
+	_civPlacement setVariable ['blacklist', "", true];
+	_civPlacement setVariable ['debug', "true", true];
+	_civPlacement setVariable ['ambientVehicleFaction', "CIV_F", true];
+	_civPlacement setVariable ['faction', "CIV_F", true];
+	_civPlacement setVariable ['placementMultiplier', "1", true];
+	_civPlacement setVariable ['ambientVehicleAmount', "0.6", true];
+	_civPlacement setVariable ['priorityFilter', "", true];
+	[_civPlacement] call BIS_fnc_initModules;
+};
+
