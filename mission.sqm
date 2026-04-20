@@ -5,18 +5,18 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=1537;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=181;
+		nextID=182;
 	};
 	class MarkerIDProvider
 	{
-		nextID=7;
+		nextID=8;
 	};
 	class LayerIndexProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6983.3477,9.7370777,7380.8833};
-		dir[]={-0.7332809,-0.40943986,0.54282427};
-		up[]={-0.32908276,0.91233706,0.24360938};
-		aside[]={0.59498209,0,0.80373889};
+		pos[]={6987.3457,155.26149,7382.2778};
+		dir[]={-0.019104019,-0.99981314,-0.0032463106};
+		up[]={-0.98568332,0.0192717,-0.16749537};
+		aside[]={-0.16752662,0,0.98586768};
 	};
 };
 binarizationWanted=0;
@@ -295,7 +295,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=83;
+		items=84;
 		class Item0
 		{
 			dataType="Object";
@@ -454,7 +454,7 @@ class Mission
 		class Item6
 		{
 			dataType="Marker";
-			position[]={6917.6465,2.6600001,7400.894};
+			position[]={6884.6455,2.6600001,7394.0928};
 			name="civSpawn";
 			type="mil_objective";
 			colorName="ColorGreen";
@@ -2961,6 +2961,39 @@ class Mission
 			id=180;
 			type="Land_PortableLight_double_F";
 			atlOffset=2.3841858e-07;
+		};
+		class Item83
+		{
+			dataType="Marker";
+			position[]={6958.9492,2.6600001,7381.5562};
+			name="marker_7";
+			text="PICKUP ZONE";
+			markerType="RECTANGLE";
+			type="";
+			colorName="ColorGreen";
+			alpha=0.49576423;
+			fillName="DiagGrid";
+			a=15.013258;
+			b=68.333069;
+			angle=349.73865;
+			id=181;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };
