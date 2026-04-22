@@ -11,4 +11,4 @@
 sleep 5;
 [] call OA_fnc_airportRefuelJobsQueue;
 [] call OA_fnc_airportRepairJobsQueue;
-
+[] call OA_fnc_ambTrafficQueue;

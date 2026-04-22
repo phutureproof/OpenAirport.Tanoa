@@ -19,7 +19,6 @@ private _aliveGroup = createGroup sideLogic;
 	this setVariable ["ALiVE_AI_DISTRIBUTION", "false", true];
 	this setVariable ["BIS_fnc_initModules_disableAutoActivation", false];
 '];
-
 sleep 3;
 
 ["Creating ALiVE system profile."] call OA_fnc_sendATCmsg;
@@ -29,7 +28,7 @@ sleep 3;
 	this setVariable ["seaTransport", "false", true];
 	this setVariable ["pathfinding", "false", true];
 	this setVariable ["debug", "false", true];
-	this setVariable ["activeLimiter", "144", true];
+	this setVariable ["activeLimiter", "50", true];
 	this setVariable ["spawnRadius", "1000", true];
 	this setVariable ["persistent", "false", true];
 	this setVariable ["speedModifier", "1.00", true];
@@ -41,12 +40,11 @@ sleep 3;
 	this setVariable ["pathfindingSize", "[600,75]", true];
 	this setVariable ["BIS_fnc_initModules_disableAutoActivation", false];
 '];
-
 sleep 1;
 
 ["Creating ALiVE weather system."] call OA_fnc_sendATCmsg;
 "ALiVE_sys_weather" createUnit[[0,0,0], _aliveGroup, '
-	this setVariable ["weather_cycle_variance_setting", 0.5 , true];
+	this setVariable ["weather_cycle_variance_setting", 0.5, true];
 	this setVariable ["weather_debug_cycle_setting", 60, true];
 	this setVariable ["weather_real_location_setting", "COUNTRY/CITY", true];
 	this setVariable ["weather_initial_setting", 2, true];
@@ -55,8 +53,9 @@ sleep 1;
 	this setVariable ["weather_override_setting", 3, true];
 	this setVariable ["BIS_fnc_initModules_disableAutoActivation", false];
 '];
-
 sleep 1;
+
+/*
 
 ["Creating ALiVE civilian population system."] call OA_fnc_sendATCmsg;
 "ALiVE_amb_civ_population" createUnit [[0,0,0], _aliveGroup, '
@@ -68,7 +67,7 @@ sleep 1;
 	this setVariable ["spawnRadius", "1000", true];
 	this setVariable ["customHumRatItems", "", true];
 	this setVariable ["hostilityWest", "0", true];
-	this setVariable ["activeLimiter", "50", true];
+	this setVariable ["activeLimiter", "10", true];
 	this setVariable ["hostilityIndep", "0", true];
 	this setVariable ["spawnTypeJetRadius", "2500", true];
 	this setVariable ["ambientCivilianRoles", "[]", true];
@@ -83,7 +82,6 @@ sleep 1;
 	this setVariable ["customWaterItems", "", true];
 	this setVariable ["BIS_fnc_initModules_disableAutoActivation", false];
 '];
-
 sleep 1;
 
 ["Creating ALiVE civilian placement system."] call OA_fnc_sendATCmsg;
@@ -100,3 +98,5 @@ sleep 1;
 	this setVariable ["priorityFilter", "", true];
 	this setVariable ["BIS_fnc_initModules_disableAutoActivation", false];
 '];
+
+*/

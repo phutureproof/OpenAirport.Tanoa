@@ -5,18 +5,18 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1537;
+	toggles=1025;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=182;
+		nextID=297;
 	};
 	class MarkerIDProvider
 	{
-		nextID=8;
+		nextID=9;
 	};
 	class LayerIndexProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6987.3457,155.26149,7382.2778};
-		dir[]={-0.019104019,-0.99981314,-0.0032463106};
-		up[]={-0.98568332,0.0192717,-0.16749537};
-		aside[]={-0.16752662,0,0.98586768};
+		pos[]={7046.3257,105.59226,7393.6802};
+		dir[]={-0.85714406,-0.45405549,-0.24327262};
+		up[]={-0.43682304,0.8909623,-0.12397763};
+		aside[]={-0.27303979,2.1234155e-07,0.96202475};
 	};
 };
 binarizationWanted=0;
@@ -46,13 +46,14 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Soft_F_Orange_Van_02",
 	"A3_Structures_F_EPA_Civ_Constructions",
-	"A3_Props_F_Enoch_Military_Camps"
+	"A3_Props_F_Enoch_Military_Camps",
+	"A3_Air_F_Heli_Light_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=13;
+		items=14;
 		class Item0
 		{
 			className="A3_Structures_F_Mil";
@@ -144,6 +145,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item13
+		{
+			className="A3_Air_F";
+			name="Arma 3 Alpha - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -222,14 +230,19 @@ class Mission
 	{
 		overviewText="OpenAirport";
 		startWeather=0;
-		startWind=0;
+		startWind=0.097594045;
+		startWindDir=145;
+		startGust=0.10182983;
 		forecastWeather=0;
-		forecastWind=0;
+		forecastWind=0.10182983;
 		forecastWaves=0;
+		forecastGust=0.097594045;
+		forecastWindDir=320;
+		windForced=1;
 		year=2026;
 		month=6;
 		day=5;
-		hour=5;
+		hour=6;
 		minute=0;
 		startFogBase=-1000;
 		forecastFogBase=-1000;
@@ -286,7 +299,7 @@ class Mission
 					class data
 					{
 						singleType="SCALAR";
-						value=24;
+						value=1;
 					};
 				};
 			};
@@ -295,7 +308,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=84;
+		items=141;
 		class Item0
 		{
 			dataType="Object";
@@ -2975,7 +2988,7 @@ class Mission
 			fillName="DiagGrid";
 			a=15.013258;
 			b=68.333069;
-			angle=349.73862;
+			angle=349.73846;
 			id=181;
 			class CustomAttributes
 			{
@@ -2994,6 +3007,2849 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item84
+		{
+			dataType="Marker";
+			position[]={6958.3818,2.6600001,7382.0049};
+			name="OA_pickupzone_marker";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			id=182;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item85
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=3;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6968.8291,2.6614392,7325.6201};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=185;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6968.8291,3.266145,7324.6401};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=186;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+				class Item2
+				{
+					dataType="Waypoint";
+					loiterRadius=500;
+					loiterAltitude=200;
+					position[]={7047.1411,2.6600001,7392.9771};
+					speed="NORMAL";
+					combat="CARELESS";
+					expActiv="[""Loitering""] remoteExec [""hintSilent""];";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=187;
+					type="Move";
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_1";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=185;
+						item1=184;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=186;
+						item1=184;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=183;
+			atlOffset=43.851158;
+		};
+		class Item86
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7223.5654,47.115864,7021.8901};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=184;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851158;
+		};
+		class Item87
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9040.1855,-8.7569427,9982.9932};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=190;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9040.1855,-8.1522369,9982.0127};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=191;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_2";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=190;
+						item1=192;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=191;
+						item1=192;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=189;
+			atlOffset=43.851002;
+		};
+		class Item88
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9041.3359,79.609612,9977.3926};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=192;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item89
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9105.3438,22.451469,11087.343};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=194;
+					type="C_man_1_1_F";
+					atlOffset=43.850998;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9105.3438,23.056175,11086.362};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=195;
+					type="C_man_1_1_F";
+					atlOffset=43.850998;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_3";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=194;
+						item1=196;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=195;
+						item1=196;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=193;
+			atlOffset=43.850998;
+		};
+		class Item90
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={9106.4951,110.72885,11081.742};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=196;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.850998;
+		};
+		class Item91
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11842.104,-36.899563,13104.965};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=198;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11842.104,-36.294857,13103.985};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=199;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_4";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=198;
+						item1=200;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=199;
+						item1=200;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=197;
+			atlOffset=43.851002;
+		};
+		class Item92
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11843.254,51.405708,13099.365};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=200;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item93
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2068.8403,-30.399563,13246.736};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=202;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2068.8403,-29.794857,13245.757};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=203;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_5";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=202;
+						item1=204;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=203;
+						item1=204;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=201;
+			atlOffset=43.851002;
+		};
+		class Item94
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2069.9912,57.905708,13241.137};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=204;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item95
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1968.9622,-30.899563,3488.8838};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=206;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1968.9622,-30.294857,3487.9038};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=207;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_6";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=206;
+						item1=208;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=207;
+						item1=208;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=205;
+			atlOffset=43.851002;
+		};
+		class Item96
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1970.113,57.405708,3483.2837};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=208;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item97
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2144.2695,-30.899563,3537.2932};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=210;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2144.2695,-30.294857,3536.3132};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=211;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_7";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=210;
+						item1=212;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=211;
+						item1=212;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=209;
+			atlOffset=43.851002;
+		};
+		class Item98
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2145.4204,57.405708,3531.6931};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=212;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item99
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2259.8879,-30.899563,3572.0723};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=214;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2259.8879,-30.294857,3571.0923};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=215;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_8";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=214;
+						item1=216;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=215;
+						item1=216;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=213;
+			atlOffset=43.851002;
+		};
+		class Item100
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2261.0388,57.405708,3566.4722};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=216;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item101
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2379.7356,-30.899563,3608.2622};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=218;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2379.7356,-30.294857,3607.2822};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=219;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_9";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=218;
+						item1=220;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=219;
+						item1=220;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=217;
+			atlOffset=43.851002;
+		};
+		class Item102
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2380.8865,57.405708,3602.6621};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=220;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item103
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11408.938,-31.81535,3312.8315};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=222;
+					type="C_man_1_1_F";
+					atlOffset=43.851006;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11408.938,-31.210644,3311.8516};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=223;
+					type="C_man_1_1_F";
+					atlOffset=43.851006;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_10";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=222;
+						item1=224;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=223;
+						item1=224;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=221;
+			atlOffset=43.851006;
+		};
+		class Item104
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11410.089,56.464439,3307.2314};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=224;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851006;
+		};
+		class Item105
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11510.846,-35.920334,3239.1829};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=226;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11510.846,-35.315628,3238.2029};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=227;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_11";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=226;
+						item1=228;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=227;
+						item1=228;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=225;
+			atlOffset=43.851002;
+		};
+		class Item106
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11511.997,52.366894,3233.5828};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=228;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item107
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11619.609,-38.110229,3164.6782};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=230;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11619.609,-37.505524,3163.6982};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=231;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_12";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=230;
+						item1=232;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=231;
+						item1=232;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=229;
+			atlOffset=43.851002;
+		};
+		class Item108
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11620.76,50.182064,3159.0781};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=232;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item109
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11744.641,-38.989563,3067.0498};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=234;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11744.641,-38.384857,3066.0698};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=235;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_13";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=234;
+						item1=236;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=235;
+						item1=236;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=233;
+			atlOffset=43.851002;
+		};
+		class Item110
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11745.791,49.315708,3061.4497};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=236;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item111
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11857.682,-38.989563,2982.2676};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=238;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11857.682,-38.384857,2981.2876};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=239;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_14";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=238;
+						item1=240;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=239;
+						item1=240;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=237;
+			atlOffset=43.851002;
+		};
+		class Item112
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11858.833,49.315708,2976.6675};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=240;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item113
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7189.646,-41.189564,7158.5664};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=242;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7189.646,-40.584858,7157.5864};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=243;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_15";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=242;
+						item1=244;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=243;
+						item1=244;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=241;
+			atlOffset=43.851002;
+		};
+		class Item114
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7190.7969,47.115707,7152.9663};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=244;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item115
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7159.9976,-41.189564,7302.1255};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=246;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7159.9976,-40.584858,7301.1455};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=247;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_16";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=246;
+						item1=248;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=247;
+						item1=248;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=245;
+			atlOffset=43.851002;
+		};
+		class Item116
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7161.1484,47.115707,7296.5254};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=248;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item117
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7125.6685,-41.189564,7445.6855};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=250;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7125.6685,-40.584858,7444.7056};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=251;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_17";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=250;
+						item1=252;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=251;
+						item1=252;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=249;
+			atlOffset=43.851002;
+		};
+		class Item118
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7126.8193,47.115707,7440.0854};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=252;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item119
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7100.7017,-41.189564,7550.2334};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=254;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7100.7017,-40.584858,7549.2534};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=255;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_18";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=254;
+						item1=256;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=255;
+						item1=256;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=253;
+			atlOffset=43.851002;
+		};
+		class Item120
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7101.8525,47.115707,7544.6333};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=256;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item121
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7088.2183,-41.189564,7642.2998};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=258;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7088.2183,-40.584858,7641.3198};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=259;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_19";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=258;
+						item1=260;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=259;
+						item1=260;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=257;
+			atlOffset=43.851002;
+		};
+		class Item122
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7089.3691,47.115707,7636.6997};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=260;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item123
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7077.2954,-41.189564,7721.8813};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=262;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7077.2954,-40.584858,7720.9014};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=263;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_20";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=262;
+						item1=264;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=263;
+						item1=264;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=261;
+			atlOffset=43.851002;
+		};
+		class Item124
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7078.4463,47.115707,7716.2813};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=264;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item125
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1601.1891,-30.399719,13309.465};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=266;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1601.1891,-29.795013,13308.485};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=267;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_21";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=266;
+						item1=268;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=267;
+						item1=268;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=265;
+			atlOffset=43.851158;
+		};
+		class Item126
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1855.9254,57.905865,13005.734};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=268;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851158;
+		};
+		class Item127
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1667.2694,-30.399719,13355.797};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=270;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1667.2694,-29.795013,13354.817};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=271;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_22";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=270;
+						item1=272;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=271;
+						item1=272;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=269;
+			atlOffset=43.851158;
+		};
+		class Item128
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1922.0057,57.905865,13052.066};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=272;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851158;
+		};
+		class Item129
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1727.2732,-30.399719,13400.61};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=274;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1727.2732,-29.795013,13399.63};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=275;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_23";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=274;
+						item1=276;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=275;
+						item1=276;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=273;
+			atlOffset=43.851158;
+		};
+		class Item130
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1982.0095,57.905865,13096.881};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=276;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851158;
+		};
+		class Item131
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1783.4795,-30.399719,13452.259};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=278;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1783.4795,-29.795013,13451.278};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=279;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_24";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=278;
+						item1=280;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=279;
+						item1=280;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=277;
+			atlOffset=43.851158;
+		};
+		class Item132
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2038.2158,57.905865,13148.529};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=280;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851158;
+		};
+		class Item133
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1859.4336,-30.399719,13514.543};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=282;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1859.4336,-29.795013,13513.563};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=283;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_25";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=282;
+						item1=284;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=283;
+						item1=284;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=281;
+			atlOffset=43.851158;
+		};
+		class Item134
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2114.1699,57.905865,13210.813};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=284;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851158;
+		};
+		class Item135
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1929.3115,-30.399719,13569.23};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=286;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1929.3115,-29.795013,13568.251};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=287;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_26";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=286;
+						item1=288;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=287;
+						item1=288;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=285;
+			atlOffset=43.851158;
+		};
+		class Item136
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2184.0479,57.905865,13265.5};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=288;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851158;
+		};
+		class Item137
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2000.7085,-30.399719,13623.916};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=290;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2000.7085,-29.795013,13622.937};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=291;
+					type="C_man_1_1_F";
+					atlOffset=43.851002;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_27";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=290;
+						item1=292;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=291;
+						item1=292;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=289;
+			atlOffset=43.851002;
+		};
+		class Item138
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2255.4451,57.905708,13320.186};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=292;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851002;
+		};
+		class Item139
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2089.575,-30.399719,13689.237};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					flags=2;
+					class Attributes
+					{
+					};
+					id=294;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2089.575,-29.795013,13688.257};
+						angles[]={0,5.5611601,0};
+					};
+					side="Civilian";
+					class Attributes
+					{
+					};
+					id=295;
+					type="C_man_1_1_F";
+					atlOffset=43.851158;
+				};
+			};
+			class Attributes
+			{
+				name="OA_amb_traffic_28";
+				init="[this] call OA_fnc_AddTrafficToQueue;";
+				combatMode="BLUE";
+				behaviour="CARELESS";
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=294;
+						item1=296;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=295;
+						item1=296;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=293;
+			atlOffset=43.851158;
+		};
+		class Item140
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2344.3113,57.905865,13385.508};
+				angles[]={0,5.5611601,0};
+			};
+			side="Civilian";
+			flags=2;
+			class Attributes
+			{
+			};
+			id=296;
+			type="C_Heli_Light_01_civil_F";
+			atlOffset=43.851158;
 		};
 	};
 };

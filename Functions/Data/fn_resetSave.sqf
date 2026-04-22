@@ -1,7 +1,7 @@
 if (isServer) then {
 
-	profileNamespace setVariable ["OA_airport_funds", 100000];
-	missionNamespace setVariable ["OA_airport_funds", 100000, true];
+	profileNamespace setVariable ["OA_airport_funds", 500000];
+	missionNamespace setVariable ["OA_airport_funds", 500000, true];
 	profileNamespace setVariable ["OA_airport_vehicles", []];
 	saveProfileNamespace;
 

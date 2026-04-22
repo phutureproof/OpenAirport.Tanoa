@@ -75,6 +75,9 @@ class CfgFunctions
 
             class airportRepairJobsQueue {};
             class addRepairJobToQueue {};
+
+            class ambTrafficQueue {};
+            class addTrafficToQueue {};
         };
 
         class Radio
