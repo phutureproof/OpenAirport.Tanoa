@@ -2975,7 +2975,7 @@ class Mission
 			fillName="DiagGrid";
 			a=15.013258;
 			b=68.333069;
-			angle=349.73865;
+			angle=349.73862;
 			id=181;
 			class CustomAttributes
 			{

@@ -55,7 +55,9 @@ class CfgFunctions
 
         class Integrations
         {
-            class initAlive {};
+            class initAlive {
+                postInit = 1;
+            };
         };
 
         class PlayerJobs
