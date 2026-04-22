@@ -69,9 +69,11 @@ if (isServer) then {
         sleep 1;
         _units = { alive _x } count(units _group);
         _inVehicle = { _x in _vehicle } count (units _group);
+        /*
         if (time - _time > 45) then {
             { _x moveInAny _vehicle; } forEach (units _group);
         };
+        */
         _units == _inVehicle
     };
     [_taskLoad, "SUCCEEDED"] call BIS_fnc_taskSetState;
