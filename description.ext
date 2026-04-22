@@ -55,7 +55,9 @@ class CfgFunctions
 
         class Integrations
         {
-            class initAlive {};
+            class initAlive {
+                postInit = 1;
+            };
         };
 
         class PlayerJobs
@@ -73,6 +75,9 @@ class CfgFunctions
 
             class airportRepairJobsQueue {};
             class addRepairJobToQueue {};
+
+            class ambTrafficQueue {};
+            class addTrafficToQueue {};
         };
 
         class Radio

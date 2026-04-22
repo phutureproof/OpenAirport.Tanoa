@@ -11,10 +11,10 @@ if (isServer) then {
     _player setVariable ["OA_hasTask", true];
 
     // add task to get into a vehicle
-    _taskGetIn = [_player, 'Board Vehicle', "You have a job waiting! Get into a helicopter or plane.", _player, 'getin' ] call OA_fnc_genericTask;
+    _taskGetIn = [_player, 'Board Vehicle', "You have a job waiting! Get into a helicopter or plane.", [], 'getin' ] call OA_fnc_genericTask;
     _numVehSeats = 0;
 
-    // wait until player is in vehicle and has enough seats
+    // wait until player is in vehicle
     waitUntil {
         sleep 1;
         _inVehicle = !(isNull objectParent _player);
@@ -27,7 +27,6 @@ if (isServer) then {
     [_taskGetIn, "SUCCEEDED"] call BIS_fnc_taskSetState;
     [_taskGetIn] call BIS_fnc_deleteTask;
 
-    _clientID = owner _player;
     _vehicle = vehicle _player;
     _spawnPoint = getMarkerPos "civSpawn";
 	_dest = [];
@@ -50,25 +49,31 @@ if (isServer) then {
     };
 
     // create a task to wait for passengers
-    _taskLoad = [_player, 'Load Passengers', 'Move to the pickup zone and wait for all passengers to board', OA_passengerPickupArea, 'getin'] call OA_fnc_genericTask;
+    _taskLoad = [_player, 'Load Passengers', 'Move to the pickup zone and wait for all passengers to board', getMarkerPos "OA_pickupzone_marker", 'getin'] call OA_fnc_genericTask;
 
     waitUntil {
         sleep 1;
         _inArea = ((_vehicle inArea OA_passengerPickupArea) && (_player in _vehicle));
         _stopped = ((speed _vehicle) < 1);
-        _grounded = (isTouchingGround _vehicle);
-        _inArea && _stopped
+        _grounded = ((getPosATL _vehicle select 2) < 1);
+        _inArea && _stopped && _grounded
     };
 
     // order passengers to get in
     _group addVehicle _vehicle;
-    units _group orderGetIn true;
+    (units _group) orderGetIn true;
 
     // wait until all passengers are in the vehicle
+    _time = time;
     waitUntil {
         sleep 1;
         _units = { alive _x } count(units _group);
         _inVehicle = { _x in _vehicle } count (units _group);
+        /*
+        if (time - _time > 45) then {
+            { _x moveInAny _vehicle; } forEach (units _group);
+        };
+        */
         _units == _inVehicle
     };
     [_taskLoad, "SUCCEEDED"] call BIS_fnc_taskSetState;
@@ -89,23 +94,22 @@ if (isServer) then {
     _smoke = objNull;
     if (_doSmoke) then {
         _smoke = createVehicle [selectRandom [
-            "SmokeShell",        // White
-            "SmokeShellRed",     // Red
-            "SmokeShellGreen",   // Green
-            "SmokeShellBlue",    // Blue
-            "SmokeShellYellow",  // Yellow
-            "SmokeShellOrange",  // Orange
-            "SmokeShellPurple"   // Purple
+            "SmokeShell",
+            "SmokeShellRed",
+            "SmokeShellGreen",
+            "SmokeShellBlue",
+            "SmokeShellYellow",
+            "SmokeShellOrange",
+            "SmokeShellPurple"
         ], _dest, [], 0, "CAN_COLLIDE"];
     };
 
     // wait until we're at the destination 
     waitUntil {
         sleep 1;
-        _atDest = _vehicle distance _dest < 100;
-        _stopped = speed _vehicle < 1;
-        _grounded = isTouchingGround _vehicle;
-
+        _atDest = (_vehicle distance _dest < 100);
+        _stopped = (speed _vehicle < 1);
+        _grounded = ((getPosATL _vehicle select 2) < 1);
         _atDest && _stopped && _grounded
     };
 

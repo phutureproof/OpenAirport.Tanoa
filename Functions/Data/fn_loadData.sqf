@@ -1,5 +1,5 @@
 // funds
-private _savedFunds = profileNamespace getVariable ["OA_airport_funds", 100000];
+private _savedFunds = profileNamespace getVariable ["OA_airport_funds", 500000];
 missionNamespace setVariable ["OA_airport_funds", _savedFunds, true];
 
 // vehicles
