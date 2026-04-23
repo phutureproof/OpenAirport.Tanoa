@@ -13,17 +13,17 @@
 
 				_veh = vehicle (leader _group);
 
-				_dest = [] call OA_fnc_getRandomHelicopterDestination;
+				_dest = [] call OA_fnc_getHelicopterDestination;
 
 				_group setBehaviour "CARELESS";
 				_group setCombatMode "BLUE";
 
 				_veh setCaptive true;
-				_veh flyInHeight (50 + random(100));
+				_veh flyInHeight (selectRandom [50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300]);
 
 				_wp = _group addWaypoint [_dest, 0];
 				_wp setWaypointType "MOVE";
-				_wp setWaypointSpeed "NORMAL";
+				_wp setWaypointSpeed (selectRandom ["LIMITED", "NORMAL", "FULL"]);
 				_wp setWaypointCompletionRadius 250;
 
 				waitUntil {

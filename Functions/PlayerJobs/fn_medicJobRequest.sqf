@@ -21,7 +21,7 @@ if (isServer) then {
     _clientID = owner _player;
     _vehicle = vehicle _player;
     _spawnPoint = getMarkerPos "civSpawn";
-    _dest = [] call OA_fnc_getRandomDestination;
+    _dest = [] call OA_fnc_getHelicopterDestination;
 
     _jobDistance = _spawnPoint distance getPos _dest;
 

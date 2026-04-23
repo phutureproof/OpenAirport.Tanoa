@@ -8,7 +8,7 @@ if (isServer) then {
 	private _lightCargo = ["C_Quadbike_01_F", "CargoNet_01_barrels_F", "CargoNet_01_box_F", "I_CargoNet_01_ammo_F", "O_CargoNet_01_ammo_F", "C_IDAP_CargoNet_01_supplies_F", "I_E_CargoNet_01_ammo_F"];
 	private _mediumCargo = ["Land_Cargo10_IDAP_F", "Land_Cargo10_blue_F", "Land_Cargo10_brick_red_F"];
 	private _heavyCargo = ["Land_Cargo20_grey_F", "Land_Cargo20_blue_F", "Land_Cargo20_orange_F", "Land_Cargo20_white_F"];
-	private _dest = [] call OA_fnc_getRandomHelicopterDestination;
+	private _dest = [] call OA_fnc_getHelicopterDestination;
 	private _jobDistance = _spawnPos distance _dest;
 	private _multiplier = 1;
 

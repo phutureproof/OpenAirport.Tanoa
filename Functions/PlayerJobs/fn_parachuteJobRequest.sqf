@@ -29,7 +29,7 @@ if (isServer) then {
 
     _vehicle = vehicle _player;
     _spawnPoint = getMarkerPos "civSpawn";
-	_dest = [] call OA_fnc_getRandomHelicopterDestination;
+	_dest = [] call OA_fnc_getHelicopterDestination;
     _doSmoke = true;
 
     _jobDistance = _spawnPoint distance _dest;

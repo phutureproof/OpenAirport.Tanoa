@@ -31,8 +31,8 @@ if (isServer) then {
     _spawnPoint = getMarkerPos "civSpawn";
 	_dest = [];
     _doSmoke = false;
-	if (_vehicle isKindOf "Helicopter") then { _dest = [] call OA_fnc_getRandomHelicopterDestination; _doSmoke = true; };
-	if (_vehicle isKindOf "Plane") then { _dest = [] call OA_fnc_getRandomPlaneDestination; _doSmoke = false; };
+	if (_vehicle isKindOf "Helicopter") then { _dest = [] call OA_fnc_getHelicopterDestination; _doSmoke = true; };
+	if (_vehicle isKindOf "Plane") then { _dest = [] call OA_fnc_getPlaneDestination; _doSmoke = false; };
 
     _jobDistance = _spawnPoint distance _dest;
 
@@ -46,7 +46,7 @@ if (isServer) then {
     };
 
     // create a task to wait for passengers
-    _taskLoad = [_player, 'Load Passengers', 'Move to the pickup zone and wait for all passengers to board', getMarkerPos "OA_pickupzone_marker", 'getin'] call OA_fnc_genericTask;
+    _taskLoad = [_player, 'Move To Pickup Area', 'Move to the pickup area and wait for the passengers.', getMarkerPos "OA_pickupzone_marker", 'getin'] call OA_fnc_genericTask;
 
     waitUntil {
         sleep 1;
@@ -55,6 +55,11 @@ if (isServer) then {
         _grounded = ((getPosATL _vehicle select 2) < 1);
         _inArea && _stopped && _grounded
     };
+
+    [_taskLoad, "SUCCEEDED"] call BIS_fnc_taskSetState;
+    [_taskLoad] call BIS_fnc_deleteTask;
+
+    _taskPassengers = [_player, 'Wait For Passengers', 'Wait for the passengers to board your vehicle.', (leader _group), 'getin'] call OA_fnc_genericTask;
 
     // order passengers to get in
     _group addVehicle _vehicle;
@@ -69,8 +74,9 @@ if (isServer) then {
         _inVehicle = { _x in _vehicle } count (units _group);
         _units == _inVehicle
     };
-    [_taskLoad, "SUCCEEDED"] call BIS_fnc_taskSetState;
-    [_taskLoad] call BIS_fnc_deleteTask;
+
+    [_taskPassengers, "SUCCEEDED"] call BIS_fnc_taskSetState;
+    [_taskPassengers] call BIS_fnc_deleteTask;
 
     // create task for player HUD
     _taskID = [_player, 'Transport Passengers', 'Transport the passengers to their destination', _dest, 'move'] call OA_fnc_genericTask;

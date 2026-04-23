@@ -10,8 +10,8 @@ class CfgFunctions
     {
         class ActionMenus
         {
-            class laptopActions {}; 
-            class jobBoardActions {}; 
+            class laptopActions {};
+            class jobBoardActions {};
             class playerActions {};
             class shopActions {};
         };
@@ -36,8 +36,8 @@ class CfgFunctions
 
         class Destinations
         {
-            class getRandomHelicopterDestination {};
-            class getRandomPlaneDestination {};
+            class getHelicopterDestination {};
+            class getPlaneDestination {};
         };
 
         class Funds
