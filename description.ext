@@ -11,6 +11,7 @@ class CfgFunctions
         class ActionMenus
         {
             class laptopActions {}; 
+            class jobBoardActions {}; 
             class playerActions {};
             class shopActions {};
         };

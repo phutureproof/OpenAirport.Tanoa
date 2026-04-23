@@ -12,11 +12,11 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=297;
+		nextID=316;
 	};
 	class MarkerIDProvider
 	{
-		nextID=9;
+		nextID=10;
 	};
 	class LayerIndexProvider
 	{
@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6987.0479,52.680611,7322.3237};
-		dir[]={0.8727501,-0.33039704,0.35936755};
-		up[]={0.30551088,0.94384199,0.12579855};
-		aside[]={0.38074967,0,-0.92467809};
+		pos[]={6925.7495,7.4032345,7388.0176};
+		dir[]={-0.94155145,-0.33655503,0.014546178};
+		up[]={-0.33651489,0.9416638,0.0051988717};
+		aside[]={0.015447316,0,0.99988073};
 	};
 };
 binarizationWanted=0;
@@ -47,13 +47,14 @@ addons[]=
 	"A3_Soft_F_Orange_Van_02",
 	"A3_Structures_F_EPA_Civ_Constructions",
 	"A3_Props_F_Enoch_Military_Camps",
-	"A3_Air_F_Heli_Light_01"
+	"A3_Air_F_Heli_Light_01",
+	"A3_Signs_F_Signs_Ad"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=14;
+		items=15;
 		class Item0
 		{
 			className="A3_Structures_F_Mil";
@@ -152,6 +153,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item14
+		{
+			className="A3_Signs_F";
+			name="Arma 3 - Signs";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -238,7 +246,6 @@ class Mission
 		forecastWaves=0;
 		forecastGust=0.097594045;
 		forecastWindDir=320;
-		windForced=1;
 		year=2026;
 		month=6;
 		day=5;
@@ -307,7 +314,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=141;
+		items=160;
 		class Item0
 		{
 			dataType="Object";
@@ -5860,6 +5867,529 @@ class Mission
 			id=296;
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851158;
+		};
+		class Item141
+		{
+			dataType="Marker";
+			position[]={7133.5835,2.6600001,7729.8735};
+			name="OA_vehicle_load_point_1";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=297;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item142
+		{
+			dataType="Marker";
+			position[]={7139.1045,2.6600001,7698.3638};
+			name="OA_vehicle_load_point_2";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=298;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item143
+		{
+			dataType="Marker";
+			position[]={7144.6504,2.6600001,7666.9399};
+			name="OA_vehicle_load_point_3";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=299;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item144
+		{
+			dataType="Marker";
+			position[]={7150.3779,2.6600001,7641.6196};
+			name="OA_vehicle_load_point_4";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=300;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item145
+		{
+			dataType="Marker";
+			position[]={7156.4482,2.6600001,7615.9985};
+			name="OA_vehicle_load_point_5";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=301;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item146
+		{
+			dataType="Marker";
+			position[]={7162.4526,2.6600001,7581.6943};
+			name="OA_vehicle_load_point_6";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=302;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item147
+		{
+			dataType="Marker";
+			position[]={7168.2056,2.6600001,7552.9839};
+			name="OA_vehicle_load_point_7";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=303;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item148
+		{
+			dataType="Marker";
+			position[]={7175.4409,2.6600001,7523.5474};
+			name="OA_vehicle_load_point_8";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=304;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item149
+		{
+			dataType="Marker";
+			position[]={7182.4019,2.6507826,7494.2109};
+			name="OA_vehicle_load_point_9";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=305;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item150
+		{
+			dataType="Marker";
+			position[]={7190.6055,2.6600001,7449.7026};
+			name="OA_vehicle_load_point_10";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=306;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item151
+		{
+			dataType="Marker";
+			position[]={7198.3267,2.6600001,7418.1978};
+			name="OA_vehicle_load_point_11";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=307;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item152
+		{
+			dataType="Marker";
+			position[]={7205.3721,2.7292798,7388.1304};
+			name="OA_vehicle_load_point_12";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=308;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item153
+		{
+			dataType="Marker";
+			position[]={7212.6943,2.9314382,7355.208};
+			name="OA_vehicle_load_point_13";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=309;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item154
+		{
+			dataType="Marker";
+			position[]={7223.1909,2.6600001,7307.8682};
+			name="OA_vehicle_load_point_14";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=310;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item155
+		{
+			dataType="Marker";
+			position[]={7229.9028,2.6600001,7271.0527};
+			name="OA_vehicle_load_point_15";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=311;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item156
+		{
+			dataType="Marker";
+			position[]={7055.2153,2.6600001,7400.8687};
+			name="OA_vehicle_load_point_16";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=312;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item157
+		{
+			dataType="Marker";
+			position[]={7095.2974,2.6600001,7222.0698};
+			name="OA_vehicle_load_point_17";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=313;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item158
+		{
+			dataType="Marker";
+			position[]={7039.4551,2.6600001,7541.0259};
+			name="OA_vehicle_load_point_18";
+			type="mil_objective";
+			colorName="ColorGreen";
+			alpha=0;
+			angle=236.23883;
+			id=314;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ENH_markerShape";
+					expression="if (_value != 'NONE' && isServer) then {_this setMarkerShape _value}";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="NONE";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item159
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6916.5552,3.8100533,7387.542};
+				angles[]={0,4.5491486,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="[this] call OA_fnc_jobBoardActions;";
+				name="OA_job_board";
+			};
+			id=315;
+			type="SignAd_Sponsor_Larkin_F";
+			atlOffset=0.10899997;
 		};
 	};
 };
