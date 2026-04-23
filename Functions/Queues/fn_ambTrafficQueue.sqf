@@ -19,12 +19,12 @@
 				_group setCombatMode "BLUE";
 
 				_veh setCaptive true;
-				_veh flyInHeight 100;
+				_veh flyInHeight (50 + random(100));
 
 				_wp = _group addWaypoint [_dest, 0];
 				_wp setWaypointType "MOVE";
 				_wp setWaypointSpeed "NORMAL";
-				_wp setWaypointCompletionRadius 100;
+				_wp setWaypointCompletionRadius 250;
 
 				waitUntil {
 					(_veh distance2D _dest < 250)

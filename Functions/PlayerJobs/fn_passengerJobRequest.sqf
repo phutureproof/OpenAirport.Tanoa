@@ -36,14 +36,11 @@ if (isServer) then {
 
     _jobDistance = _spawnPoint distance _dest;
 
-    _numCivs = (1 + floor(random(_numVehSeats)));
-    if (_numCivs < ceil(_numVehSeats / 2)) then { _numCivs = ceil(_numVehSeats / 2); }; // at least half
-    if (_numCivs > _numVehSeats) then { _numCivs = _numVehSeats; }; // no more than max
     _group = createGroup civilian;
     _player setVariable ["OA_taskGroup", _group];
 
     // spawn civilian group
-    for "_i" from 1 to _numCivs do {
+    for "_i" from 1 to _numVehSeats do {
         [_group, _spawnPoint] call OA_fnc_spawnPassenger;
         sleep 0.1;
     };
@@ -61,6 +58,7 @@ if (isServer) then {
 
     // order passengers to get in
     _group addVehicle _vehicle;
+    { _x assignAsCargo _vehicle; } forEach (units _group);
     (units _group) orderGetIn true;
 
     // wait until all passengers are in the vehicle
@@ -69,11 +67,6 @@ if (isServer) then {
         sleep 1;
         _units = { alive _x } count(units _group);
         _inVehicle = { _x in _vehicle } count (units _group);
-        /*
-        if (time - _time > 45) then {
-            { _x moveInAny _vehicle; } forEach (units _group);
-        };
-        */
         _units == _inVehicle
     };
     [_taskLoad, "SUCCEEDED"] call BIS_fnc_taskSetState;
@@ -139,7 +132,7 @@ if (isServer) then {
 
     // create a payment
     _tip = random(floor(0.5 * _jobDistance));
-    _payment = _jobDistance * _numCivs + _tip;
+    _payment = (_jobDistance * _numVehSeats) + _tip;
     [_payment] call OA_fnc_updateFunds;
     _distanceFormatted = [_jobDistance] call OA_fnc_formatIntAsKilometers;
 
@@ -147,7 +140,7 @@ if (isServer) then {
         "%1 has finished a job! Earning %2 for %3 passengers at a distance of around %4, and a tip of %5",
         name _player,
         [_payment] call OA_fnc_formatIntAsCurrency,
-        _numCivs,
+        _numVehSeats,
         _distanceFormatted,
         [_tip] call OA_fnc_formatIntAsCurrency
     ];

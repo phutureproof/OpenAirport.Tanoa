@@ -3,6 +3,8 @@ params ["_group", "_spawnPoint"];
 private _civilianClasses = missionNamespace getVariable ["OA_civilianList", []];
 private _unitType = selectRandom _civilianClasses;
 private _unit = _group createUnit [_unitType, _spawnPoint, [], 2, "NONE"];
+
+_unit allowFleeing 0;
 _unit setBehaviour "CARELESS";
 _unit setSpeedMode "FULL";
 

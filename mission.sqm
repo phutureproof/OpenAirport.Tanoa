@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={6988.5034,26.419209,7299.9741};
-		dir[]={-0.55033731,-0.46811426,0.69143879};
-		up[]={-0.2915383,0.88365161,0.36628738};
-		aside[]={0.78245676,5.3190161e-07,0.6227774};
+		pos[]={6987.0479,52.680611,7322.3237};
+		dir[]={0.8727501,-0.33039704,0.35936755};
+		up[]={0.30551088,0.94384199,0.12579855};
+		aside[]={0.38074967,0,-0.92467809};
 	};
 };
 binarizationWanted=0;
@@ -243,7 +243,6 @@ class Mission
 		month=6;
 		day=5;
 		hour=6;
-		minute=9;
 		startFogBase=-1000;
 		forecastFogBase=-1000;
 		startFogDecay=0;
@@ -3041,7 +3040,7 @@ class Mission
 			side="Civilian";
 			class Entities
 			{
-				items=3;
+				items=2;
 				class Item0
 				{
 					dataType="Object";
@@ -3074,22 +3073,6 @@ class Mission
 					id=186;
 					type="C_man_1_1_F";
 					atlOffset=0.60470605;
-				};
-				class Item2
-				{
-					dataType="Waypoint";
-					loiterRadius=500;
-					loiterAltitude=200;
-					position[]={7047.1411,2.6600001,7392.9771};
-					speed="NORMAL";
-					combat="CARELESS";
-					expActiv="[""Loitering""] remoteExec [""hintSilent""];";
-					class Effects
-					{
-					};
-					showWP="NEVER";
-					id=187;
-					type="Move";
 				};
 			};
 			class Attributes
@@ -3132,14 +3115,14 @@ class Mission
 				};
 			};
 			id=183;
-			atlOffset=43.851158;
+			atlOffset=43.851002;
 		};
 		class Item86
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7223.5654,47.115864,7021.8901};
+				position[]={7223.5649,47.115707,7021.8901};
 				angles[]={0,5.5611601,0};
 			};
 			side="Civilian";
@@ -3149,7 +3132,7 @@ class Mission
 			};
 			id=184;
 			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851158;
+			atlOffset=43.851002;
 		};
 		class Item87
 		{
