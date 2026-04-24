@@ -17,21 +17,19 @@ if (isServer) then {
     // wait until player is in vehicle
     waitUntil {
         sleep 1;
-        _inVehicle = !(isNull objectParent _player) && ((vehicle _player) isKindOf "Air");
-		_vehType = ((vehicle _player) isKindOf "Air");
-        _inVehicle && _vehType
+        ([_player, _vehicle] call OA_fnc_jobPlayerInVehicle)
     };
-    _numVehSeats = count (fullCrew [vehicle _player, "", true]) - 1;
+    
+    _vehicle = vehicle _player;
+    _numVehSeats = _vehicle emptyPositions "Cargo";
 
     // remove the task to board vehicle 
     [_taskGetIn, "SUCCEEDED"] call BIS_fnc_taskSetState;
     [_taskGetIn] call BIS_fnc_deleteTask;
 
-    _vehicle = vehicle _player;
     _spawnPoint = getMarkerPos "civSpawn";
 	_dest = [] call OA_fnc_getHelicopterDestination;
     _doSmoke = true;
-
     _jobDistance = _spawnPoint distance _dest;
 
     _group = createGroup civilian;
@@ -54,27 +52,26 @@ if (isServer) then {
 
     waitUntil {
         sleep 1;
-        _inArea = ((_vehicle inArea OA_passengerPickupArea) && (_player in _vehicle));
-        _stopped = ((speed _vehicle) < 1);
-        _grounded = ((getPosATL _vehicle select 2) < 1);
-        _inArea && _stopped && _grounded
+        ([_player, _vehicle] call OA_fnc_jobPlayerAtPickupArea)
     };
 
+    [_taskLoad, "SUCCEEDED"] call BIS_fnc_taskSetState;
+    [_taskLoad] call BIS_fnc_deleteTask;
+
+    _taskPassengers = [_player, 'Wait For Passengers', 'Wait for the passengers to board your vehicle.', (leader _group), 'getin'] call OA_fnc_genericTask;
+
     // order passengers to get in
-    _group addVehicle _vehicle;
-    { _x assignAsCargo _vehicle; } forEach (units _group);
-    (units _group) orderGetIn true;
+    { _x assignAsCargo _vehicle; [_x] orderGetIn true; } forEach (units _group);
 
     // wait until all passengers are in the vehicle
     _time = time;
     waitUntil {
         sleep 1;
-        _units = { alive _x } count(units _group);
-        _inVehicle = { _x in _vehicle } count (units _group);
-        _units == _inVehicle
+        ([_group, _vehicle] call OA_fnc_jobUnitsInVehicle)
     };
-    [_taskLoad, "SUCCEEDED"] call BIS_fnc_taskSetState;
-    [_taskLoad] call BIS_fnc_deleteTask;
+
+    [_taskPassengers, "SUCCEEDED"] call BIS_fnc_taskSetState;
+    [_taskPassengers] call BIS_fnc_deleteTask;
 
     // create task for player HUD
     _taskID = [_player, 'Transport Passengers', 'Transport the passengers to their destination, you must be above 250m for the passengers to jump out.', _dest, 'move'] call OA_fnc_genericTask;
@@ -104,14 +101,13 @@ if (isServer) then {
     // wait until we're at the destination 
     waitUntil {
         sleep 1;
-        _atDest = _vehicle distance2D _dest < 250;
-        _atHeight = ((getPosATL _vehicle) select 2 >= 250);
-        _atDest && _atHeight
+        ([_vehicle, _dest] call OA_fnc_jobAtParachuteDest)
     };
 
     // passengers eject
-    _group leaveVehicle _vehicle;
     {
+        unassignVehicle _x;
+        _x orderGetIn false;
         _x action ["EJECT", _vehicle];
         if ( random(5) >= 2.5 ) then {
             _smokeTrail = createVehicle [selectRandom [
@@ -125,7 +121,7 @@ if (isServer) then {
             ], getPos _x, [], 0, "NONE"];
             _smokeTrail attachTo [_x, [0, 0, 0.1], "spine3"];
         };
-        sleep 0.2;
+        sleep 0.1;
     } forEach (units _group);
 
     waitUntil {

@@ -4,9 +4,9 @@ if (isServer) then {
 
 	{ deleteVehicle _x; } forEach _vehicles;
 
-	profileNamespace setVariable ["OA_airport_funds", 500000];
-	missionNamespace setVariable ["OA_airport_funds", 500000, true];
-	profileNamespace setVariable ["OA_airport_vehicles", []];
+	profileNamespace setVariable ["OA_airport_vehicles", nil];
+	profileNamespace setVariable ["OA_airport_funds", nil];
+	sleep 1;
 	saveProfileNamespace;
 	
 	["Game has been reset, you should restart the mission"] call OA_fnc_sendATCMsg;

@@ -8,11 +8,10 @@
 			_group = _queue select 0;
 
 			// spawn this on a new thread so the queue continues
-			[_group] spawn {
+			[_group] spawn {			
 				params ["_group"];
 
 				_veh = vehicle (leader _group);
-
 				_dest = [] call OA_fnc_getHelicopterDestination;
 
 				_group setBehaviour "CARELESS";
@@ -23,11 +22,12 @@
 
 				_wp = _group addWaypoint [_dest, 0];
 				_wp setWaypointType "MOVE";
-				_wp setWaypointSpeed (selectRandom ["LIMITED", "NORMAL", "FULL"]);
+				_wp setWaypointSpeed (selectRandom ["NORMAL", "FULL"]);
 				_wp setWaypointCompletionRadius 250;
 
 				waitUntil {
-					(_veh distance2D _dest < 250)
+					sleep 1;
+					(_veh distance2D _dest <= 250)
 				};
 
 				_veh setFuel 1;

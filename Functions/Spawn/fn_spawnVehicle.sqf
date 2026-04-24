@@ -2,6 +2,8 @@ params ["_vehicle"];
 
 if (isServer) then {
 	_vehicles = profileNamespace getVariable ["OA_airport_vehicles", []];
+
+
 	_veh = createVehicle [_vehicle, getMarkerPos "vehicleSpawn", [], 0, "NONE"];
 	_veh setCaptive true;
 	_veh setFuel 0.75;
@@ -16,6 +18,4 @@ if (isServer) then {
 	];
 
 	profileNamespace setVariable ["OA_airport_vehicles", _vehicles];
-	saveProfileNamespace;
-
 };

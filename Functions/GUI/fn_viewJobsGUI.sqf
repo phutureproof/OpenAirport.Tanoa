@@ -17,14 +17,20 @@ private _buttonHandler = {
     
     switch (_jobType) do {
         case "passenger": {
-            [player] remoteExec ["OA_fnc_passengerJobRequest", 2];
+            [] spawn {
+                [player] remoteExec ["OA_fnc_passengerJobRequest", 2];
+            };
         };
         case "parachute": {
-            [player] remoteExec ["OA_fnc_parachuteJobRequest", 2];
+            [] spawn {
+                [player] remoteExec ["OA_fnc_parachuteJobRequest", 2];
+            };
         };
         case "cargo": {
             _weight = _jobParams select 1;
-            [player, _weight] remoteExec ["OA_fnc_cargoHelicopterJobRequest", 2];
+            [_weight] spawn {
+                [player, _weight] remoteExec ["OA_fnc_cargoJobRequest", 2];
+            };
         };
         default {
             hint "Not implemented yet";

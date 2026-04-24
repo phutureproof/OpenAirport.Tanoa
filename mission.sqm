@@ -24,10 +24,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7066.5991,20.533888,7660.1724};
-		dir[]={0.37651509,-0.31651369,0.87066382};
-		up[]={0.12563114,0.94858789,0.29051286};
-		aside[]={0.91785246,-1.4901161e-08,-0.39692163};
+		pos[]={6957.2139,32.820778,7295.5679};
+		dir[]={-0.82173127,-0.56995845,-0.0076138536};
+		up[]={-0.56996721,0.82165194,-0.0052779638};
+		aside[]={-0.0092623942,3.601599e-10,1.0000279};
 	};
 };
 binarizationWanted=0;
@@ -314,7 +314,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=160;
+		items=134;
 		class Item0
 		{
 			dataType="Object";
@@ -2991,10 +2991,10 @@ class Mission
 			type="";
 			colorName="ColorGreen";
 			alpha=0.49576423;
-			fillName="DiagGrid";
-			a=15.013258;
-			b=68.333069;
-			angle=349.73846;
+			fillName="Grid";
+			a=15.013;
+			b=68.333;
+			angle=349.73795;
 			id=181;
 			class CustomAttributes
 			{
@@ -3042,106 +3042,6 @@ class Mission
 			};
 		};
 		class Item85
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6968.8291,2.6614392,7325.6201};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=185;
-					type="C_man_1_1_F";
-					atlOffset=2.3841858e-07;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={6968.8291,3.266145,7324.6401};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					class Attributes
-					{
-					};
-					id=186;
-					type="C_man_1_1_F";
-					atlOffset=0.60470605;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_1";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=185;
-						item1=184;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=186;
-						item1=184;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=183;
-			atlOffset=43.851002;
-		};
-		class Item86
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7223.5649,47.115707,7021.8901};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=184;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851002;
-		};
-		class Item87
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3225,7 +3125,7 @@ class Mission
 			id=189;
 			atlOffset=43.851002;
 		};
-		class Item88
+		class Item86
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3242,7 +3142,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851002;
 		};
-		class Item89
+		class Item87
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3326,7 +3226,7 @@ class Mission
 			id=193;
 			atlOffset=43.850998;
 		};
-		class Item90
+		class Item88
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3343,7 +3243,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.850998;
 		};
-		class Item91
+		class Item89
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3427,7 +3327,7 @@ class Mission
 			id=197;
 			atlOffset=43.851002;
 		};
-		class Item92
+		class Item90
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3444,108 +3344,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851002;
 		};
-		class Item93
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2068.8403,-30.399563,13246.736};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=202;
-					type="C_man_1_1_F";
-					atlOffset=-43.851002;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2068.8403,-29.794857,13245.757};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=4;
-					class Attributes
-					{
-					};
-					id=203;
-					type="C_man_1_1_F";
-					atlOffset=-43.246296;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_5";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=202;
-						item1=204;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=203;
-						item1=204;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=201;
-			atlOffset=43.851002;
-		};
-		class Item94
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2069.9912,57.905708,13241.137};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=204;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851002;
-		};
-		class Item95
+		class Item91
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3629,7 +3428,7 @@ class Mission
 			id=205;
 			atlOffset=43.851002;
 		};
-		class Item96
+		class Item92
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3646,7 +3445,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851002;
 		};
-		class Item97
+		class Item93
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3730,7 +3529,7 @@ class Mission
 			id=209;
 			atlOffset=43.851002;
 		};
-		class Item98
+		class Item94
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3747,7 +3546,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851002;
 		};
-		class Item99
+		class Item95
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3831,7 +3630,7 @@ class Mission
 			id=213;
 			atlOffset=43.851002;
 		};
-		class Item100
+		class Item96
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3848,7 +3647,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851002;
 		};
-		class Item101
+		class Item97
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3932,7 +3731,7 @@ class Mission
 			id=217;
 			atlOffset=43.851002;
 		};
-		class Item102
+		class Item98
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3949,7 +3748,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851002;
 		};
-		class Item103
+		class Item99
 		{
 			dataType="Group";
 			side="Civilian";
@@ -4033,7 +3832,7 @@ class Mission
 			id=221;
 			atlOffset=43.851006;
 		};
-		class Item104
+		class Item100
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4050,310 +3849,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851006;
 		};
-		class Item105
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11510.846,-35.920334,3239.1829};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=226;
-					type="C_man_1_1_F";
-					atlOffset=-43.948765;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11510.846,-35.315628,3238.2029};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=4;
-					class Attributes
-					{
-					};
-					id=227;
-					type="C_man_1_1_F";
-					atlOffset=-43.328377;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_11";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=226;
-						item1=228;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=227;
-						item1=228;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=225;
-			atlOffset=43.851002;
-		};
-		class Item106
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={11511.997,52.366894,3233.5828};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=228;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851002;
-		};
-		class Item107
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11619.609,-38.110229,3164.6782};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=230;
-					type="C_man_1_1_F";
-					atlOffset=-43.924202;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11619.609,-37.505524,3163.6982};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=4;
-					class Attributes
-					{
-					};
-					id=231;
-					type="C_man_1_1_F";
-					atlOffset=-43.306431;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_12";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=230;
-						item1=232;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=231;
-						item1=232;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=229;
-			atlOffset=43.851002;
-		};
-		class Item108
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={11620.76,50.182064,3159.0781};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=232;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851002;
-		};
-		class Item109
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11744.641,-38.989563,3067.0498};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=234;
-					type="C_man_1_1_F";
-					atlOffset=-43.851002;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11744.641,-38.384857,3066.0698};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=4;
-					class Attributes
-					{
-					};
-					id=235;
-					type="C_man_1_1_F";
-					atlOffset=-43.246296;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_13";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=234;
-						item1=236;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=235;
-						item1=236;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=233;
-			atlOffset=43.851002;
-		};
-		class Item110
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={11745.791,49.315708,3061.4497};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=236;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851002;
-		};
-		class Item111
+		class Item101
 		{
 			dataType="Group";
 			side="Civilian";
@@ -4437,7 +3933,7 @@ class Mission
 			id=237;
 			atlOffset=43.851002;
 		};
-		class Item112
+		class Item102
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4454,108 +3950,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851002;
 		};
-		class Item113
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7189.646,-41.189564,7158.5664};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=242;
-					type="C_man_1_1_F";
-					atlOffset=-43.851002;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7189.646,-40.584858,7157.5864};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=4;
-					class Attributes
-					{
-					};
-					id=243;
-					type="C_man_1_1_F";
-					atlOffset=-43.246296;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_15";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=242;
-						item1=244;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=243;
-						item1=244;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=241;
-			atlOffset=43.851002;
-		};
-		class Item114
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7190.7969,47.115707,7152.9663};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=244;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851002;
-		};
-		class Item115
+		class Item103
 		{
 			dataType="Group";
 			side="Civilian";
@@ -4639,7 +4034,7 @@ class Mission
 			id=245;
 			atlOffset=43.851002;
 		};
-		class Item116
+		class Item104
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4656,310 +4051,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851002;
 		};
-		class Item117
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7125.6685,-41.189564,7445.6855};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=250;
-					type="C_man_1_1_F";
-					atlOffset=-43.851002;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7125.6685,-40.584858,7444.7056};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=4;
-					class Attributes
-					{
-					};
-					id=251;
-					type="C_man_1_1_F";
-					atlOffset=-43.246296;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_17";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=250;
-						item1=252;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=251;
-						item1=252;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=249;
-			atlOffset=43.851002;
-		};
-		class Item118
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7126.8193,47.115707,7440.0854};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=252;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851002;
-		};
-		class Item119
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7100.7017,-41.189564,7550.2334};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=254;
-					type="C_man_1_1_F";
-					atlOffset=-43.851002;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7100.7017,-40.584858,7549.2534};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=4;
-					class Attributes
-					{
-					};
-					id=255;
-					type="C_man_1_1_F";
-					atlOffset=-43.246296;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_18";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=254;
-						item1=256;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=255;
-						item1=256;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=253;
-			atlOffset=43.851002;
-		};
-		class Item120
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7101.8525,47.115707,7544.6333};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=256;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851002;
-		};
-		class Item121
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7088.2183,-41.189564,7642.2998};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=258;
-					type="C_man_1_1_F";
-					atlOffset=-43.851002;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={7088.2183,-40.584858,7641.3198};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=4;
-					class Attributes
-					{
-					};
-					id=259;
-					type="C_man_1_1_F";
-					atlOffset=-43.246296;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_19";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=258;
-						item1=260;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=259;
-						item1=260;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=257;
-			atlOffset=43.851002;
-		};
-		class Item122
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7089.3691,47.115707,7636.6997};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=260;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851002;
-		};
-		class Item123
+		class Item105
 		{
 			dataType="Group";
 			side="Civilian";
@@ -5043,7 +4135,7 @@ class Mission
 			id=261;
 			atlOffset=43.851002;
 		};
-		class Item124
+		class Item106
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5060,7 +4152,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851002;
 		};
-		class Item125
+		class Item107
 		{
 			dataType="Group";
 			side="Civilian";
@@ -5144,7 +4236,7 @@ class Mission
 			id=265;
 			atlOffset=43.851158;
 		};
-		class Item126
+		class Item108
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5161,7 +4253,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851158;
 		};
-		class Item127
+		class Item109
 		{
 			dataType="Group";
 			side="Civilian";
@@ -5245,7 +4337,7 @@ class Mission
 			id=269;
 			atlOffset=43.851158;
 		};
-		class Item128
+		class Item110
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5262,411 +4354,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851158;
 		};
-		class Item129
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1727.2732,-30.399719,13400.61};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=274;
-					type="C_man_1_1_F";
-					atlOffset=-25.175751;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1727.2732,-29.795013,13399.63};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=4;
-					class Attributes
-					{
-					};
-					id=275;
-					type="C_man_1_1_F";
-					atlOffset=-24.612883;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_23";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=274;
-						item1=276;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=275;
-						item1=276;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=273;
-			atlOffset=43.851158;
-		};
-		class Item130
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1982.0095,57.905865,13096.881};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=276;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851158;
-		};
-		class Item131
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1783.4795,-30.399719,13452.259};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=278;
-					type="C_man_1_1_F";
-					atlOffset=-26.025187;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1783.4795,-29.795013,13451.278};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=4;
-					class Attributes
-					{
-					};
-					id=279;
-					type="C_man_1_1_F";
-					atlOffset=-25.453966;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_24";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=278;
-						item1=280;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=279;
-						item1=280;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=277;
-			atlOffset=43.851158;
-		};
-		class Item132
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2038.2158,57.905865,13148.529};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=280;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851158;
-		};
-		class Item133
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1859.4336,-30.399719,13514.543};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=282;
-					type="C_man_1_1_F";
-					atlOffset=-24.88558;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1859.4336,-29.795013,13513.563};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=4;
-					class Attributes
-					{
-					};
-					id=283;
-					type="C_man_1_1_F";
-					atlOffset=-24.35663;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_25";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=282;
-						item1=284;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=283;
-						item1=284;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=281;
-			atlOffset=43.851158;
-		};
-		class Item134
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2114.1699,57.905865,13210.813};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=284;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851158;
-		};
-		class Item135
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=2;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1929.3115,-30.399719,13569.23};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=6;
-					class Attributes
-					{
-					};
-					id=286;
-					type="C_man_1_1_F";
-					atlOffset=-24.465927;
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1929.3115,-29.795013,13568.251};
-						angles[]={0,5.5611601,0};
-					};
-					side="Civilian";
-					flags=4;
-					class Attributes
-					{
-					};
-					id=287;
-					type="C_man_1_1_F";
-					atlOffset=-23.936977;
-				};
-			};
-			class Attributes
-			{
-				name="OA_amb_traffic_26";
-				init="[this] call OA_fnc_AddTrafficToQueue;";
-				combatMode="BLUE";
-				behaviour="CARELESS";
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=2;
-				};
-				class Links
-				{
-					items=2;
-					class Item0
-					{
-						linkID=0;
-						item0=286;
-						item1=288;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=287;
-						item1=288;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-				};
-			};
-			id=285;
-			atlOffset=43.851158;
-		};
-		class Item136
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2184.0479,57.905865,13265.5};
-				angles[]={0,5.5611601,0};
-			};
-			side="Civilian";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=288;
-			type="C_Heli_Light_01_civil_F";
-			atlOffset=43.851158;
-		};
-		class Item137
+		class Item111
 		{
 			dataType="Group";
 			side="Civilian";
@@ -5750,7 +4438,7 @@ class Mission
 			id=289;
 			atlOffset=43.851002;
 		};
-		class Item138
+		class Item112
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5767,7 +4455,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851002;
 		};
-		class Item139
+		class Item113
 		{
 			dataType="Group";
 			side="Civilian";
@@ -5851,7 +4539,7 @@ class Mission
 			id=293;
 			atlOffset=43.851158;
 		};
-		class Item140
+		class Item114
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5868,7 +4556,7 @@ class Mission
 			type="C_Heli_Light_01_civil_F";
 			atlOffset=43.851158;
 		};
-		class Item141
+		class Item115
 		{
 			dataType="Marker";
 			position[]={7133.5835,2.6600001,7729.8735};
@@ -5896,7 +4584,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item142
+		class Item116
 		{
 			dataType="Marker";
 			position[]={7139.1045,2.6600001,7698.3638};
@@ -5924,7 +4612,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item143
+		class Item117
 		{
 			dataType="Marker";
 			position[]={7144.6504,2.6600001,7666.9399};
@@ -5952,7 +4640,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item144
+		class Item118
 		{
 			dataType="Marker";
 			position[]={7150.3779,2.6600001,7641.6196};
@@ -5980,7 +4668,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item145
+		class Item119
 		{
 			dataType="Marker";
 			position[]={7156.4482,2.6600001,7615.9985};
@@ -6008,7 +4696,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item146
+		class Item120
 		{
 			dataType="Marker";
 			position[]={7162.4526,2.6600001,7581.6943};
@@ -6036,7 +4724,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item147
+		class Item121
 		{
 			dataType="Marker";
 			position[]={7168.2056,2.6600001,7552.9839};
@@ -6064,7 +4752,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item148
+		class Item122
 		{
 			dataType="Marker";
 			position[]={7175.4409,2.6600001,7523.5474};
@@ -6092,7 +4780,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item149
+		class Item123
 		{
 			dataType="Marker";
 			position[]={7182.4019,2.6507826,7494.2109};
@@ -6120,7 +4808,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item150
+		class Item124
 		{
 			dataType="Marker";
 			position[]={7190.6055,2.6600001,7449.7026};
@@ -6148,7 +4836,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item151
+		class Item125
 		{
 			dataType="Marker";
 			position[]={7198.3267,2.6600001,7418.1978};
@@ -6176,7 +4864,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item152
+		class Item126
 		{
 			dataType="Marker";
 			position[]={7205.3721,2.7292798,7388.1304};
@@ -6204,7 +4892,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item153
+		class Item127
 		{
 			dataType="Marker";
 			position[]={7212.6943,2.9314382,7355.208};
@@ -6232,7 +4920,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item154
+		class Item128
 		{
 			dataType="Marker";
 			position[]={7223.1909,2.6600001,7307.8682};
@@ -6260,7 +4948,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item155
+		class Item129
 		{
 			dataType="Marker";
 			position[]={7229.9028,2.6600001,7271.0527};
@@ -6288,7 +4976,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item156
+		class Item130
 		{
 			dataType="Marker";
 			position[]={7055.2153,2.6600001,7400.8687};
@@ -6316,7 +5004,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item157
+		class Item131
 		{
 			dataType="Marker";
 			position[]={7095.2974,2.6600001,7222.0698};
@@ -6344,7 +5032,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item158
+		class Item132
 		{
 			dataType="Marker";
 			position[]={7039.4551,2.6600001,7541.0259};
@@ -6372,7 +5060,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item159
+		class Item133
 		{
 			dataType="Object";
 			class PositionInfo

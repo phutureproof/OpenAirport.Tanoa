@@ -35,7 +35,7 @@ if (isServer) then {
     _taskGetIn = [_player, 'Board Vehicle', "You have a job waiting! Get into a vehicle that can carry light cargo", _player, 'getin'] call OA_fnc_genericTask;
     waitUntil {
         sleep 1;
-        !(isNull objectParent _player) && ((vehicle player) isKindOf "Air")
+        !(isNull objectParent _player) && ((vehicle _player) isKindOf "Air")
     };
     [_taskGetIn] call BIS_fnc_deleteTask;
 	_vehicle = vehicle _player;

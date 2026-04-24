@@ -8,15 +8,13 @@ private _vehicleList = [];
 	_className = (configName _x);
 	_scope = getNumber (_x >> 'scope');
 	_numSeats = (getNumber (_x >> 'transportSoldier'));
-	_numTurrets = count ("true" configClasses (_x >> 'Turrets'));
-	_totalSeats = (_numSeats + _numTurrets) - 1;
 	_factionID = getText (_x >> 'faction');
 	_factionName = getText(configFile >> "CfgFactionClasses" >> _factionID >> "displayName");
 	_displayName = format ["%1 (%2)", getText (_x >> 'displayName'), _factionName];
 
-	if ( (_scope >= 2) && (_totalSeats > 1) ) then {
-		_price = (_basePrice * (_priceMultiplier * _totalSeats));
-		_vehicleList pushBack ["air", _className, _displayName, _totalSeats, _price];
+	if ( (_scope >= 2) && (_numSeats > 1) ) then {
+		_price = (_basePrice * (_priceMultiplier * _numSeats));
+		_vehicleList pushBack ["air", _className, _displayName, _numSeats, _price];
 	};
 
 } forEach _allVehicles;

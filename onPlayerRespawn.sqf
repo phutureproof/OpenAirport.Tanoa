@@ -30,3 +30,13 @@ if (!isNull _group) then {
 player setVariable ["OA_taskID", ""];
 player setVariable ["OA_hasTask", false];
 player setVariable ["OA_taskGroup", grpNull];
+
+// force the loading screen to close 
+_EndSplashScreen = {
+    for "_x" from 1 to 10 do {
+        endLoadingScreen;
+        sleep 5;
+    };
+};
+
+[] spawn _EndSplashScreen;

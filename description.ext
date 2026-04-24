@@ -22,6 +22,14 @@ class CfgFunctions
             class repairJob {};
         };
 
+        class Conditions {
+            class jobAtParachuteDest {};
+            class jobAtPassengerDest {};
+            class jobPlayerInPickupArea {};
+            class jobPlayerInVehicle {};
+            class jobUnitsInVehicle {};
+        };
+
         class Config
         {
             class initServerConfig {};
