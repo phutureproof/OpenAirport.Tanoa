@@ -102,7 +102,7 @@ if (isServer) then {
     };
 
     // passengers disembark
-    { unassignVehicle _x; _x orderGetIn false; } forEach (units _group);
+    { unassignVehicle _x; [_x] orderGetIn false; } forEach (units _group);
 
     waitUntil {
         sleep 1;

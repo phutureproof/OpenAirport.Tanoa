@@ -1,5 +1,6 @@
 // funds
-private _savedFunds = profileNamespace getVariable ["OA_airport_funds", 500000];
+private _startingFunds = missionNamespace getVariable ["OA_starting_funds", 0];
+private _savedFunds = profileNamespace getVariable ["OA_airport_funds", _startingFunds];
 missionNamespace setVariable ["OA_airport_funds", _savedFunds, true];
 
 // vehicles
@@ -16,5 +17,5 @@ private _vehicles = profileNamespace getVariable ["OA_airport_vehicles", []];
     _veh setDir _dir;
     _veh setFuel _fuel;
     _veh setDamage _damage;
-    sleep 0.5;
+    sleep 0.1;
 } forEach _vehicles;

@@ -25,9 +25,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={6957.2139,32.820778,7295.5679};
-		dir[]={-0.82173127,-0.56995845,-0.0076138536};
-		up[]={-0.56996721,0.82165194,-0.0052779638};
-		aside[]={-0.0092623942,3.601599e-10,1.0000279};
+		dir[]={-0.82166851,-0.56991482,-0.0076130666};
+		up[]={-0.56989038,0.82170379,-0.0052802479};
+		aside[]={-0.0092649776,0,0.99995708};
 	};
 };
 binarizationWanted=0;
@@ -239,17 +239,16 @@ class Mission
 		overviewText="OpenAirport";
 		startWeather=0;
 		startWind=0.097594045;
-		startWindDir=145;
 		startGust=0.10182983;
 		forecastWeather=0;
 		forecastWind=0.10182983;
 		forecastWaves=0;
 		forecastGust=0.097594045;
-		forecastWindDir=320;
+		windForced=1;
 		year=2026;
 		month=6;
 		day=5;
-		hour=6;
+		minute=-15;
 		startFogBase=-1000;
 		forecastFogBase=-1000;
 		startFogDecay=0;

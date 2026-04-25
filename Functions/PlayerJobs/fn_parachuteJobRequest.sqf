@@ -17,7 +17,7 @@ if (isServer) then {
     // wait until player is in vehicle
     waitUntil {
         sleep 1;
-        ([_player, _vehicle] call OA_fnc_jobPlayerInVehicle)
+        ([_player] call OA_fnc_jobPlayerInVehicle)
     };
     
     _vehicle = vehicle _player;
@@ -48,11 +48,11 @@ if (isServer) then {
     } forEach (units _group);
 
     // create a task to wait for passengers
-    _taskLoad = [_player, 'Load Passengers', 'Move to the pickup zone and wait for all passengers to board', getMarkerPos "OA_pickupzone_marker", 'getin'] call OA_fnc_genericTask;
+    _taskLoad = [_player, 'Move To Pickup Area', 'Move to the pickup area and wait the passengers.', getMarkerPos "OA_pickupzone_marker", 'getin'] call OA_fnc_genericTask;
 
     waitUntil {
         sleep 1;
-        ([_player, _vehicle] call OA_fnc_jobPlayerAtPickupArea)
+        ([_player, _vehicle] call OA_fnc_jobPlayerInPickupArea)
     };
 
     [_taskLoad, "SUCCEEDED"] call BIS_fnc_taskSetState;
@@ -107,7 +107,7 @@ if (isServer) then {
     // passengers eject
     {
         unassignVehicle _x;
-        _x orderGetIn false;
+        [_x] orderGetIn false;
         _x action ["EJECT", _vehicle];
         if ( random(5) >= 2.5 ) then {
             _smokeTrail = createVehicle [selectRandom [
