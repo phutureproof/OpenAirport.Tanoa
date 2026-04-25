@@ -2,82 +2,107 @@ params ["_player"];
 
 if (isServer) then {
 
-    // add task to get into a vehicle
-    _taskGetIn = [_player, 'Board Vehicle', format["You have a job waiting! Get into a vehicle that can carry up to %1 passengers.", _maxPassengers], _player, 'getin' ] call OA_fnc_genericTask;
+    // sanity checks
+    // player already has a task
+    if (_player getVariable ["OA_hasTask", false]) exitWith {
+        ["You already have a job request"] remoteExec ["hint", _clientID];
+    };
 
-    // wait until player is in vehicle and has enough seats
+    _player setVariable ["OA_hasTask", true];
+
+    // add task to get into a vehicle
+    _taskGetIn = [_player, 'Board Vehicle', "You have a medical job waiting. Get into a helicopter. You may need help to complete this mission and you will need medical equipment which can be purchased from the shop.", [], 'getin' ] call OA_fnc_genericTask;
+    _numVehSeats = 0;
+
+    // wait until player is in vehicle
     waitUntil {
         sleep 1;
-        _inVehicle = !(isNull objectParent _player);
-        _numSeats = (vehicle _player emptyPositions "Cargo" >= _maxPassengers);
-
-        _inVehicle && _numSeats
+        ([_player] call OA_fnc_jobPlayerInVehicle)
     };
+
+    _vehicle = vehicle _player;
+    _numVehSeats = _vehicle emptyPositions "Cargo";
 
     // remove the task to board vehicle 
     [_taskGetIn, "SUCCEEDED"] call BIS_fnc_taskSetState;
     [_taskGetIn] call BIS_fnc_deleteTask;
 
-    _clientID = owner _player;
-    _vehicle = vehicle _player;
     _spawnPoint = getMarkerPos "civSpawn";
-    _dest = [] call OA_fnc_getHelicopterDestination;
+	_dest = [];
+    _doSmoke = false;
+	if (_vehicle isKindOf "Helicopter") then { _dest = [] call OA_fnc_getHelicopterDestination; _doSmoke = true; };
+	if (_vehicle isKindOf "Plane") then { _dest = [] call OA_fnc_getPlaneDestination; _doSmoke = false; };
 
-    _jobDistance = _spawnPoint distance getPos _dest;
+    _jobDistance = _spawnPoint distance _dest;
 
-    // sanity checks
-    // player already has a task
-    if (_player getVariable ["hasTask", false]) exitWith {
-        ["You already have a job request"] remoteExec ["hint", _clientID];
-    };
-
-    _player setVariable ["hasTask", true];
-
-    _seats = _vehicle emptyPositions "Cargo";
-    _numCivs = (1 + floor(random(_maxPassengers)));
     _group = createGroup civilian;
+    _player setVariable ["OA_taskGroup", _group];
 
     // spawn civilian group
-    for "_i" from 1 to _numCivs do {
-        [_group, _vehicle] call OA_fnc_spawnPassenger;
+    for "_i" from 1 to _numVehSeats do {
+        [_group, _spawnPoint] call OA_fnc_spawnPassenger;
+        sleep 0.1;
     };
-
-    // order them to get in
-    units _group orderGetIn true;
 
     // create a task to wait for passengers
-    _taskLoad = [_player, 'Load Passengers', 'Wait for all passengers to board', _vehicle, 'getin'] call OA_fnc_genericTask;
+    _taskLoad = [_player, 'Move To Pickup Area', 'Move to the pickup area and wait for the passengers.', getMarkerPos "OA_pickupzone_marker", 'getin'] call OA_fnc_genericTask;
 
-    // wait until all passengers are in the vehicle
     waitUntil {
         sleep 1;
-        _units = { alive _x } count(units _group);
-        _inVehicle = { _x in _vehicle } count (units _group);
-        _units == _inVehicle
+        ([_player, _vehicle] call OA_fnc_jobPlayerInPickupArea)
     };
+
     [_taskLoad, "SUCCEEDED"] call BIS_fnc_taskSetState;
     [_taskLoad] call BIS_fnc_deleteTask;
+
+    _taskPassengers = [_player, 'Wait For Passengers', 'Wait for the passengers to board your vehicle.', (leader _group), 'getin'] call OA_fnc_genericTask;
+
+    // order passengers to get in
+    { _x assignAsCargo _vehicle; [_x] orderGetIn true; } forEach (units _group);
+
+    // wait until all passengers are in the vehicle
+    _time = time;
+    waitUntil {
+        sleep 1;
+        ([_group, _vehicle] call OA_fnc_jobUnitsInVehicle)
+    };
+
+    [_taskPassengers, "SUCCEEDED"] call BIS_fnc_taskSetState;
+    [_taskPassengers] call BIS_fnc_deleteTask;
 
     // create task for player HUD
     _taskID = [_player, 'Transport Passengers', 'Transport the passengers to their destination', _dest, 'move'] call OA_fnc_genericTask;
     // save task to play incase of death 
-    _player setVariable ["taskID", _taskID];
+    _player setVariable ["OA_taskID", _taskID];
+
+    // when player gets near destination let off a smoke grenade 
+    waitUntil {
+        sleep 1;
+        _atDest = _vehicle distance _dest < 1000;
+        _atDest
+    };
+
+    _smoke = objNull;
+    if (_doSmoke) then {
+        _smoke = createVehicle [selectRandom [
+            "SmokeShell",
+            "SmokeShellRed",
+            "SmokeShellGreen",
+            "SmokeShellBlue",
+            "SmokeShellYellow",
+            "SmokeShellOrange",
+            "SmokeShellPurple"
+        ], _dest, [], 0, "CAN_COLLIDE"];
+    };
 
     // wait until we're at the destination 
     waitUntil {
         sleep 1;
-        _atDest = _vehicle distance _dest < 100;
-        _stopped = speed _vehicle < 1;
-        _grounded = isTouchingGround _vehicle;
-
-        _atDest && _stopped && _grounded
+        ([_vehicle, _dest] call OA_fnc_jobAtPassengerDest)
     };
 
     // passengers disembark
-    {
-        unassignVehicle _x;
-        moveOut _x;
-    } forEach (units _group);
+    { unassignVehicle _x; [_x] orderGetIn false; } forEach (units _group);
 
     waitUntil {
         sleep 1;
@@ -93,23 +118,23 @@ if (isServer) then {
     // complete the task
     [_taskID, "SUCCEEDED"] call BIS_fnc_taskSetState;
     [_taskID] call BIS_fnc_deleteTask;
-    _player setVariable ["taskID", false];
+    _player setVariable ["OA_taskID", false];
 
 
     // remove the hasTask flag
-    _player setVariable ["hasTask", false];
+    _player setVariable ["OA_hasTask", false];
 
     // create a payment
     _tip = random(floor(0.5 * _jobDistance));
-    _payment = _jobDistance * _numCivs + _tip;
+    _payment = (_jobDistance * _numVehSeats) + _tip;
     [_payment] call OA_fnc_updateFunds;
-    _distanceFormatted = _jobDistance / 1000;
+    _distanceFormatted = [_jobDistance] call OA_fnc_formatIntAsKilometers;
 
     _atcMessage = format [
-        "%1 has finished a job! Earning %2 for %3 passengers at a distance of %4km, and a tip of %5",
+        "%1 has finished a job! Earning %2 for %3 passengers at a distance of around %4, and a tip of %5",
         name _player,
         [_payment] call OA_fnc_formatIntAsCurrency,
-        _numCivs,
+        _numVehSeats,
         _distanceFormatted,
         [_tip] call OA_fnc_formatIntAsCurrency
     ];
@@ -135,4 +160,8 @@ if (isServer) then {
     } forEach (units _group);
 
     deleteGroup _group;
+
+    if (!(isNull _smoke)) then {
+        deleteVehicle _smoke;
+    };
 };
