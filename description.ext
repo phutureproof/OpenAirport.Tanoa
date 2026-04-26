@@ -38,8 +38,10 @@ class CfgFunctions
         class Data
         {
             class loadData {};
+            class loadPlayerData {};
             class resetSave {};
             class saveData {};
+            class savePlayerData {};
         };
 
         class Destinations

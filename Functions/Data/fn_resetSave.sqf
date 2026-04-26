@@ -13,6 +13,7 @@ _startingFunds = missionNamespace getVariable ["OA_starting_funds", 0];
 
 profileNamespace setVariable ["OA_airport_vehicles", nil];
 profileNamespace setVariable ["OA_airport_funds", nil];
+profileNamespace setVariable ["OA_player_data", nil];
 missionNamespace setVariable ["OA_airport_funds", _startingFunds, true];
 
 sleep 1;

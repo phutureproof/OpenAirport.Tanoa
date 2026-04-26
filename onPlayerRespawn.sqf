@@ -6,7 +6,6 @@ removeAllActions _oldUnit;
 
 _gameLogicChannel = missionNamespace getVariable ["OA_ATCMissionLogicChannelID", 0];
 _gameLogicChannel radioChannelAdd [player];
-setCurrentChannel _gameLogicChannel;
 
 // cleanup any tasks that were attached to the player
 _taskID = player getVariable ["OA_taskID", ""];
@@ -31,8 +30,13 @@ player setVariable ["OA_hasTask", false];
 player setVariable ["OA_taskGroup", grpNull];
 player setUnitTrait ["Medic", true];
 
-// remove parachute from player
-[player] remoteExec ["removeBackpack", 2];
+// handle player inventory saved on server 
+_hasLoadedInv = player getVariable ["OA_has_loaded_inv", false];
+if (!_hasLoadedInv) then {
+    [player] remoteExec ["OA_fnc_loadPlayerData", 2];
+    player setVariable ["OA_has_loaded_inv", true];
+};
+
 
 // force the loading screen to close 
 _EndSplashScreen = {
