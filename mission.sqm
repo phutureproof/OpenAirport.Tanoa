@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=31;
+		nextID=81;
 	};
 	class Camera
 	{
-		pos[]={6930.0273,5.9490924,7390.4766};
-		dir[]={-0.92668873,-0.34252584,-0.15467417};
-		up[]={-0.33785203,0.93950838,-0.056391086};
-		aside[]={-0.16463308,0,0.98635489};
+		pos[]={6916.8486,8.1376219,7285.7109};
+		dir[]={-0.60575789,-0.46014211,-0.64909679};
+		up[]={-0.31394514,0.88784528,-0.33640632};
+		aside[]={-0.73109221,0,0.68227863};
 	};
 };
 binarizationWanted=0;
@@ -3651,7 +3651,7 @@ class Mission
 				class Item2
 				{
 					dataType="Marker";
-					position[]={6957.7275,2.6600001,7256.1675};
+					position[]={6957.9385,2.6600001,7254.8057};
 					name="vehicleSpawn";
 					type="mil_objective";
 					colorName="ColorGreen";

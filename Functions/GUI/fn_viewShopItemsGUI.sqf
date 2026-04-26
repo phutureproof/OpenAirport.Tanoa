@@ -70,11 +70,11 @@ private _buttonHandler = {
             for "_i" from 1 to 5 do { player addItem "FirstAidKit"; };
         };
         case "quad": {
-            _type = "Keys";
-            if (_type in (items player + assignedItems player)) exitWith {
+            _ownsQuad = player getVariable["OA_transport_quad", false];
+            if (_ownsQuad) exitWith {
                 hint "You already own the transport quad";
             };
-            player addItem _type;
+            player setVariable ["OA_transport_quad", true];
         };
     };
 

@@ -1,6 +1,6 @@
 params ["_player", "_target"];
 
-if (isServer) exitWith {};
+if (!isServer) exitWith {};
 
 private _repairCost = missionNamespace getVariable ["OA_repair_cost", 0];
 private _formattedRepairCost = [_repairCost] call OA_fnc_formatIntAsCurrency;
