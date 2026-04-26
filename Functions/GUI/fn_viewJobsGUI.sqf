@@ -29,7 +29,13 @@ private _buttonHandler = {
         case "cargo": {
             _weight = _jobParams select 1;
             [_weight] spawn {
+                params ["_weight"];
                 [player, _weight] remoteExec ["OA_fnc_cargoJobRequest", 2];
+            };
+        };
+        case "medic": {
+            [] spawn {
+                [player] remoteExec ["OA_fnc_medicJobRequest", 2];
             };
         };
         default {

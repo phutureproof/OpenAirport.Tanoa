@@ -1,6 +1,5 @@
 // define configs for game mode 
-missionNamespace setVariable ["OA_vehicles", [], true];
-missionNamespace setVariable ["OA_starting_funds", 500000, true];
+missionNamespace setVariable ["OA_starting_funds", 0, true];
 
 // refuel / repair job costs
 missionNamespace setVariable ["OA_repair_cost", 10000, true];

@@ -118,11 +118,10 @@ if (isServer) then {
     // complete the task
     [_taskID, "SUCCEEDED"] call BIS_fnc_taskSetState;
     [_taskID] call BIS_fnc_deleteTask;
-    _player setVariable ["OA_taskID", false];
 
-
-    // remove the hasTask flag
+    // remove the task variables from the player
     _player setVariable ["OA_hasTask", false];
+    _player setVariable ["OA_taskGroup", nil];
 
     // create a payment
     _tip = random(floor(0.5 * _jobDistance));

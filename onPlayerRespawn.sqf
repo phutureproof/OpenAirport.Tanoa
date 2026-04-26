@@ -4,10 +4,9 @@ params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 removeAllActions _oldUnit;
 [_newUnit] call OA_fnc_playerActions;
 
-_newUnit linkItem "ItemRadio";
-_atcChannel = missionNamespace getVariable ["OA_ATCRadioChannelID", 0];
-_atcChannel radioChannelAdd [player];
-[_atcChannel] remoteExec ["setCurrentChannel", owner _newUnit];
+_gameLogicChannel = missionNamespace getVariable ["OA_ATCMissionLogicChannelID", 0];
+_gameLogicChannel radioChannelAdd [player];
+setCurrentChannel _gameLogicChannel;
 
 // cleanup any tasks that were attached to the player
 _taskID = player getVariable ["OA_taskID", ""];
@@ -30,6 +29,10 @@ if (!isNull _group) then {
 player setVariable ["OA_taskID", ""];
 player setVariable ["OA_hasTask", false];
 player setVariable ["OA_taskGroup", grpNull];
+player setUnitTrait ["Medic", true];
+
+// remove parachute from player
+[player] remoteExec ["removeBackpack", 2];
 
 // force the loading screen to close 
 _EndSplashScreen = {

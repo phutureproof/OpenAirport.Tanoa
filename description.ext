@@ -58,6 +58,7 @@ class CfgFunctions
         {
             class genericListGUI {};
             class viewJobsGUI {};
+            class viewShopItemsGUI {};
             class viewShopHelicopterGUI {};
             class viewShopPlaneGUI {};
         };
@@ -93,6 +94,7 @@ class CfgFunctions
         {
             class initCustomRadioChannels {};
             class sendATCMsg {};
+            class sendGlobalMsg {};
         };
         
         class Shops
