@@ -11,7 +11,7 @@ A cooperative sandbox mission for ArmA 3
 - Passenger missions
 - Parachute missions
 - Medical missions
-- Cargo mission
+- Cargo missions
 - ATC system
 - Support for any mod that adds vehicles (CUPS, RHCS, etc)
 - Support for ALiVE (not required)
