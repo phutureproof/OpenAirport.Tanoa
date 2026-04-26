@@ -14,7 +14,7 @@ _player addAction ["<t color='#00FF00'>Request Airport Balance</t>", {
 	_formattedFunds = [_funds] call OA_fnc_formatIntAsCurrency;
 	_atcMsg = format ["Requesting airport balance, over."];
 	[_atcMsg, _caller] call OA_fnc_sendATCMsg;
-	sleep (1 + round(2));
+	sleep (1 + round(random(3)));
 	_atcMsg = format ["Roger that %1, current balance is %2", name _caller, _formattedFunds];
 	[_atcMsg] call OA_fnc_sendATCMsg;
 }, [], _menuPriority, false, true, "", '("ItemRadio" in (items _this + assignedItems _this))'];
@@ -26,12 +26,18 @@ _player addAction ["<t color='#00FF00'>Transport Quad</t>", {
 
 _player addAction [ format ["<t color='#00FF00'>Request Refuel (%1)</t>", _formattedRefuelCost], {
 	params ["_target", "_caller"];
+	_atcMsg = format ["This is %1 requesting a refuel at vehicle %2, over.", name _caller, getText (configFile >> "CfgVehicles" >> typeOf (vehicle _caller) >> "displayName")];
+	[_atcMsg, _caller] call OA_fnc_sendATCMsg;
+	sleep (1 + round(random(3)));
 	["refuel", _caller, vehicle _caller] remoteExec ["OA_fnc_addRefuelJobToQueue", 2];
-}, [], _menuPriority, false, true, "", "!(isNull objectParent _this) && (vehicle _this isKindOf 'Air') && (_this distance (getMarkerPos 'civSpawn') < 1000)"];
+}, [], _menuPriority, false, true, "", "!(isNull objectParent _this) && ('ItemRadio' in (items _this + assignedItems _this)) && (vehicle _this isKindOf 'Air') && (_this distance (getMarkerPos 'civSpawn') < 500)"];
 
 _player addAction [ format ["<t color='#00FF00'>Request Repair (%1)</t>", _formattedRepairCost], {
 	params ["_target", "_caller"];
+	_atcMsg = format ["This is %1 requesting a repair at vehicle %2, over.", name _caller, getText (configFile >> "CfgVehicles" >> typeOf (vehicle _caller) >> "displayName")];
+	[_atcMsg, _caller] call OA_fnc_sendATCMsg;
+	sleep (1 + round(random(3)));
 	["repair", _caller, vehicle _caller] remoteExec ["OA_fnc_addRepairJobToQueue", 2];
-}, [], _menuPriority, false, true, "", "!(isNull objectParent _this) && (vehicle _this isKindOf 'Air') && (_this distance (getMarkerPos 'civSpawn') < 1000)"];
+}, [], _menuPriority, false, true, "", "!(isNull objectParent _this) && ('ItemRadio' in (items _this + assignedItems _this)) && (vehicle _this isKindOf 'Air') && (_this distance (getMarkerPos 'civSpawn') < 500)"];
 
 _player addAction ["================", {}, [], _menuPriority, false, true, "", "!(isNull objectParent _this) && (vehicle _this isKindOf 'Air') "];

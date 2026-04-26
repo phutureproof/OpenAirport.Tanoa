@@ -26,21 +26,26 @@ private _buttonHandler = {
         hint "Not enough money to buy item";
     };
 
+    _doPurchase = false;
+
     switch (_objType) do {
         case "helmet": {
             _type = (selectRandom ["H_PilotHelmetHeli_I_E", "H_PilotHelmetFighter_I_E", "H_PilotHelmetHeli_I", "H_PilotHelmetHeli_O", "H_PilotHelmetHeli_B"]);
             removeHeadgear player;
             player addHeadgear _type;
+            _doPurchase = true;
         };
         case "uniform": {
             _type = (selectRandom ["U_I_HeliPilotCoveralls", "U_I_E_Uniform_01_coveralls_F", "U_B_HeliPilotCoveralls"]);
             removeUniform player;
             player forceAddUniform _type;
+            _doPurchase = true;
         };
         case "backpack": {
             _type = (selectRandom ["B_TacticalPack_ocamo", "B_TacticalPack_blk", "B_TacticalPack_rgr", "B_TacticalPack_mcamo", "B_TacticalPack_oli"]);
             removeBackpack player;
             player addBackpack _type;
+            _doPurchase = true;
         };
         case "gps": {
             _type = "ItemGPS";
@@ -48,6 +53,7 @@ private _buttonHandler = {
                 hint "You already own a GPS";
             };
             player linkItem _type;
+            _doPurchase = true;
         };
         case "radio": {
             _type = "ItemRadio";
@@ -58,16 +64,20 @@ private _buttonHandler = {
             _atcChannel = missionNamespace getVariable ["OA_ATCRadioChannelID", 0];
             _atcChannel radioChannelAdd [player];
             [_atcChannel] remoteExec ["setCurrentChannel", owner player];
+            _doPurchase = true;
         };
         case "nvgoggles": {
             _type = (selectRandom ["NVGoggles_OPFOR", "NVGoggles", "NVGoggles_INDEP", "NVGoggles_tna_F"]);
             player linkItem _type;
+            _doPurchase = true;
         };
         case "firstaidkit": {
             player addItem "FirstAidKit";
+            _doPurchase = true;
         };
         case "firstaidkitx5": {
             for "_i" from 1 to 5 do { player addItem "FirstAidKit"; };
+            _doPurchase = true;
         };
         case "quad": {
             _ownsQuad = player getVariable["OA_transport_quad", false];
@@ -75,18 +85,21 @@ private _buttonHandler = {
                 hint "You already own the transport quad";
             };
             player setVariable ["OA_transport_quad", true];
+            _doPurchase = true;
         };
     };
 
     // handle price and show messages
-    [(-1 * _objPrice)] remoteExec ["OA_fnc_updateFunds", 2];
-    _atcMsg = format [
-        "%1 spent %2 on %3",
-        name player,
-        [_objPrice] call OA_fnc_formatIntAsCurrency,
-        _objName
-    ];
-    [_atcMsg] call OA_fnc_sendATCMsg;
+    if (_doPurchase) then {
+        [(-1 * _objPrice)] remoteExec ["OA_fnc_updateFunds", 2];
+        _atcMsg = format [
+            "%1 spent %2 on %3",
+            name player,
+            [_objPrice] call OA_fnc_formatIntAsCurrency,
+            _objName
+        ];
+        [_atcMsg] call OA_fnc_sendATCMsg;
+    };
 };
 
 [_listData, _buttonText, _buttonHandler] call OA_fnc_genericListGUI;
