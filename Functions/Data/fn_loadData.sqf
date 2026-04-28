@@ -1,8 +1,12 @@
+if (!isServer) exitWith {};
+
 ["Loading game state"] call OA_fnc_sendGlobalMsg;
 // funds
 private _startingFunds = profileNamespace getvariable ["OA_starting_funds", 0];
 private _savedFunds = profileNamespace getVariable ["OA_airport_funds", _startingFunds];
 missionNamespace setVariable ["OA_airport_funds", _savedFunds, true];
+private _playerStartingBalance = profileNamespace getVariable ["OA_player_starting_balance", 0];
+missionNamespace setVariable ["OA_player_starting_balance", _playerStartingBalance, true];
 
 // vehicles
 private _vehicles = profileNamespace getVariable ["OA_airport_vehicles", []];
@@ -25,7 +29,7 @@ if (count _vehicles == 0) then {
         _skins = _x select 5;
 
         _veh = createVehicle [_type, _pos, [], 0, "NONE"];
-        _veh setVehiclePosition [_pos, [], 10, "NONE"];
+        _veh setVehiclePosition [_pos, [], 0, "NONE"];
         _veh setCaptive true;
         _veh setDir _dir;
         _veh setFuel _fuel;
@@ -35,4 +39,5 @@ if (count _vehicles == 0) then {
         sleep 0.1;
     } forEach _vehicles;
 };
+
 ["Game state loaded"] call OA_fnc_sendGlobalMsg;

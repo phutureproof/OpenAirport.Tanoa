@@ -8,6 +8,13 @@ private _formattedRefuelCost = [_refuelCost] call OA_fnc_formatIntAsCurrency;
 private _repairCost = missionNamespace getVariable ["OA_repair_cost", 0];
 private _formattedRepairCost = [_repairCost] call OA_fnc_formatIntAsCurrency;
 
+_player addAction ["<t color='#00FF00'>Check Wallet</t>", {
+	params ["_target", "_caller"];
+	_funds = _caller getVariable ["OA_player_money", 0];
+	_formattedFunds = [_funds] call OA_fnc_formatIntAsCurrency;
+	hint format ["Personal funds: %1", _formattedFunds];
+}, [], _menuPriority, false, true, "", 'true'];
+
 _player addAction ["<t color='#00FF00'>Request Airport Balance</t>", {
 	params ["_target", "_caller"];
 	_funds = missionNamespace getVariable ["OA_airport_funds", 0];
@@ -39,5 +46,3 @@ _player addAction [ format ["<t color='#00FF00'>Request Repair (%1)</t>", _forma
 	sleep (1 + round(random(3)));
 	["repair", _caller, vehicle _caller] remoteExec ["OA_fnc_addRepairJobToQueue", 2];
 }, [], _menuPriority, false, true, "", "!(isNull objectParent _this) && ('ItemRadio' in (items _this + assignedItems _this)) && (vehicle _this isKindOf 'Air') && (_this distance (getMarkerPos 'civSpawn') < 500)"];
-
-_player addAction ["================", {}, [], _menuPriority, false, true, "", "!(isNull objectParent _this) && (vehicle _this isKindOf 'Air') "];

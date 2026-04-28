@@ -61,15 +61,17 @@ if (isServer) then {
 
 	// calculate payment
 	_payment = _jobDistance * _multiplier;
+	_tip = floor((_payment * 0.1) + random(_payment * 0.5));
     [_payment] call OA_fnc_updateFunds;
 
 	// ATC message
     _atcMessage = format [
-        "%1 has finished a job! Earning %2 for cargo delivered with a %3x multiplier at a distance of around %4",
+        "%1 has finished a job! Earning %2 for cargo delivered with a %3x multiplier at a distance of around %4 and a tip of %5",
         name _player,
         [_payment] call OA_fnc_formatIntAsCurrency,
 		_multiplier,
-        [_jobDistance] call OA_fnc_formatIntAsKilometers
+        [_jobDistance] call OA_fnc_formatIntAsKilometers,
+		[_tip] call OA_fnc_formatIntAsCurrency
     ];
     [_atcMessage] call OA_fnc_sendATCMsg;
 

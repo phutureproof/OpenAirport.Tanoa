@@ -1,4 +1,4 @@
-params ["_vehicle", ["_damage", 0.45], ["_fuel", 0.5]];
+params ["_vehicle", ["_damage", 0.45], ["_fuel", 0.35]];
 
 if (!isServer) exitWith {};
 
@@ -8,7 +8,7 @@ _veh = createVehicle [_vehicle, getMarkerPos "vehicleSpawn", [], 0, "NONE"];
 _veh setCaptive true;
 _veh setFuel _fuel;
 _veh setDamage _damage;
-_veh setVariable ["OA_airport_vehicle", true];
+_veh setVariable ["OA_airport_vehicle", true, true];
 
 _vehicles pushBack [
 	typeOf _veh,
@@ -20,3 +20,4 @@ _vehicles pushBack [
 ];
 
 profileNamespace setVariable ["OA_airport_vehicles", _vehicles];
+saveProfileNamespace;

@@ -124,9 +124,10 @@ if (isServer) then {
     _player setVariable ["OA_taskGroup", nil];
 
     // create a payment
-    _tip = random(floor(0.5 * _jobDistance));
-    _payment = (_jobDistance * _numVehSeats) + _tip;
+    _payment = (_jobDistance * _numVehSeats);
+    _tip = floor((_payment * 0.1) + random(_payment * 0.5));
     [_payment] call OA_fnc_updateFunds;
+    [_player, _tip] call OA_fnc_updatePlayerFunds;
     _distanceFormatted = [_jobDistance] call OA_fnc_formatIntAsKilometers;
 
     _atcMessage = format [

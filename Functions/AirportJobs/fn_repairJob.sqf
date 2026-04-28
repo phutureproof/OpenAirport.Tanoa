@@ -5,7 +5,7 @@ if (!isServer) exitWith {};
 private _repairCost = missionNamespace getVariable ["OA_repair_cost", 0];
 private _formattedRepairCost = [_repairCost] call OA_fnc_formatIntAsCurrency;
 
-private _funds = profileNamespace getVariable ["OA_airport_funds", 0];
+private _funds = missionNamespace getVariable ["OA_airport_funds", 0];
 if (_funds < _repairCost) exitWith {"Not enough money to repair" remoteExec ["hint", owner _player]};
 
 private _crew = repairCrew;
