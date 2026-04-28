@@ -5,7 +5,7 @@ if (!isServer) exitWith {};
 private _refuelCost = missionNamespace getVariable ["OA_refuel_cost", 0];
 private _formattedRefuelCost = [_refuelCost] call OA_fnc_formatIntAsCurrency;
 
-private _funds = profileNamespace getVariable ["OA_airport_funds", 0];
+private _funds = missionNamespace getVariable ["OA_airport_funds", 0];
 if (_funds < _refuelCost) exitWith {"Not enough money to refuel" remoteExec ["hint", owner _player]};
 
 private _crew = refuelCrew;

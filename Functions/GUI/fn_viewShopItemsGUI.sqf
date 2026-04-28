@@ -20,7 +20,7 @@ private _buttonHandler = {
     _objPrice = parseNumber (_objParams select 1);
     _objName = (_objParams select 2);
 
-    _currentFunds = missionNamespace getVariable ["OA_airport_funds", 0];
+    _currentFunds = player getVariable ["OA_player_money", 0];
 
     if (_currentFunds < _objPrice) exitWith {
         hint "Not enough money to buy item";
@@ -91,7 +91,7 @@ private _buttonHandler = {
 
     // handle price and show messages
     if (_doPurchase) then {
-        [(-1 * _objPrice)] remoteExec ["OA_fnc_updateFunds", 2];
+        [player, (-1 * _objPrice)] remoteExec ["OA_fnc_updatePlayerFunds", 2];
         _atcMsg = format [
             "%1 spent %2 on %3",
             name player,

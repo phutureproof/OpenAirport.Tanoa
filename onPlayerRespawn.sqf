@@ -1,5 +1,7 @@
 params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 
+waitUntil {hasInterface && time > 5};
+
 // handle actions on old and new player objects
 removeAllActions _oldUnit;
 [_newUnit] call OA_fnc_playerActions;

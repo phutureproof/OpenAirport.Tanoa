@@ -1,6 +1,11 @@
+if (!isServer) exitWith {};
+
 params ["_player"];
 
-if (!isServer) exitWith {};
+waitUntil {
+	sleep 1;
+	!isNil "OA_reset_from_params" && !isNil "OA_player_starting_balance_from_params"
+};
 
 _allPlayerData = profileNamespace getVariable ["OA_player_data", []];
 _uid = getPlayerUID _player;
@@ -16,12 +21,14 @@ _playerData = [];
 } forEach _allPlayerData;
 
 if (count _playerData == 0) exitWith {
-	_atcMsg = format ["Welcome to the server %1, please check the briefing screen for game mode information.", name _player];
-	[_atcMsg] call OA_fnc_sendGlobalMsg;
+	_startingBalance = missionNamespace getVariable ["OA_player_starting_balance", 0];
+	[_player, _startingBalance] call OA_fnc_updatePlayerFunds;
+	_msg = format ["Welcome to the server %1, please check the briefing screen for game mode information.", name _player];
+	[_msg] call OA_fnc_sendGlobalMsg;
 };
 
-_atcMsg = format ["Welcome back %1! Enjoy your stay with us. Don't forget to check the briefing screen for game mode information.", name _player];
-[_atcMsg] call OA_fnc_sendGlobalMsg;
+_msg = format ["Welcome back %1! Enjoy your stay with us. Don't forget to check the briefing screen for game mode information.", name _player];
+[_msg] call OA_fnc_sendGlobalMsg;
 
 [[_playerData], {
 	params ["_playerData"];
@@ -38,11 +45,15 @@ _atcMsg = format ["Welcome back %1! Enjoy your stay with us. Don't forget to che
 		["_vestItems", []],
 		["_backpackItems", []],
 		["_weapons", []],
-		["_hasQuad", false]
+		["_hasQuad", false],
+		["_money", 0]
 	];
 
 	// quad is a special case
-	if(_hasQuad) then { player setVariable ["OA_transport_quad", true]; };
+	if(_hasQuad) then { player setVariable ["OA_transport_quad", true, true]; };
+
+	// money is a special case 
+	player setVariable ["OA_player_money", _money, true];
 
 	// remove all items from player
 	removeAllWeapons player;

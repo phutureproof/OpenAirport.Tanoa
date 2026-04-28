@@ -1,10 +1,10 @@
 if (!isServer) exitWith {};
 if (!isClass (configFile >> "CfgPatches" >> "ALiVE_main")) exitWith {};
 
-["ALiVE Mod is loaded, initialising."] call OA_fnc_sendATCmsg;
+["ALiVE Mod is loaded, initialising."] call OA_fnc_sendGlobalMsg;
 private _aliveGroup = createGroup sideLogic;
 
-["Creating ALiVE require system."] call OA_fnc_sendATCmsg;
+["Creating ALiVE require system."] call OA_fnc_sendGlobalMsg;
 "ALiVE_require" createUnit [[0,0,0], _aliveGroup, '
 	this setVariable ["ALiVE_GC_THRESHHOLD", "100", true];
 	this setVariable ["ALiVE_GC_INTERVAL", "300", true];
@@ -21,7 +21,7 @@ private _aliveGroup = createGroup sideLogic;
 '];
 sleep 3;
 
-["Creating ALiVE system profile."] call OA_fnc_sendATCmsg;
+["Creating ALiVE system profile."] call OA_fnc_sendGlobalMsg;
 "ALiVE_sys_profile" createUnit [[0,0,0], _aliveGroup, '
 	this setVariable ["virtualcombat_speedmodifier", "0.75", true];
 	this setVariable ["spawnTypeJetRadius", "2500", true];
@@ -42,7 +42,7 @@ sleep 3;
 '];
 sleep 1;
 
-["Creating ALiVE weather system."] call OA_fnc_sendATCmsg;
+["Creating ALiVE weather system."] call OA_fnc_sendGlobalMsg;
 "ALiVE_sys_weather" createUnit[[0,0,0], _aliveGroup, '
 	this setVariable ["weather_cycle_variance_setting", 0.5, true];
 	this setVariable ["weather_debug_cycle_setting", 60, true];
@@ -57,7 +57,7 @@ sleep 1;
 
 /*
 
-["Creating ALiVE civilian population system."] call OA_fnc_sendATCmsg;
+["Creating ALiVE civilian population system."] call OA_fnc_sendGlobalMsg;
 "ALiVE_amb_civ_population" createUnit [[0,0,0], _aliveGroup, '
 	this setVariable ["disableACEX", 0, true];
 	this setVariable ["ambientCrowdSpawn", "50", true];
@@ -84,7 +84,7 @@ sleep 1;
 '];
 sleep 1;
 
-["Creating ALiVE civilian placement system."] call OA_fnc_sendATCmsg;
+["Creating ALiVE civilian placement system."] call OA_fnc_sendGlobalMsg;
 "ALiVE_amb_civ_placement" createUnit [[0,0,0], _aliveGroup, '
 	this setVariable ["taor", "", true];
 	this setVariable ["initialdamage", "false", true];

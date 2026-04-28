@@ -2,6 +2,9 @@
 respawn = 3;            // respawn on custom marker position
 respawnOnStart = 0;     // dont respawn but run the player respawn event
 enableDebugConsole = 1;
+saving = 0;
+author = "Close";
+onLoadName = "OpenAirport";
 
 // Define our custom functions / scripts
 class CfgFunctions
@@ -54,6 +57,7 @@ class CfgFunctions
         {
             class showFunds {};
             class updateFunds {};
+            class updatePlayerFunds {};
         };
 
         class GUI
@@ -70,6 +74,14 @@ class CfgFunctions
             class initAlive {
                 postInit = 1;
             };
+        };
+
+        class Params {
+            class doResetFromParams {};
+            class doSetTimeFromParams {};
+            class doSetWeatherFromParams {};
+            class doPlayerStartingBalanceFromParams {};
+            class doStartingBalanceFromParams {};
         };
 
         class PlayerJobs
@@ -124,5 +136,63 @@ class CfgFunctions
             class formatIntAsCurrency {};
             class formatIntAsKilometers {};
         };
+    };
+};
+
+// mission start parameters
+class Params {
+
+    class MissionSep {
+        title = "===== Mission Settings =====";
+        texts[] = {""};
+        values[] = {0};
+        default = 0;
+    };
+
+    class StartTime {
+        title = "Starting Hour";
+        texts[] = { "Mission saved setting", "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00" };
+        values[] = { 24, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 };
+        default = 24;
+        function = "OA_fnc_doSetTimeFromParams";
+    };
+
+    class Weather {
+        title = "Weather";
+        texts[] = { "Mission saved setting", "Clear", "Cloudy", "Overcast", "Rainy", "Stormy" };
+        values[] = { 200, 0, 20, 50, 80, 100 };
+        default = 200;
+        function = "OA_fnc_doSetWeatherFromParams";
+    };
+
+    class SaveSep {
+        title = "===== Save Settings =====";
+        texts[] = {""};
+        values[] = {0};
+        default = 0;
+    };    
+
+    class ResetSave {
+        title = "Reset Save Data";
+        texts[] = { "No", "Yes" };
+        values[] = { 0, 1 };
+        default = 0;
+        function = "OA_fnc_doResetFromParams";
+    };
+
+    class StartingBalance {
+        title = "Airport Starting Balance (must reset save data)";
+        texts[] = { "$0", "$100,000", "$250,000", "$500,000" };
+        values[] = { 0, 100000, 250000, 500000 };
+        default = 0;
+        function = "OA_fnc_doStartingBalanceFromParams";
+    };
+
+    class PlayerFunds {
+        title = "Player Starting Balance (must reset save data)";
+        texts[] = { "$0", "$10,000", "$25,000", "$50,000" };
+        values[] = { 0, 10000, 25000, 50000 };
+        default = 0;
+        function = "OA_fnc_doPlayerStartingBalanceFromParams";
     };
 };

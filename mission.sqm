@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1025;
+	toggles=1537;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=101;
+		nextID=161;
 	};
 	class Camera
 	{
-		pos[]={6916.8486,8.1376219,7285.7109};
-		dir[]={-0.80331278,-0.47617313,-0.35769787};
-		up[]={-0.43499774,0.8793515,-0.19369511};
-		aside[]={-0.40677458,0,0.91352856};
+		pos[]={6918.2539,10.405052,7291.166};
+		dir[]={-0.5806275,-0.44333395,-0.68288118};
+		up[]={-0.2871758,0.89635652,-0.33775002};
+		aside[]={-0.76184106,0,0.64776403};
 	};
 };
 binarizationWanted=0;
@@ -183,6 +183,7 @@ randomSeed=9619285;
 class ScenarioData
 {
 	author="Close";
+	overviewText="A cooperative sandbox mission";
 	disabledAI=1;
 	joinUnassigned=0;
 	respawn=3;
@@ -240,11 +241,216 @@ class CustomAttributes
 		};
 		nAttributes=3;
 	};
+	class Category1
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="ENH_introText";
+			expression="                if (!is3DEN && (_value # 0) > 0 && hasInterface) then                {                    _value spawn                    {                        scriptName 'ENH_Attribute_IntroText';                        params ['_delay', '_l1', '_l2', '_l3', '_type'];                        _l1 = _l1 call BIS_fnc_localize;                        _l2 = _l2 call BIS_fnc_localize;                        _l3 = _l3 call BIS_fnc_localize;                        uiSleep _delay;                        switch _type do                        {                            case 0:                            {                                private _text = parseText format                                [                                    ""<t align='right' size='1.6'><t font='PuristaBold' size='1.8'>%1<br/></t>%2<br/>%3</t>"",                                    _l1,                                    _l2,                                    _l3                                ];                                [_text, true] spawn BIS_fnc_textTiles;                            };                            case 1:                            {                                [_l1, _l2, _l3] spawn BIS_fnc_infoText;                            };                            case 2:                            {                                [_l1, _l2, _l3] spawn BIS_fnc_EXP_camp_SITREP;                            };                        };                    };                }";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+					class value
+					{
+						items=5;
+						class Item0
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0;
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								singleType="STRING";
+								value="OpenAirport";
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								singleType="STRING";
+								value="by Close";
+							};
+						};
+						class Item3
+						{
+							class data
+							{
+								singleType="STRING";
+								value="06:45";
+							};
+						};
+						class Item4
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0;
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="ENH_Briefing_Civilian_Signal";
+			expression="if (!is3DEN && hasInterface && _value != '') then {_value spawn {scriptName 'ENH_Briefing_Civilian_Signal'; waitUntil {!isNull player}; if (side player == civilian) then {sleep 0.4; player createDiaryRecord ['Diary', [localize 'STR_A3_DIARY_SIGNAL_TITLE', _this call BIS_fnc_localize]]}}};";
+			class Value
+			{
+				class data
+				{
+					singleType="STRING";
+					value="ATC - ATC channel" \n "Mission Logic - Info regarding various game systems";
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="ENH_Briefing_Civilian_Situation";
+			expression="if (!is3DEN && hasInterface && _value != '') then {_value spawn {scriptName 'ENH_Briefing_Civilian_Situation'; waitUntil {!isNull player}; if (side player == civilian) then {sleep 0.1; player createDiaryRecord ['Diary', [localize 'STR_A3_DIARY_SITUATION_TITLE', _this call BIS_fnc_localize]]}}};";
+			class Value
+			{
+				class data
+				{
+					singleType="STRING";
+					value="Welcome to OpenAirport, a cooperative sandbox mission.";
+				};
+			};
+		};
+		class Attribute3
+		{
+			property="ENH_establisingShot";
+			expression="if (!is3DEN && ((_value # 0) isNotEqualTo [0, 0, 0]) && hasInterface) then {_value spawn BIS_fnc_establishingShot}";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+					class value
+					{
+						items=6;
+						class Item0
+						{
+							class data
+							{
+								singleType="ARRAY";
+								class value
+								{
+									items=3;
+									class Item0
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0;
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0;
+										};
+									};
+									class Item2
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0;
+										};
+									};
+								};
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Tanoa";
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=500;
+							};
+						};
+						class Item3
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=200;
+							};
+						};
+						class Item4
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=60;
+							};
+						};
+						class Item5
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0;
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute4
+		{
+			property="ENH_Briefing_Civilian_Execution";
+			expression="if (!is3DEN && hasInterface && _value != '') then {_value spawn {scriptName 'ENH_Briefing_Civilian_Execution'; waitUntil {!isNull player}; if (side player == civilian) then {sleep 0.3; player createDiaryRecord ['Diary', [localize 'STR_A3_DIARY_EXECUTION_TITLE', _this call BIS_fnc_localize]]}}};";
+			class Value
+			{
+				class data
+				{
+					singleType="STRING";
+					value="Take jobs to earn money for the airport company and a little bit for yourself in the manner of tips." \n "" \n "Use the shop to buy new vehicles and spend your personal money on items.";
+				};
+			};
+		};
+		class Attribute5
+		{
+			property="ENH_Briefing_Civilian_Mission";
+			expression="if (!is3DEN && hasInterface && _value != '') then {_value spawn {scriptName 'ENH_Briefing_Civilian_Mission'; waitUntil {!isNull player}; if (side player == civilian) then {sleep 0.2; player createDiaryRecord ['Diary', [localize 'STR_A3_DIARY_MISSION_TITLE', _this call BIS_fnc_localize]]}}};";
+			class Value
+			{
+				class data
+				{
+					singleType="STRING";
+					value="Do jobs to make money for the airport company";
+				};
+			};
+		};
+		nAttributes=6;
+	};
 };
 class Mission
 {
 	class Intel
 	{
+		briefingName="OpenAirport";
 		overviewText="OpenAirport";
 		startWeather=0.39833963;
 		startFog=0.49999979;
@@ -5366,7 +5572,7 @@ class Mission
 					markerType="RECTANGLE";
 					type="";
 					colorName="ColorGreen";
-					alpha=0.49576423;
+					alpha=0.5;
 					fillName="Grid";
 					a=15.013;
 					b=68.333;

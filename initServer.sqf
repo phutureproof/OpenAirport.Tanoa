@@ -11,3 +11,5 @@
 
 // load game state
 [] call OA_fnc_loadData;
+
+OA_server_init_done = true;

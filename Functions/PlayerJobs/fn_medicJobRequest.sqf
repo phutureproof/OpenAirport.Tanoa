@@ -156,9 +156,10 @@ _player setVariable ["OA_taskGroup", nil];
 
 
 // create a payment
-_tip = floor(random(1.5 * _jobDistance));
-_payment = ((_jobDistance * 2.5) * _numVehSeats) + _tip;
+_payment = ((_jobDistance) * _numVehSeats) * 3;
+_tip = floor((_payment * 0.1) + random(_payment * 0.5));
 [_payment] call OA_fnc_updateFunds;
+[_player, _tip] call OA_fnc_updatePlayerFunds;
 _distanceFormatted = [_jobDistance] call OA_fnc_formatIntAsKilometers;
 
 _atcMessage = format [

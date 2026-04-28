@@ -1,4 +1,5 @@
 if (!isServer) exitWith {};
+
 ["Game state is being reset"] call OA_fnc_sendGlobalMsg;
 
 _vehicles = profileNamespace getVariable ["OA_airport_vehicles", []];
@@ -13,12 +14,17 @@ _startingFunds = missionNamespace getVariable ["OA_starting_funds", 0];
 
 profileNamespace setVariable ["OA_airport_vehicles", nil];
 profileNamespace setVariable ["OA_airport_funds", nil];
-profileNamespace setVariable ["OA_player_data", nil];
 missionNamespace setVariable ["OA_airport_funds", _startingFunds, true];
+missionNamespace setVariable ["OA_player_starting_balance", 0, true];
+profileNamespace setVariable ["OA_player_starting_balance", 0];
+saveProfileNamespace;
 
-sleep 1;
 [] call OA_fnc_loadData;
-sleep 1;
 [] call OA_fnc_saveData;
-sleep 1;
+
+["Wiping player data"] call OA_fnc_sendGlobalMsg;
+
+profileNamespace setVariable ["OA_player_data", nil];
+saveProfileNamespace;
+
 ["Game has been reset and reloaded"] call OA_fnc_sendGlobalMsg;
