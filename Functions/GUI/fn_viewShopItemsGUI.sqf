@@ -84,7 +84,7 @@ private _buttonHandler = {
             if (_ownsQuad) exitWith {
                 hint "You already own the transport quad";
             };
-            player setVariable ["OA_transport_quad", true];
+            player setVariable ["OA_transport_quad", true, true];
             _doPurchase = true;
         };
     };

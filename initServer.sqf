@@ -7,6 +7,7 @@
 // start airport jobs queue
 [] call OA_fnc_airportRefuelJobsQueue;
 [] call OA_fnc_airportRepairJobsQueue;
+[] call OA_fnc_vehicleDeliveryQueue;
 [] call OA_fnc_ambTrafficQueue;
 
 // load game state

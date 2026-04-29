@@ -1,4 +1,5 @@
 [] spawn {
+	["Starting ambient traffic queue"] call OA_fnc_sendGlobalMsg;
 	while {true} do {
 		// this is a queue of units waiting for a move command
 		_queue = missionNamespace getVariable ["OA_airport_traffic_queue", []];

@@ -102,6 +102,9 @@ class CfgFunctions
 
             class ambTrafficQueue {};
             class addTrafficToQueue {};
+
+            class vehicleDeliveryQueue {};
+            class addVehicleDeliveryJob {};
         };
 
         class Radio

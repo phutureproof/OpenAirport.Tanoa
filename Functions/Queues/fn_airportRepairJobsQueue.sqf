@@ -1,4 +1,5 @@
 [] spawn {
+	["Starting airport repair job queue"] call OA_fnc_sendGlobalMsg;
 	while {true} do {
 		_queue = missionNamespace getVariable ["OA_airport_repair_jobs", []];
 

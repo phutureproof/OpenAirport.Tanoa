@@ -48,7 +48,7 @@ _player setVariable ["OA_taskGroup", _group];
 
 // spawn civs
 for "_i" from 1 to _numVehSeats do {
-    [_group, _spawnPoint, 25] call OA_fnc_spawnPassenger;
+    [_group, _spawnPoint, 10] call OA_fnc_spawnPassenger;
 };
 
 // civs having a bad time
@@ -76,9 +76,15 @@ for "_i" from 1 to _numVehSeats do {
             [_target, false] remoteExec ["setUnconscious", 0, true];
             [_target, ""] remoteExec ["switchMove", 0, true];
             [_target, (_this select 2)] remoteExec ["BIS_fnc_holdActionRemove", 0, true];
-            _target enableAI "PATH";
-            _target assignAsCargo _vehicle;
-            [_target] orderGetIn true;
+            [
+                [_target, _vehicle],
+                {
+                    params ["_civ", "_veh"];
+                    _civ enableAI "PATH";
+                    _civ assignAsCargo _veh;
+                    [_civ] orderGetIn true;
+                }
+            ] remoteExec ["BIS_fnc_spawn", _target]; 
         },
         {},
         [_vehicle],
@@ -157,7 +163,7 @@ _player setVariable ["OA_taskGroup", nil];
 
 // create a payment
 _payment = ((_jobDistance) * _numVehSeats) * 3;
-_tip = floor((_payment * 0.1) + random(_payment * 0.5));
+_tip = floor((_payment * 0.1) + floor(random(_payment * 0.25)));
 [_payment] call OA_fnc_updateFunds;
 [_player, _tip] call OA_fnc_updatePlayerFunds;
 _distanceFormatted = [_jobDistance] call OA_fnc_formatIntAsKilometers;

@@ -22,7 +22,7 @@ _playerData = [];
 
 if (count _playerData == 0) exitWith {
 	_startingBalance = missionNamespace getVariable ["OA_player_starting_balance", 0];
-	[_player, _startingBalance] call OA_fnc_updatePlayerFunds;
+	_player setVariable ["OA_player_money", _money, true];
 	_msg = format ["Welcome to the server %1, please check the briefing screen for game mode information.", name _player];
 	[_msg] call OA_fnc_sendGlobalMsg;
 };
