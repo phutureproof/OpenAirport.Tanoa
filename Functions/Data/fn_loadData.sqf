@@ -12,7 +12,7 @@ missionNamespace setVariable ["OA_player_starting_balance", _playerStartingBalan
 private _vehicles = profileNamespace getVariable ["OA_airport_vehicles", []];
 
 if (count _vehicles == 0) then {
-    ["C_Heli_Light_01_civil_F", 0.5, 0.5] call OA_fnc_spawnVehicle;
+    ["B_Heli_Light_01_F", 0.5, 0.5] call OA_fnc_spawnVehicle;
 } else {
     {
         _type = _x select 0;

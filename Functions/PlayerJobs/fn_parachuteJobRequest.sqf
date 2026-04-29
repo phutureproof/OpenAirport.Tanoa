@@ -43,9 +43,14 @@ if (isServer) then {
 
     // give them parachutes
     {
-        [_x] remoteExec ["removeBackpack", 2];
-        [_x, "B_Parachute"] remoteExec ["addBackpack", 2];
+        [[_x], {
+            params ["_unit"];
+            _unit removeBackpack;
+            _unit addBackpack "B_Parachute";
+
+        }] remoteExec ["BIS_fnc_spawn", _x] ;
     } forEach (units _group);
+    
 
     // create a task to wait for passengers
     _taskLoad = [_player, 'Move To Pickup Area', 'Move to the pickup area and wait the passengers.', getMarkerPos "OA_pickupzone_marker", 'getin'] call OA_fnc_genericTask;
@@ -61,7 +66,14 @@ if (isServer) then {
     _taskPassengers = [_player, 'Wait For Passengers', 'Wait for the passengers to board your vehicle.', (leader _group), 'getin'] call OA_fnc_genericTask;
 
     // order passengers to get in
-    { _x assignAsCargo _vehicle; [_x] orderGetIn true; } forEach (units _group);
+    {
+        [[_x, _vehicle], {
+            params ["_unit", "_vehicle"];
+            _unit assignAsCargo _vehicle;
+            [_unit] orderGetIn true;
+             
+        }] remoteExec ["BIS_fnc_spawn", _x];
+    } forEach (units _group);
 
     // wait until all passengers are in the vehicle
     _time = time;
@@ -106,23 +118,25 @@ if (isServer) then {
 
     // passengers eject
     {
-        unassignVehicle _x;
-        [_x] orderGetIn false;
-        _x action ["EJECT", _vehicle];
-        if ( random(5) >= 2.5 ) then {
-            _smokeTrail = createVehicle [selectRandom [
-                "SmokeShell",
-                "SmokeShellRed",
-                "SmokeShellGreen",
-                "SmokeShellBlue",
-                "SmokeShellYellow",
-                "SmokeShellOrange",
-                "SmokeShellPurple"
-            ], getPos _x, [], 0, "NONE"];
-            _smokeTrail attachTo [_x, [0, 0, 0.1], "spine3"];
-        };
-        sleep 0.1;
+        [[_x, _vehicle], {
+            unassignVehicle _x;
+            [_x] orderGetIn false;
+            _x action ["EJECT", _vehicle];
+            if ( random(5) >= 2.5 ) then {
+                _smokeTrail = createVehicle [selectRandom [
+                    "SmokeShell",
+                    "SmokeShellRed",
+                    "SmokeShellGreen",
+                    "SmokeShellBlue",
+                    "SmokeShellYellow",
+                    "SmokeShellOrange",
+                    "SmokeShellPurple"
+                ], getPos _x, [], 0, "NONE"];
+                _smokeTrail attachTo [_x, [0, 0, 0.1], "spine3"];
+            };
+        }] remoteExec ["BIS_fnc_spawn", _x];
     } forEach (units _group);
+    
 
     waitUntil {
         sleep 1;
@@ -134,7 +148,6 @@ if (isServer) then {
     _pos = [_vehicle, 200, 500, 0] call BIS_fnc_findSafePos;
     _group move _pos;
     
-
     // complete the task
     [_taskID, "SUCCEEDED"] call BIS_fnc_taskSetState;
     [_taskID] call BIS_fnc_deleteTask;
@@ -145,8 +158,8 @@ if (isServer) then {
     _player setVariable ["OA_hasTask", false];
 
     // create a payment
-    _payment = (_jobDistance * _numVehSeats) * 2;
-    _tip = floor((_payment * 0.1) + floor(random(_payment * 0.25)));
+    _payment = (_jobDistance * _numVehSeats) * 4;
+    _tip = floor(_payment * 0.01);
     [_payment] call OA_fnc_updateFunds;
     [_player, _tip] call OA_updatePlayerFunds;
     _distanceFormatted = [_jobDistance] call OA_fnc_formatIntAsKilometers;
@@ -175,12 +188,14 @@ if (isServer) then {
     [_taskReturn] call BIS_fnc_deleteTask;
 
     // cleanup 
-    sleep 5;
-    {
-        deleteVehicle _x;
-    } forEach (units _group);
-
-    deleteGroup _group;
+    [[_group], {
+        params ["_group"];
+        sleep 5;
+        {
+            deleteVehicle _x;
+        } forEach (units _group);
+        deleteGroup _group;
+    }] remoteExec["BIS_fnc_spawn", _group];
 
     if (!(isNull _smoke)) then {
         deleteVehicle _smoke;

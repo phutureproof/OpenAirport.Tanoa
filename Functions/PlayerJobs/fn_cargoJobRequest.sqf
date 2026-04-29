@@ -61,7 +61,7 @@ if (isServer) then {
 
 	// calculate payment
 	_payment = _jobDistance * _multiplier;
-	_tip = floor((_payment * 0.1) + floor(random(_payment * 0.25)));
+	_tip = floor(_payment * 0.01);
     [_payment] call OA_fnc_updateFunds;
 
 	// ATC message

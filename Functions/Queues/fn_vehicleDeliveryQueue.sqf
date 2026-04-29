@@ -34,16 +34,14 @@
 					_direction = getDir _target;
 					_args params ["_vehicle"];
 					["You have 5 seconds to clear the delivery area!"] remoteExec ["hint", _caller];
-					sleep 5;
+					sleep 6;
 					deleteVehicle _target;
-					_veh = [_vehicle] call OA_fnc_spawnVehicle;
+					_veh = [_vehicle] remoteExec ["OA_fnc_spawnVehicle", 2];
 					_veh setVehiclePosition [_position, [], 0, "NONE"];
 					_veh setDir _direction;
-
 				}, [_vehicle], 20, true, true, "", "true", 12];
 			}] remoteExec["BIS_fnc_spawn"];
 			
-
 			_heli setSlingLoad _crate;
 			_heli flyInHeight 30;
 
